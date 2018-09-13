@@ -1,0 +1,1 @@
+# Vim Snippets for Terraform
