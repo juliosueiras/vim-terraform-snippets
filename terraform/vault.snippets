@@ -1,0 +1,199 @@
+snippet vault
+	provider "vault" {
+		address = "${1}"
+		token = "${2}"
+	}
+snippet r_vault_approle_auth_backend_login
+	resource "vault_approle_auth_backend_login" "${1}" {
+		role_id = "${2}"
+	}
+snippet r_vault_approle_auth_backend_role
+	resource "vault_approle_auth_backend_role" "${1}" {
+		role_name = "${2}"
+	}
+snippet r_vault_approle_auth_backend_role_secret_id
+	resource "vault_approle_auth_backend_role_secret_id" "${1}" {
+		role_name = "${2}"
+	}
+snippet r_vault_audit
+	resource "vault_audit" "${1}" {
+		options = ["${2}"]
+		type = "${3}"
+	}
+snippet r_vault_auth_backend
+	resource "vault_auth_backend" "${1}" {
+		type = "${2}"
+	}
+snippet r_vault_aws_auth_backend_cert
+	resource "vault_aws_auth_backend_cert" "${1}" {
+		aws_public_cert = "${2}"
+		cert_name = "${3}"
+	}
+snippet r_vault_aws_auth_backend_client
+	resource "vault_aws_auth_backend_client" "${1}" {
+		
+	}
+snippet r_vault_aws_auth_backend_identity_whitelist
+	resource "vault_aws_auth_backend_identity_whitelist" "${1}" {
+		
+	}
+snippet r_vault_aws_auth_backend_login
+	resource "vault_aws_auth_backend_login" "${1}" {
+		
+	}
+snippet r_vault_aws_auth_backend_role
+	resource "vault_aws_auth_backend_role" "${1}" {
+		role = "${2}"
+	}
+snippet r_vault_aws_auth_backend_role_tag
+	resource "vault_aws_auth_backend_role_tag" "${1}" {
+		role = "${2}"
+	}
+snippet r_vault_aws_auth_backend_roletag_blacklist
+	resource "vault_aws_auth_backend_roletag_blacklist" "${1}" {
+		backend = "${2}"
+	}
+snippet r_vault_aws_auth_backend_sts_role
+	resource "vault_aws_auth_backend_sts_role" "${1}" {
+		account_id = "${2}"
+		sts_role = "${3}"
+	}
+snippet r_vault_aws_secret_backend
+	resource "vault_aws_secret_backend" "${1}" {
+		access_key = "${2}"
+		secret_key = "${3}"
+	}
+snippet r_vault_aws_secret_backend_role
+	resource "vault_aws_secret_backend_role" "${1}" {
+		backend = "${2}"
+		name = "${3}"
+	}
+snippet r_vault_cert_auth_backend_role
+	resource "vault_cert_auth_backend_role" "${1}" {
+		certificate = "${2}"
+		name = "${3}"
+	}
+snippet r_vault_consul_secret_backend
+	resource "vault_consul_secret_backend" "${1}" {
+		address = "${2}"
+		token = "${3}"
+	}
+snippet r_vault_database_secret_backend_connection
+	resource "vault_database_secret_backend_connection" "${1}" {
+		backend = "${2}"
+		name = "${3}"
+	}
+snippet r_vault_database_secret_backend_role
+	resource "vault_database_secret_backend_role" "${1}" {
+		backend = "${2}"
+		creation_statements = "${3}"
+		db_name = "${4}"
+		name = "${5}"
+	}
+snippet r_vault_gcp_auth_backend_role
+	resource "vault_gcp_auth_backend_role" "${1}" {
+		project_id = "${2}"
+		role = "${3}"
+		type = "${4}"
+	}
+snippet r_vault_gcp_secret_backend
+	resource "vault_gcp_secret_backend" "${1}" {
+		credentials = "${2}"
+	}
+snippet r_vault_generic_secret
+	resource "vault_generic_secret" "${1}" {
+		data_json = "${2}"
+		path = "${3}"
+	}
+snippet r_vault_jwt_auth_backend_role
+	resource "vault_jwt_auth_backend_role" "${1}" {
+		bound_audiences = ["${2}"]
+		role_name = "${3}"
+		user_claim = "${4}"
+	}
+snippet r_vault_kubernetes_auth_backend_config
+	resource "vault_kubernetes_auth_backend_config" "${1}" {
+		kubernetes_host = "${2}"
+	}
+snippet r_vault_kubernetes_auth_backend_role
+	resource "vault_kubernetes_auth_backend_role" "${1}" {
+		bound_service_account_names = ["${2}"]
+		bound_service_account_namespaces = ["${3}"]
+		role_name = "${4}"
+	}
+snippet r_vault_ldap_auth_backend
+	resource "vault_ldap_auth_backend" "${1}" {
+		url = "${2}"
+	}
+snippet r_vault_ldap_auth_backend_group
+	resource "vault_ldap_auth_backend_group" "${1}" {
+		groupname = "${2}"
+	}
+snippet r_vault_ldap_auth_backend_user
+	resource "vault_ldap_auth_backend_user" "${1}" {
+		username = "${2}"
+	}
+snippet r_vault_mount
+	resource "vault_mount" "${1}" {
+		path = "${2}"
+		type = "${3}"
+	}
+snippet r_vault_okta_auth_backend
+	resource "vault_okta_auth_backend" "${1}" {
+		organization = "${2}"
+	}
+snippet r_vault_okta_auth_backend_group
+	resource "vault_okta_auth_backend_group" "${1}" {
+		group_name = "${2}"
+		path = "${3}"
+	}
+snippet r_vault_okta_auth_backend_user
+	resource "vault_okta_auth_backend_user" "${1}" {
+		path = "${2}"
+		username = "${3}"
+	}
+snippet r_vault_policy
+	resource "vault_policy" "${1}" {
+		name = "${2}"
+		policy = "${3}"
+	}
+snippet r_vault_rabbitmq_secret_backend
+	resource "vault_rabbitmq_secret_backend" "${1}" {
+		connection_uri = "${2}"
+		password = "${3}"
+		username = "${4}"
+	}
+snippet r_vault_rabbitmq_secret_backend_role
+	resource "vault_rabbitmq_secret_backend_role" "${1}" {
+		backend = "${2}"
+		name = "${3}"
+	}
+snippet r_vault_ssh_secret_backend_ca
+	resource "vault_ssh_secret_backend_ca" "${1}" {
+		
+	}
+snippet r_vault_token_auth_backend_role
+	resource "vault_token_auth_backend_role" "${1}" {
+		role_name = "${2}"
+	}
+snippet d_vault_approle_auth_backend_role_id
+	data "vault_approle_auth_backend_role_id" "${1}" {
+		role_name = "${2}"
+	}
+snippet d_vault_aws_access_credentials
+	data "vault_aws_access_credentials" "${1}" {
+		backend = "${2}"
+		role = "${3}"
+	}
+snippet d_vault_generic_secret
+	data "vault_generic_secret" "${1}" {
+		path = "${2}"
+	}
+snippet d_vault_kubernetes_auth_backend_config
+	data "vault_kubernetes_auth_backend_config" "${1}" {
+		
+	}
+snippet d_vault_kubernetes_auth_backend_role
+	data "vault_kubernetes_auth_backend_role" "${1}" {
+		role_name = "${2}"
+	}

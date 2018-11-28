@@ -1,0 +1,33 @@
+snippet rundeck
+	provider "rundeck" {
+		auth_token = "${1}"
+		url = "${2}"
+	}
+snippet r_rundeck_job
+	resource "rundeck_job" "${1}" {
+		command {
+		
+		}
+		description = "${3}"
+		name = "${4}"
+		project_name = "${5}"
+	}
+snippet r_rundeck_private_key
+	resource "rundeck_private_key" "${1}" {
+		key_material = "${2}"
+		path = "${3}"
+	}
+snippet r_rundeck_project
+	resource "rundeck_project" "${1}" {
+		name = "${2}"
+		resource_model_source {
+			config {
+
+			}
+			type = ""
+		}
+	}
+snippet r_rundeck_public_key
+	resource "rundeck_public_key" "${1}" {
+		path = "${2}"
+	}

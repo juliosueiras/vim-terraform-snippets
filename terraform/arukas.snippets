@@ -1,0 +1,13 @@
+snippet arukas
+	provider "arukas" {
+		secret = "${1}"
+		token = "${2}"
+	}
+snippet r_arukas_container
+	resource "arukas_container" "${1}" {
+		image = "${2}"
+		name = "${3}"
+		ports {
+		
+		}
+	}

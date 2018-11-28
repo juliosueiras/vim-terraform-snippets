@@ -1,0 +1,13 @@
+snippet local
+	provider "local" {
+		
+	}
+snippet r_local_file
+	resource "local_file" "${1}" {
+		content = "${2}"
+		filename = "${3}"
+	}
+snippet d_local_file
+	data "local_file" "${1}" {
+		filename = "${2}"
+	}

@@ -1,0 +1,80 @@
+snippet newrelic
+	provider "newrelic" {
+		api_key = "${1}"
+	}
+snippet r_newrelic_alert_channel
+	resource "newrelic_alert_channel" "${1}" {
+		configuration {
+
+		}
+		name = "${3}"
+		type = "${4}"
+	}
+snippet r_newrelic_alert_condition
+	resource "newrelic_alert_condition" "${1}" {
+		entities = [${2}]
+		metric = "${3}"
+		name = "${4}"
+		policy_id = ${5}
+		term {
+			duration = 1
+			threshold = 1.0
+			time_function = ""
+		}
+		type = "${7}"
+	}
+snippet r_newrelic_alert_policy
+	resource "newrelic_alert_policy" "${1}" {
+		name = "${2}"
+	}
+snippet r_newrelic_alert_policy_channel
+	resource "newrelic_alert_policy_channel" "${1}" {
+		channel_id = ${2}
+		policy_id = ${3}
+	}
+snippet r_newrelic_dashboard
+	resource "newrelic_dashboard" "${1}" {
+		title = "${2}"
+	}
+snippet r_newrelic_infra_alert_condition
+	resource "newrelic_infra_alert_condition" "${1}" {
+		name = "${2}"
+		policy_id = ${3}
+		type = "${4}"
+	}
+snippet r_newrelic_nrql_alert_condition
+	resource "newrelic_nrql_alert_condition" "${1}" {
+		name = "${2}"
+		nrql {
+			query = ""
+			since_value = ""
+		}
+		policy_id = ${4}
+		term {
+			duration = 1
+			threshold = 1.0
+			time_function = ""
+		}
+	}
+snippet r_newrelic_synthetics_alert_condition
+	resource "newrelic_synthetics_alert_condition" "${1}" {
+		monitor_id = "${2}"
+		name = "${3}"
+		policy_id = ${4}
+	}
+snippet d_newrelic_alert_channel
+	data "newrelic_alert_channel" "${1}" {
+		name = "${2}"
+	}
+snippet d_newrelic_application
+	data "newrelic_application" "${1}" {
+		name = "${2}"
+	}
+snippet d_newrelic_key_transaction
+	data "newrelic_key_transaction" "${1}" {
+		name = "${2}"
+	}
+snippet d_newrelic_synthetics_monitor
+	data "newrelic_synthetics_monitor" "${1}" {
+		name = "${2}"
+	}

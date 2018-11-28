@@ -1,0 +1,80 @@
+snippet triton
+	provider "triton" {
+		account = "${1}"
+		key_id = "${2}"
+		url = "${3}"
+		user = "${4}"
+	}
+snippet r_triton_fabric
+	resource "triton_fabric" "${1}" {
+		name = "${2}"
+		provision_end_ip = "${3}"
+		provision_start_ip = "${4}"
+		subnet = "${5}"
+		vlan_id = ${6}
+	}
+snippet r_triton_firewall_rule
+	resource "triton_firewall_rule" "${1}" {
+		rule = "${2}"
+	}
+snippet r_triton_instance_template
+	resource "triton_instance_template" "${1}" {
+		image = "${2}"
+		package = "${3}"
+		template_name = "${4}"
+	}
+snippet r_triton_key
+	resource "triton_key" "${1}" {
+		key = "${2}"
+	}
+snippet r_triton_machine
+	resource "triton_machine" "${1}" {
+		image = "${2}"
+		package = "${3}"
+	}
+snippet r_triton_service_group
+	resource "triton_service_group" "${1}" {
+		group_name = "${2}"
+		template = "${3}"
+	}
+snippet r_triton_snapshot
+	resource "triton_snapshot" "${1}" {
+		machine_id = "${2}"
+		name = "${3}"
+	}
+snippet r_triton_vlan
+	resource "triton_vlan" "${1}" {
+		name = "${2}"
+		vlan_id = ${3}
+	}
+snippet d_triton_account
+	data "triton_account" "${1}" {
+		
+	}
+snippet d_triton_datacenter
+	data "triton_datacenter" "${1}" {
+		
+	}
+snippet d_triton_fabric_network
+	data "triton_fabric_network" "${1}" {
+		name = "${2}"
+		vlan_id = ${3}
+	}
+snippet d_triton_fabric_vlan
+	data "triton_fabric_vlan" "${1}" {
+		
+	}
+snippet d_triton_image
+	data "triton_image" "${1}" {
+		
+	}
+snippet d_triton_network
+	data "triton_network" "${1}" {
+		name = "${2}"
+	}
+snippet d_triton_package
+	data "triton_package" "${1}" {
+		filter {
+			
+			}
+	}

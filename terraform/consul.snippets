@@ -1,0 +1,83 @@
+snippet consul
+	provider "consul" {
+		
+	}
+snippet r_consul_agent_service
+	resource "consul_agent_service" "${1}" {
+		name = "${2}"
+	}
+snippet r_consul_catalog_entry
+	resource "consul_catalog_entry" "${1}" {
+		address = "${2}"
+		node = "${3}"
+	}
+snippet r_consul_intention
+	resource "consul_intention" "${1}" {
+		action = "${2}"
+		destination_name = "${3}"
+		source_name = "${4}"
+	}
+snippet r_consul_key_prefix
+	resource "consul_key_prefix" "${1}" {
+		path_prefix = "${2}"
+		subkeys = ["${3}"]
+	}
+snippet r_consul_keys
+	resource "consul_keys" "${1}" {
+		
+	}
+snippet r_consul_node
+	resource "consul_node" "${1}" {
+		address = "${2}"
+		name = "${3}"
+	}
+snippet r_consul_prepared_query
+	resource "consul_prepared_query" "${1}" {
+		name = "${2}"
+		service = "${3}"
+	}
+snippet r_consul_service
+	resource "consul_service" "${1}" {
+		name = "${2}"
+		node = "${3}"
+	}
+snippet d_consul_agent_config
+	data "consul_agent_config" "${1}" {
+		
+	}
+snippet d_consul_agent_self
+	data "consul_agent_self" "${1}" {
+		
+	}
+snippet d_consul_catalog_nodes
+	data "consul_catalog_nodes" "${1}" {
+		
+	}
+snippet d_consul_catalog_service
+	data "consul_catalog_service" "${1}" {
+		name = "${2}"
+	}
+snippet d_consul_catalog_services
+	data "consul_catalog_services" "${1}" {
+		
+	}
+snippet d_consul_key_prefix
+	data "consul_key_prefix" "${1}" {
+		path_prefix = "${2}"
+	}
+snippet d_consul_keys
+	data "consul_keys" "${1}" {
+		
+	}
+snippet d_consul_nodes
+	data "consul_nodes" "${1}" {
+		
+	}
+snippet d_consul_service
+	data "consul_service" "${1}" {
+		name = "${2}"
+	}
+snippet d_consul_services
+	data "consul_services" "${1}" {
+		
+	}

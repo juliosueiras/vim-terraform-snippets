@@ -1,0 +1,120 @@
+snippet digitalocean
+	provider "digitalocean" {
+		token = "${1}"
+	}
+snippet r_digitalocean_certificate
+	resource "digitalocean_certificate" "${1}" {
+		name = "${2}"
+	}
+snippet r_digitalocean_domain
+	resource "digitalocean_domain" "${1}" {
+		name = "${2}"
+	}
+snippet r_digitalocean_droplet
+	resource "digitalocean_droplet" "${1}" {
+		image = "${2}"
+		name = "${3}"
+		region = "${4}"
+		size = "${5}"
+	}
+snippet r_digitalocean_firewall
+	resource "digitalocean_firewall" "${1}" {
+		name = "${2}"
+	}
+snippet r_digitalocean_floating_ip
+	resource "digitalocean_floating_ip" "${1}" {
+		region = "${2}"
+	}
+snippet r_digitalocean_floating_ip_assignment
+	resource "digitalocean_floating_ip_assignment" "${1}" {
+		droplet_id = ${2}
+		ip_address = "${3}"
+	}
+snippet r_digitalocean_loadbalancer
+	resource "digitalocean_loadbalancer" "${1}" {
+		forwarding_rule {
+			entry_port = 1
+			entry_protocol = ""
+			target_port = 1
+			target_protocol = ""
+		}
+		name = "${3}"
+		region = "${4}"
+	}
+snippet r_digitalocean_record
+	resource "digitalocean_record" "${1}" {
+		domain = "${2}"
+		name = "${3}"
+		type = "${4}"
+		value = "${5}"
+	}
+snippet r_digitalocean_ssh_key
+	resource "digitalocean_ssh_key" "${1}" {
+		name = "${2}"
+		public_key = "${3}"
+	}
+snippet r_digitalocean_tag
+	resource "digitalocean_tag" "${1}" {
+		name = "${2}"
+	}
+snippet r_digitalocean_volume
+	resource "digitalocean_volume" "${1}" {
+		name = "${2}"
+		region = "${3}"
+		size = ${4}
+	}
+snippet r_digitalocean_volume_attachment
+	resource "digitalocean_volume_attachment" "${1}" {
+		droplet_id = ${2}
+		volume_id = "${3}"
+	}
+snippet r_digitalocean_volume_snapshot
+	resource "digitalocean_volume_snapshot" "${1}" {
+		name = "${2}"
+		volume_id = "${3}"
+	}
+snippet d_digitalocean_certificate
+	data "digitalocean_certificate" "${1}" {
+		name = "${2}"
+	}
+snippet d_digitalocean_domain
+	data "digitalocean_domain" "${1}" {
+		name = "${2}"
+	}
+snippet d_digitalocean_droplet
+	data "digitalocean_droplet" "${1}" {
+		name = "${2}"
+	}
+snippet d_digitalocean_floating_ip
+	data "digitalocean_floating_ip" "${1}" {
+		ip_address = "${2}"
+	}
+snippet d_digitalocean_image
+	data "digitalocean_image" "${1}" {
+		
+	}
+snippet d_digitalocean_loadbalancer
+	data "digitalocean_loadbalancer" "${1}" {
+		name = "${2}"
+	}
+snippet d_digitalocean_record
+	data "digitalocean_record" "${1}" {
+		domain = "${2}"
+		name = "${3}"
+	}
+snippet d_digitalocean_ssh_key
+	data "digitalocean_ssh_key" "${1}" {
+		name = "${2}"
+	}
+snippet d_digitalocean_tag
+	data "digitalocean_tag" "${1}" {
+		name = "${2}"
+	}
+snippet d_digitalocean_volume
+	data "digitalocean_volume" "${1}" {
+		name = "${2}"
+	}
+snippet d_digitalocean_volume_snapshot
+	data "digitalocean_volume_snapshot" "${1}" {
+		
+	}

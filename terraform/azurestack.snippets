@@ -1,0 +1,292 @@
+snippet azurestack
+	provider "azurestack" {
+		
+	}
+snippet r_azurestack_availability_set
+	resource "azurestack_availability_set" "${1}" {
+		location = "${2}"
+		name = "${3}"
+		resource_group_name = "${4}"
+	}
+snippet r_azurestack_dns_a_record
+	resource "azurestack_dns_a_record" "${1}" {
+		name = "${2}"
+		records = ["${3}"]
+		resource_group_name = "${4}"
+		ttl = ${5}
+		zone_name = "${6}"
+	}
+snippet r_azurestack_dns_zone
+	resource "azurestack_dns_zone" "${1}" {
+		name = "${2}"
+		resource_group_name = "${3}"
+	}
+snippet r_azurestack_lb
+	resource "azurestack_lb" "${1}" {
+		location = "${2}"
+		name = "${3}"
+		resource_group_name = "${4}"
+	}
+snippet r_azurestack_lb_backend_address_pool
+	resource "azurestack_lb_backend_address_pool" "${1}" {
+		loadbalancer_id = "${2}"
+		name = "${3}"
+		resource_group_name = "${4}"
+	}
+snippet r_azurestack_lb_nat_pool
+	resource "azurestack_lb_nat_pool" "${1}" {
+		backend_port = ${2}
+		frontend_ip_configuration_name = "${3}"
+		frontend_port_end = ${4}
+		frontend_port_start = ${5}
+		loadbalancer_id = "${6}"
+		name = "${7}"
+		protocol = "${8}"
+		resource_group_name = "${9}"
+	}
+snippet r_azurestack_lb_nat_rule
+	resource "azurestack_lb_nat_rule" "${1}" {
+		backend_port = ${2}
+		frontend_ip_configuration_name = "${3}"
+		frontend_port = ${4}
+		loadbalancer_id = "${5}"
+		name = "${6}"
+		protocol = "${7}"
+		resource_group_name = "${8}"
+	}
+snippet r_azurestack_lb_probe
+	resource "azurestack_lb_probe" "${1}" {
+		loadbalancer_id = "${2}"
+		name = "${3}"
+		port = ${4}
+		resource_group_name = "${5}"
+	}
+snippet r_azurestack_lb_rule
+	resource "azurestack_lb_rule" "${1}" {
+		backend_port = ${2}
+		frontend_ip_configuration_name = "${3}"
+		frontend_port = ${4}
+		loadbalancer_id = "${5}"
+		name = "${6}"
+		protocol = "${7}"
+		resource_group_name = "${8}"
+	}
+snippet r_azurestack_local_network_gateway
+	resource "azurestack_local_network_gateway" "${1}" {
+		address_space = ["${2}"]
+		gateway_address = "${3}"
+		location = "${4}"
+		name = "${5}"
+		resource_group_name = "${6}"
+	}
+snippet r_azurestack_network_interface
+	resource "azurestack_network_interface" "${1}" {
+		ip_configuration {
+			name = ""
+			private_ip_address_allocation = ""
+			subnet_id = ""
+		}
+		location = "${3}"
+		name = "${4}"
+		resource_group_name = "${5}"
+	}
+snippet r_azurestack_network_security_group
+	resource "azurestack_network_security_group" "${1}" {
+		location = "${2}"
+		name = "${3}"
+		resource_group_name = "${4}"
+	}
+snippet r_azurestack_network_security_rule
+	resource "azurestack_network_security_rule" "${1}" {
+		access = "${2}"
+		direction = "${3}"
+		name = "${4}"
+		network_security_group_name = "${5}"
+		priority = ${6}
+		protocol = "${7}"
+		resource_group_name = "${8}"
+	}
+snippet r_azurestack_public_ip
+	resource "azurestack_public_ip" "${1}" {
+		location = "${2}"
+		name = "${3}"
+		public_ip_address_allocation = "${4}"
+		resource_group_name = "${5}"
+	}
+snippet r_azurestack_resource_group
+	resource "azurestack_resource_group" "${1}" {
+		location = "${2}"
+		name = "${3}"
+	}
+snippet r_azurestack_route
+	resource "azurestack_route" "${1}" {
+		address_prefix = "${2}"
+		name = "${3}"
+		next_hop_type = "${4}"
+		resource_group_name = "${5}"
+		route_table_name = "${6}"
+	}
+snippet r_azurestack_route_table
+	resource "azurestack_route_table" "${1}" {
+		location = "${2}"
+		name = "${3}"
+		resource_group_name = "${4}"
+	}
+snippet r_azurestack_storage_account
+	resource "azurestack_storage_account" "${1}" {
+		account_replication_type = "${2}"
+		account_tier = "${3}"
+		location = "${4}"
+		name = "${5}"
+		resource_group_name = "${6}"
+	}
+snippet r_azurestack_storage_blob
+	resource "azurestack_storage_blob" "${1}" {
+		name = "${2}"
+		resource_group_name = "${3}"
+		storage_account_name = "${4}"
+		storage_container_name = "${5}"
+	}
+snippet r_azurestack_storage_container
+	resource "azurestack_storage_container" "${1}" {
+		name = "${2}"
+		resource_group_name = "${3}"
+		storage_account_name = "${4}"
+	}
+snippet r_azurestack_subnet
+	resource "azurestack_subnet" "${1}" {
+		address_prefix = "${2}"
+		name = "${3}"
+		resource_group_name = "${4}"
+		virtual_network_name = "${5}"
+	}
+snippet r_azurestack_template_deployment
+	resource "azurestack_template_deployment" "${1}" {
+		deployment_mode = "${2}"
+		name = "${3}"
+		resource_group_name = "${4}"
+	}
+snippet r_azurestack_virtual_machine
+	resource "azurestack_virtual_machine" "${1}" {
+		location = "${2}"
+		name = "${3}"
+		network_interface_ids = ["${4}"]
+		resource_group_name = "${5}"
+		storage_os_disk {
+			create_option = ""
+			name = ""
+		}
+		vm_size = "${7}"
+	}
+snippet r_azurestack_virtual_machine_extension
+	resource "azurestack_virtual_machine_extension" "${1}" {
+		location = "${2}"
+		name = "${3}"
+		publisher = "${4}"
+		resource_group_name = "${5}"
+		type = "${6}"
+		type_handler_version = "${7}"
+		virtual_machine_name = "${8}"
+	}
+snippet r_azurestack_virtual_machine_scale_set
+	resource "azurestack_virtual_machine_scale_set" "${1}" {
+		location = "${2}"
+		name = "${3}"
+		network_profile {
+			ip_configuration {
+				name = ""
+				subnet_id = ""
+			}
+			name = ""
+			primary = false
+		}
+		os_profile {
+			admin_password = ""
+			admin_username = ""
+			computer_name_prefix = ""
+		}
+		resource_group_name = "${6}"
+		sku {
+			capacity = 1
+			name = ""
+		}
+		storage_profile_os_disk {
+			create_option = ""
+		}
+		upgrade_policy_mode = "${9}"
+	}
+snippet r_azurestack_virtual_network
+	resource "azurestack_virtual_network" "${1}" {
+		address_space = ["${2}"]
+		location = "${3}"
+		name = "${4}"
+		resource_group_name = "${5}"
+	}
+snippet r_azurestack_virtual_network_gateway
+	resource "azurestack_virtual_network_gateway" "${1}" {
+		ip_configuration {
+			subnet_id = ""
+		}
+		location = "${3}"
+		name = "${4}"
+		resource_group_name = "${5}"
+		sku = "${6}"
+		type = "${7}"
+	}
+snippet r_azurestack_virtual_network_gateway_connection
+	resource "azurestack_virtual_network_gateway_connection" "${1}" {
+		location = "${2}"
+		name = "${3}"
+		resource_group_name = "${4}"
+		type = "${5}"
+		virtual_network_gateway_id = "${6}"
+	}
+snippet d_azurestack_client_config
+	data "azurestack_client_config" "${1}" {
+		
+	}
+snippet d_azurestack_network_interface
+	data "azurestack_network_interface" "${1}" {
+		name = "${2}"
+		resource_group_name = "${3}"
+	}
+snippet d_azurestack_network_security_group
+	data "azurestack_network_security_group" "${1}" {
+		name = "${2}"
+		resource_group_name = "${3}"
+	}
+snippet d_azurestack_public_ip
+	data "azurestack_public_ip" "${1}" {
+		name = "${2}"
+		resource_group_name = "${3}"
+	}
+snippet d_azurestack_resource_group
+	data "azurestack_resource_group" "${1}" {
+		name = "${2}"
+	}
+snippet d_azurestack_route_table
+	data "azurestack_route_table" "${1}" {
+		name = "${2}"
+		resource_group_name = "${3}"
+	}
+snippet d_azurestack_storage_account
+	data "azurestack_storage_account" "${1}" {
+		name = "${2}"
+		resource_group_name = "${3}"
+	}
+snippet d_azurestack_subnet
+	data "azurestack_subnet" "${1}" {
+		name = "${2}"
+		resource_group_name = "${3}"
+		virtual_network_name = "${4}"
+	}
+snippet d_azurestack_virtual_network
+	data "azurestack_virtual_network" "${1}" {
+		name = "${2}"
+		resource_group_name = "${3}"
+	}
+snippet d_azurestack_virtual_network_gateway
+	data "azurestack_virtual_network_gateway" "${1}" {
+		name = "${2}"
+		resource_group_name = "${3}"
+	}

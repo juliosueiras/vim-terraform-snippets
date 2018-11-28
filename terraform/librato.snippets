@@ -1,0 +1,30 @@
+snippet librato
+	provider "librato" {
+		email = "${1}"
+		token = "${2}"
+	}
+snippet r_librato_alert
+	resource "librato_alert" "${1}" {
+		name = "${2}"
+	}
+snippet r_librato_metric
+	resource "librato_metric" "${1}" {
+		name = "${2}"
+		type = "${3}"
+	}
+snippet r_librato_service
+	resource "librato_service" "${1}" {
+		settings = "${2}"
+		title = "${3}"
+		type = "${4}"
+	}
+snippet r_librato_space
+	resource "librato_space" "${1}" {
+		name = "${2}"
+	}
+snippet r_librato_space_chart
+	resource "librato_space_chart" "${1}" {
+		name = "${2}"
+		space_id = ${3}
+		type = "${4}"
+	}

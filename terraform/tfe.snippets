@@ -1,0 +1,68 @@
+snippet tfe
+	provider "tfe" {
+		
+	}
+snippet r_tfe_organization
+	resource "tfe_organization" "${1}" {
+		email = "${2}"
+		name = "${3}"
+	}
+snippet r_tfe_organization_token
+	resource "tfe_organization_token" "${1}" {
+		organization = "${2}"
+	}
+snippet r_tfe_policy_set
+	resource "tfe_policy_set" "${1}" {
+		name = "${2}"
+		organization = "${3}"
+		policy_ids = ["${4}"]
+	}
+snippet r_tfe_sentinel_policy
+	resource "tfe_sentinel_policy" "${1}" {
+		name = "${2}"
+		organization = "${3}"
+		policy = "${4}"
+	}
+snippet r_tfe_ssh_key
+	resource "tfe_ssh_key" "${1}" {
+		key = "${2}"
+		name = "${3}"
+		organization = "${4}"
+	}
+snippet r_tfe_team
+	resource "tfe_team" "${1}" {
+		name = "${2}"
+		organization = "${3}"
+	}
+snippet r_tfe_team_access
+	resource "tfe_team_access" "${1}" {
+		access = "${2}"
+		team_id = "${3}"
+		workspace_id = "${4}"
+	}
+snippet r_tfe_team_member
+	resource "tfe_team_member" "${1}" {
+		team_id = "${2}"
+		username = "${3}"
+	}
+snippet r_tfe_team_members
+	resource "tfe_team_members" "${1}" {
+		team_id = "${2}"
+		usernames = ["${3}"]
+	}
+snippet r_tfe_team_token
+	resource "tfe_team_token" "${1}" {
+		team_id = "${2}"
+	}
+snippet r_tfe_variable
+	resource "tfe_variable" "${1}" {
+		category = "${2}"
+		key = "${3}"
+		value = "${4}"
+		workspace_id = "${5}"
+	}
+snippet r_tfe_workspace
+	resource "tfe_workspace" "${1}" {
+		name = "${2}"
+		organization = "${3}"
+	}

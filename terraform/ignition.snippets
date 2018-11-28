@@ -1,0 +1,53 @@
+snippet ignition
+	provider "ignition" {
+		
+	}
+snippet d_ignition_config
+	data "ignition_config" "${1}" {
+		
+	}
+snippet d_ignition_directory
+	data "ignition_directory" "${1}" {
+		filesystem = "${2}"
+		path = "${3}"
+	}
+snippet d_ignition_disk
+	data "ignition_disk" "${1}" {
+		device = "${2}"
+	}
+snippet d_ignition_file
+	data "ignition_file" "${1}" {
+		filesystem = "${2}"
+		path = "${3}"
+	}
+snippet d_ignition_filesystem
+	data "ignition_filesystem" "${1}" {
+		
+	}
+snippet d_ignition_group
+	data "ignition_group" "${1}" {
+		name = "${2}"
+	}
+snippet d_ignition_link
+	data "ignition_link" "${1}" {
+		filesystem = "${2}"
+		path = "${3}"
+		target = "${4}"
+	}
+snippet d_ignition_networkd_unit
+	data "ignition_networkd_unit" "${1}" {
+		name = "${2}"
+	}
+snippet d_ignition_raid
+	data "ignition_raid" "${1}" {
+		level = "${2}"
+		name = "${3}"
+	}
+snippet d_ignition_systemd_unit
+	data "ignition_systemd_unit" "${1}" {
+		name = "${2}"
+	}
+snippet d_ignition_user
+	data "ignition_user" "${1}" {
+		name = "${2}"
+	}

@@ -1,0 +1,430 @@
+snippet panos
+	provider "panos" {
+		
+	}
+snippet r_panos_address_group
+	resource "panos_address_group" "${1}" {
+		name = "${2}"
+	}
+snippet r_panos_address_object
+	resource "panos_address_object" "${1}" {
+		name = "${2}"
+		value = "${3}"
+	}
+snippet r_panos_administrative_tag
+	resource "panos_administrative_tag" "${1}" {
+		name = "${2}"
+	}
+snippet r_panos_dag_tags
+	resource "panos_dag_tags" "${1}" {
+		register {
+			ip = ""
+			tags = [""]
+		}
+	}
+snippet r_panos_edl
+	resource "panos_edl" "${1}" {
+		name = "${2}"
+	}
+snippet r_panos_ethernet_interface
+	resource "panos_ethernet_interface" "${1}" {
+		mode = "${2}"
+		name = "${3}"
+	}
+snippet r_panos_general_settings
+	resource "panos_general_settings" "${1}" {
+		
+	}
+snippet r_panos_ike_crypto_profile
+	resource "panos_ike_crypto_profile" "${1}" {
+		authentications = ["${2}"]
+		dh_groups = ["${3}"]
+		encryptions = ["${4}"]
+		name = "${5}"
+	}
+snippet r_panos_ike_gateway
+	resource "panos_ike_gateway" "${1}" {
+		interface = "${2}"
+		name = "${3}"
+	}
+snippet r_panos_ipsec_crypto_profile
+	resource "panos_ipsec_crypto_profile" "${1}" {
+		authentications = ["${2}"]
+		encryptions = ["${3}"]
+		name = "${4}"
+	}
+snippet r_panos_ipsec_tunnel
+	resource "panos_ipsec_tunnel" "${1}" {
+		name = "${2}"
+		tunnel_interface = "${3}"
+	}
+snippet r_panos_ipsec_tunnel_proxy_id_ipv4
+	resource "panos_ipsec_tunnel_proxy_id_ipv4" "${1}" {
+		ipsec_tunnel = "${2}"
+		name = "${3}"
+	}
+snippet r_panos_license_api_key
+	resource "panos_license_api_key" "${1}" {
+		key = "${2}"
+	}
+snippet r_panos_licensing
+	resource "panos_licensing" "${1}" {
+		auth_codes = ["${2}"]
+	}
+snippet r_panos_loopback_interface
+	resource "panos_loopback_interface" "${1}" {
+		name = "${2}"
+	}
+snippet r_panos_management_profile
+	resource "panos_management_profile" "${1}" {
+		name = "${2}"
+	}
+snippet r_panos_nat_policy
+	resource "panos_nat_policy" "${1}" {
+		destination_addresses = ["${2}"]
+		destination_zone = "${3}"
+		name = "${4}"
+		source_addresses = ["${5}"]
+		source_zones = ["${6}"]
+	}
+snippet r_panos_nat_rule
+	resource "panos_nat_rule" "${1}" {
+		destination_addresses = ["${2}"]
+		destination_zone = "${3}"
+		name = "${4}"
+		source_addresses = ["${5}"]
+		source_zones = ["${6}"]
+	}
+snippet r_panos_panorama_address_group
+	resource "panos_panorama_address_group" "${1}" {
+		name = "${2}"
+	}
+snippet r_panos_panorama_address_object
+	resource "panos_panorama_address_object" "${1}" {
+		name = "${2}"
+		value = "${3}"
+	}
+snippet r_panos_panorama_administrative_tag
+	resource "panos_panorama_administrative_tag" "${1}" {
+		name = "${2}"
+	}
+snippet r_panos_panorama_device_group
+	resource "panos_panorama_device_group" "${1}" {
+		name = "${2}"
+	}
+snippet r_panos_panorama_device_group_entry
+	resource "panos_panorama_device_group_entry" "${1}" {
+		device_group = "${2}"
+		serial = "${3}"
+	}
+snippet r_panos_panorama_edl
+	resource "panos_panorama_edl" "${1}" {
+		name = "${2}"
+	}
+snippet r_panos_panorama_ethernet_interface
+	resource "panos_panorama_ethernet_interface" "${1}" {
+		mode = "${2}"
+		name = "${3}"
+		template = "${4}"
+	}
+snippet r_panos_panorama_ike_crypto_profile
+	resource "panos_panorama_ike_crypto_profile" "${1}" {
+		authentications = ["${2}"]
+		dh_groups = ["${3}"]
+		encryptions = ["${4}"]
+		name = "${5}"
+	}
+snippet r_panos_panorama_ike_gateway
+	resource "panos_panorama_ike_gateway" "${1}" {
+		interface = "${2}"
+		name = "${3}"
+	}
+snippet r_panos_panorama_ipsec_crypto_profile
+	resource "panos_panorama_ipsec_crypto_profile" "${1}" {
+		authentications = ["${2}"]
+		encryptions = ["${3}"]
+		name = "${4}"
+	}
+snippet r_panos_panorama_ipsec_tunnel
+	resource "panos_panorama_ipsec_tunnel" "${1}" {
+		name = "${2}"
+		template = "${3}"
+		tunnel_interface = "${4}"
+	}
+snippet r_panos_panorama_ipsec_tunnel_proxy_id_ipv4
+	resource "panos_panorama_ipsec_tunnel_proxy_id_ipv4" "${1}" {
+		ipsec_tunnel = "${2}"
+		name = "${3}"
+		template = "${4}"
+	}
+snippet r_panos_panorama_loopback_interface
+	resource "panos_panorama_loopback_interface" "${1}" {
+		name = "${2}"
+		template = "${3}"
+	}
+snippet r_panos_panorama_management_profile
+	resource "panos_panorama_management_profile" "${1}" {
+		name = "${2}"
+	}
+snippet r_panos_panorama_nat_policy
+	resource "panos_panorama_nat_policy" "${1}" {
+		destination_addresses = ["${2}"]
+		destination_zone = "${3}"
+		name = "${4}"
+		source_addresses = ["${5}"]
+		source_zones = ["${6}"]
+	}
+snippet r_panos_panorama_nat_rule
+	resource "panos_panorama_nat_rule" "${1}" {
+		destination_addresses = ["${2}"]
+		destination_zone = "${3}"
+		name = "${4}"
+		source_addresses = ["${5}"]
+		source_zones = ["${6}"]
+	}
+snippet r_panos_panorama_security_policies
+	resource "panos_panorama_security_policies" "${1}" {
+		rule {
+			applications = [""]
+			categories = [""]
+			destination_addresses = [""]
+			destination_zones = [""]
+			hip_profiles = [""]
+			name = ""
+			services = [""]
+			source_addresses = [""]
+			source_users = [""]
+			source_zones = [""]
+		}
+	}
+snippet r_panos_panorama_security_policy
+	resource "panos_panorama_security_policy" "${1}" {
+		rule {
+			applications = [""]
+			categories = [""]
+			destination_addresses = [""]
+			destination_zones = [""]
+			hip_profiles = [""]
+			name = ""
+			services = [""]
+			source_addresses = [""]
+			source_users = [""]
+			source_zones = [""]
+		}
+	}
+snippet r_panos_panorama_security_policy_group
+	resource "panos_panorama_security_policy_group" "${1}" {
+		rule {
+			applications = [""]
+			categories = [""]
+			destination_addresses = [""]
+			destination_zones = [""]
+			hip_profiles = [""]
+			name = ""
+			services = [""]
+			source_addresses = [""]
+			source_users = [""]
+			source_zones = [""]
+		}
+	}
+snippet r_panos_panorama_security_rule_group
+	resource "panos_panorama_security_rule_group" "${1}" {
+		rule {
+			applications = [""]
+			categories = [""]
+			destination_addresses = [""]
+			destination_zones = [""]
+			hip_profiles = [""]
+			name = ""
+			services = [""]
+			source_addresses = [""]
+			source_users = [""]
+			source_zones = [""]
+		}
+	}
+snippet r_panos_panorama_service_group
+	resource "panos_panorama_service_group" "${1}" {
+		name = "${2}"
+		services = ["${3}"]
+	}
+snippet r_panos_panorama_service_object
+	resource "panos_panorama_service_object" "${1}" {
+		destination_port = "${2}"
+		name = "${3}"
+		protocol = "${4}"
+	}
+snippet r_panos_panorama_static_route_ipv4
+	resource "panos_panorama_static_route_ipv4" "${1}" {
+		destination = "${2}"
+		name = "${3}"
+		virtual_router = "${4}"
+	}
+snippet r_panos_panorama_template
+	resource "panos_panorama_template" "${1}" {
+		name = "${2}"
+	}
+snippet r_panos_panorama_template_entry
+	resource "panos_panorama_template_entry" "${1}" {
+		serial = "${2}"
+		template = "${3}"
+	}
+snippet r_panos_panorama_template_stack
+	resource "panos_panorama_template_stack" "${1}" {
+		name = "${2}"
+	}
+snippet r_panos_panorama_template_stack_entry
+	resource "panos_panorama_template_stack_entry" "${1}" {
+		device = "${2}"
+		template_stack = "${3}"
+	}
+snippet r_panos_panorama_template_variable
+	resource "panos_panorama_template_variable" "${1}" {
+		name = "${2}"
+		value = "${3}"
+	}
+snippet r_panos_panorama_tunnel_interface
+	resource "panos_panorama_tunnel_interface" "${1}" {
+		name = "${2}"
+		template = "${3}"
+	}
+snippet r_panos_panorama_virtual_router
+	resource "panos_panorama_virtual_router" "${1}" {
+		name = "${2}"
+		template = "${3}"
+	}
+snippet r_panos_panorama_virtual_router_entry
+	resource "panos_panorama_virtual_router_entry" "${1}" {
+		interface = "${2}"
+		template = "${3}"
+		virtual_router = "${4}"
+	}
+snippet r_panos_panorama_vlan_interface
+	resource "panos_panorama_vlan_interface" "${1}" {
+		name = "${2}"
+		template = "${3}"
+	}
+snippet r_panos_panorama_zone
+	resource "panos_panorama_zone" "${1}" {
+		name = "${2}"
+	}
+snippet r_panos_panorama_zone_entry
+	resource "panos_panorama_zone_entry" "${1}" {
+		interface = "${2}"
+		template = "${3}"
+		zone = "${4}"
+	}
+snippet r_panos_security_policies
+	resource "panos_security_policies" "${1}" {
+		rule {
+			applications = [""]
+			categories = [""]
+			destination_addresses = [""]
+			destination_zones = [""]
+			hip_profiles = [""]
+			name = ""
+			services = [""]
+			source_addresses = [""]
+			source_users = [""]
+			source_zones = [""]
+		}
+	}
+snippet r_panos_security_policy
+	resource "panos_security_policy" "${1}" {
+		rule {
+			applications = [""]
+			categories = [""]
+			destination_addresses = [""]
+			destination_zones = [""]
+			hip_profiles = [""]
+			name = ""
+			services = [""]
+			source_addresses = [""]
+			source_users = [""]
+			source_zones = [""]
+		}
+	}
+snippet r_panos_security_policy_group
+	resource "panos_security_policy_group" "${1}" {
+		rule {
+			applications = [""]
+			categories = [""]
+			destination_addresses = [""]
+			destination_zones = [""]
+			hip_profiles = [""]
+			name = ""
+			services = [""]
+			source_addresses = [""]
+			source_users = [""]
+			source_zones = [""]
+		}
+	}
+snippet r_panos_security_rule_group
+	resource "panos_security_rule_group" "${1}" {
+		rule {
+			applications = [""]
+			categories = [""]
+			destination_addresses = [""]
+			destination_zones = [""]
+			hip_profiles = [""]
+			name = ""
+			services = [""]
+			source_addresses = [""]
+			source_users = [""]
+			source_zones = [""]
+		}
+	}
+snippet r_panos_service_group
+	resource "panos_service_group" "${1}" {
+		name = "${2}"
+		services = ["${3}"]
+	}
+snippet r_panos_service_object
+	resource "panos_service_object" "${1}" {
+		destination_port = "${2}"
+		name = "${3}"
+		protocol = "${4}"
+	}
+snippet r_panos_static_route_ipv4
+	resource "panos_static_route_ipv4" "${1}" {
+		destination = "${2}"
+		name = "${3}"
+		virtual_router = "${4}"
+	}
+snippet r_panos_telemetry
+	resource "panos_telemetry" "${1}" {
+		
+	}
+snippet r_panos_tunnel_interface
+	resource "panos_tunnel_interface" "${1}" {
+		name = "${2}"
+	}
+snippet r_panos_virtual_router
+	resource "panos_virtual_router" "${1}" {
+		name = "${2}"
+	}
+snippet r_panos_virtual_router_entry
+	resource "panos_virtual_router_entry" "${1}" {
+		interface = "${2}"
+		virtual_router = "${3}"
+	}
+snippet r_panos_vlan_interface
+	resource "panos_vlan_interface" "${1}" {
+		name = "${2}"
+	}
+snippet r_panos_zone
+	resource "panos_zone" "${1}" {
+		name = "${2}"
+	}
+snippet r_panos_zone_entry
+	resource "panos_zone_entry" "${1}" {
+		interface = "${2}"
+		zone = "${3}"
+	}
+snippet d_panos_dhcp_interface_info
+	data "panos_dhcp_interface_info" "${1}" {
+		interface = "${2}"
+	}
+snippet d_panos_system_info
+	data "panos_system_info" "${1}" {
+		
+	}

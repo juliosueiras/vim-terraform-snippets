@@ -1,0 +1,15 @@
+snippet fastly
+	provider "fastly" {
+		
+	}
+snippet r_fastly_service_v1
+	resource "fastly_service_v1" "${1}" {
+		domain {
+			name = ""
+		}
+		name = "${3}"
+	}
+snippet d_fastly_ip_ranges
+	data "fastly_ip_ranges" "${1}" {
+		
+	}

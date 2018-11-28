@@ -1,0 +1,828 @@
+snippet alicloud
+	provider "alicloud" {
+		access_key = "${1}"
+		region = "${2}"
+		secret_key = "${3}"
+	}
+snippet r_alicloud_api_gateway_api
+	resource "alicloud_api_gateway_api" "${1}" {
+		auth_type = "${2}"
+		description = "${3}"
+		group_id = "${4}"
+		name = "${5}"
+		request_config {
+			method = ""
+			mode = ""
+			path = ""
+			protocol = ""
+		}
+		service_type = "${7}"
+	}
+snippet r_alicloud_api_gateway_app
+	resource "alicloud_api_gateway_app" "${1}" {
+		name = "${2}"
+	}
+snippet r_alicloud_api_gateway_app_attachment
+	resource "alicloud_api_gateway_app_attachment" "${1}" {
+		api_id = "${2}"
+		app_id = "${3}"
+		group_id = "${4}"
+		stage_name = "${5}"
+	}
+snippet r_alicloud_api_gateway_group
+	resource "alicloud_api_gateway_group" "${1}" {
+		description = "${2}"
+		name = "${3}"
+	}
+snippet r_alicloud_api_gateway_vpc_access
+	resource "alicloud_api_gateway_vpc_access" "${1}" {
+		instance_id = "${2}"
+		name = "${3}"
+		port = ${4}
+		vpc_id = "${5}"
+	}
+snippet r_alicloud_cdn_domain
+	resource "alicloud_cdn_domain" "${1}" {
+		cdn_type = "${2}"
+		domain_name = "${3}"
+	}
+snippet r_alicloud_cen_bandwidth_limit
+	resource "alicloud_cen_bandwidth_limit" "${1}" {
+		bandwidth_limit = ${2}
+		instance_id = "${3}"
+		region_ids = ["${4}"]
+	}
+snippet r_alicloud_cen_bandwidth_package
+	resource "alicloud_cen_bandwidth_package" "${1}" {
+		bandwidth = ${2}
+		geographic_region_ids = ["${3}"]
+	}
+snippet r_alicloud_cen_bandwidth_package_attachment
+	resource "alicloud_cen_bandwidth_package_attachment" "${1}" {
+		bandwidth_package_id = "${2}"
+		instance_id = "${3}"
+	}
+snippet r_alicloud_cen_instance
+	resource "alicloud_cen_instance" "${1}" {
+		
+	}
+snippet r_alicloud_cen_instance_attachment
+	resource "alicloud_cen_instance_attachment" "${1}" {
+		child_instance_id = "${2}"
+		child_instance_region_id = "${3}"
+		instance_id = "${4}"
+	}
+snippet r_alicloud_cen_route_entry
+	resource "alicloud_cen_route_entry" "${1}" {
+		cidr_block = "${2}"
+		instance_id = "${3}"
+		route_table_id = "${4}"
+	}
+snippet r_alicloud_cms_alarm
+	resource "alicloud_cms_alarm" "${1}" {
+		contact_groups = ["${2}"]
+		dimensions {
+
+		}
+		metric = "${4}"
+		name = "${5}"
+		project = "${6}"
+		threshold = "${7}"
+	}
+snippet r_alicloud_common_bandwidth_package
+	resource "alicloud_common_bandwidth_package" "${1}" {
+		bandwidth = ${2}
+	}
+snippet r_alicloud_common_bandwidth_package_attachment
+	resource "alicloud_common_bandwidth_package_attachment" "${1}" {
+		bandwidth_package_id = "${2}"
+		instance_id = "${3}"
+	}
+snippet r_alicloud_container_cluster
+	resource "alicloud_container_cluster" "${1}" {
+		cidr_block = "${2}"
+		instance_type = "${3}"
+		password = "${4}"
+		vswitch_id = "${5}"
+	}
+snippet r_alicloud_cs_application
+	resource "alicloud_cs_application" "${1}" {
+		cluster_name = "${2}"
+		name = "${3}"
+		template = "${4}"
+	}
+snippet r_alicloud_cs_kubernetes
+	resource "alicloud_cs_kubernetes" "${1}" {
+		master_instance_types = ["${2}"]
+		worker_instance_types = ["${3}"]
+	}
+snippet r_alicloud_cs_swarm
+	resource "alicloud_cs_swarm" "${1}" {
+		cidr_block = "${2}"
+		instance_type = "${3}"
+		password = "${4}"
+		vswitch_id = "${5}"
+	}
+snippet r_alicloud_datahub_project
+	resource "alicloud_datahub_project" "${1}" {
+		name = "${2}"
+	}
+snippet r_alicloud_datahub_subscription
+	resource "alicloud_datahub_subscription" "${1}" {
+		project_name = "${2}"
+		topic_name = "${3}"
+	}
+snippet r_alicloud_datahub_topic
+	resource "alicloud_datahub_topic" "${1}" {
+		name = "${2}"
+		project_name = "${3}"
+	}
+snippet r_alicloud_db_account
+	resource "alicloud_db_account" "${1}" {
+		instance_id = "${2}"
+		name = "${3}"
+		password = "${4}"
+	}
+snippet r_alicloud_db_account_privilege
+	resource "alicloud_db_account_privilege" "${1}" {
+		account_name = "${2}"
+		db_names = ["${3}"]
+		instance_id = "${4}"
+	}
+snippet r_alicloud_db_backup_policy
+	resource "alicloud_db_backup_policy" "${1}" {
+		instance_id = "${2}"
+	}
+snippet r_alicloud_db_connection
+	resource "alicloud_db_connection" "${1}" {
+		instance_id = "${2}"
+	}
+snippet r_alicloud_db_database
+	resource "alicloud_db_database" "${1}" {
+		instance_id = "${2}"
+		name = "${3}"
+	}
+snippet r_alicloud_db_instance
+	resource "alicloud_db_instance" "${1}" {
+		engine = "${2}"
+		engine_version = "${3}"
+		instance_storage = ${4}
+		instance_type = "${5}"
+	}
+snippet r_alicloud_disk
+	resource "alicloud_disk" "${1}" {
+		availability_zone = "${2}"
+	}
+snippet r_alicloud_disk_attachment
+	resource "alicloud_disk_attachment" "${1}" {
+		
+	}
+snippet r_alicloud_dns
+	resource "alicloud_dns" "${1}" {
+		name = "${2}"
+	}
+snippet r_alicloud_dns_group
+	resource "alicloud_dns_group" "${1}" {
+		name = "${2}"
+	}
+snippet r_alicloud_dns_record
+	resource "alicloud_dns_record" "${1}" {
+		host_record = "${2}"
+		name = "${3}"
+		type = "${4}"
+		value = "${5}"
+	}
+snippet r_alicloud_drds_instance
+	resource "alicloud_drds_instance" "${1}" {
+		description = "${2}"
+		instance_series = "${3}"
+		specification = "${4}"
+	}
+snippet r_alicloud_eip
+	resource "alicloud_eip" "${1}" {
+		
+	}
+snippet r_alicloud_eip_association
+	resource "alicloud_eip_association" "${1}" {
+		
+	}
+snippet r_alicloud_ess_alarm
+	resource "alicloud_ess_alarm" "${1}" {
+		alarm_actions = ["${2}"]
+		metric_name = "${3}"
+		scaling_group_id = "${4}"
+		threshold = "${5}"
+	}
+snippet r_alicloud_ess_attachment
+	resource "alicloud_ess_attachment" "${1}" {
+		instance_ids = ["${2}"]
+		scaling_group_id = "${3}"
+	}
+snippet r_alicloud_ess_lifecycle_hook
+	resource "alicloud_ess_lifecycle_hook" "${1}" {
+		lifecycle_transition = "${2}"
+		scaling_group_id = "${3}"
+	}
+snippet r_alicloud_ess_scaling_configuration
+	resource "alicloud_ess_scaling_configuration" "${1}" {
+		image_id = "${2}"
+		instance_type = "${3}"
+		scaling_group_id = "${4}"
+		security_group_id = "${5}"
+	}
+snippet r_alicloud_ess_scaling_group
+	resource "alicloud_ess_scaling_group" "${1}" {
+		max_size = ${2}
+		min_size = ${3}
+	}
+snippet r_alicloud_ess_scaling_rule
+	resource "alicloud_ess_scaling_rule" "${1}" {
+		adjustment_type = "${2}"
+		adjustment_value = ${3}
+		scaling_group_id = "${4}"
+	}
+snippet r_alicloud_ess_schedule
+	resource "alicloud_ess_schedule" "${1}" {
+		launch_time = "${2}"
+		scheduled_action = "${3}"
+	}
+snippet r_alicloud_fc_function
+	resource "alicloud_fc_function" "${1}" {
+		handler = "${2}"
+		runtime = "${3}"
+		service = "${4}"
+	}
+snippet r_alicloud_fc_service
+	resource "alicloud_fc_service" "${1}" {
+		
+	}
+snippet r_alicloud_fc_trigger
+	resource "alicloud_fc_trigger" "${1}" {
+		config = "${2}"
+		function = "${3}"
+		service = "${4}"
+		type = "${5}"
+	}
+snippet r_alicloud_forward_entry
+	resource "alicloud_forward_entry" "${1}" {
+		external_ip = "${2}"
+		external_port = "${3}"
+		forward_table_id = "${4}"
+		internal_ip = "${5}"
+		internal_port = "${6}"
+		ip_protocol = "${7}"
+	}
+snippet r_alicloud_havip
+	resource "alicloud_havip" "${1}" {
+		vswitch_id = "${2}"
+	}
+snippet r_alicloud_havip_attachment
+	resource "alicloud_havip_attachment" "${1}" {
+		havip_id = "${2}"
+		instance_id = "${3}"
+	}
+snippet r_alicloud_instance
+	resource "alicloud_instance" "${1}" {
+		image_id = "${2}"
+		instance_type = "${3}"
+		security_groups = ["${4}"]
+	}
+snippet r_alicloud_key_pair
+	resource "alicloud_key_pair" "${1}" {
+		
+	}
+snippet r_alicloud_key_pair_attachment
+	resource "alicloud_key_pair_attachment" "${1}" {
+		instance_ids = ["${2}"]
+		key_name = "${3}"
+	}
+snippet r_alicloud_kms_key
+	resource "alicloud_kms_key" "${1}" {
+		
+	}
+snippet r_alicloud_kvstore_backup_policy
+	resource "alicloud_kvstore_backup_policy" "${1}" {
+		instance_id = "${2}"
+	}
+snippet r_alicloud_kvstore_instance
+	resource "alicloud_kvstore_instance" "${1}" {
+		instance_class = "${2}"
+		password = "${3}"
+	}
+snippet r_alicloud_log_machine_group
+	resource "alicloud_log_machine_group" "${1}" {
+		identify_list = ["${2}"]
+		name = "${3}"
+		project = "${4}"
+	}
+snippet r_alicloud_log_project
+	resource "alicloud_log_project" "${1}" {
+		name = "${2}"
+	}
+snippet r_alicloud_log_store
+	resource "alicloud_log_store" "${1}" {
+		name = "${2}"
+		project = "${3}"
+	}
+snippet r_alicloud_log_store_index
+	resource "alicloud_log_store_index" "${1}" {
+		logstore = "${2}"
+		project = "${3}"
+	}
+snippet r_alicloud_mns_queue
+	resource "alicloud_mns_queue" "${1}" {
+		name = "${2}"
+	}
+snippet r_alicloud_mns_topic
+	resource "alicloud_mns_topic" "${1}" {
+		name = "${2}"
+	}
+snippet r_alicloud_mns_topic_subscription
+	resource "alicloud_mns_topic_subscription" "${1}" {
+		endpoint = "${2}"
+		name = "${3}"
+		topic_name = "${4}"
+	}
+snippet r_alicloud_nat_gateway
+	resource "alicloud_nat_gateway" "${1}" {
+		vpc_id = "${2}"
+	}
+snippet r_alicloud_network_interface
+	resource "alicloud_network_interface" "${1}" {
+		security_groups = ["${2}"]
+		vswitch_id = "${3}"
+	}
+snippet r_alicloud_network_interface_attachment
+	resource "alicloud_network_interface_attachment" "${1}" {
+		instance_id = "${2}"
+		network_interface_id = "${3}"
+	}
+snippet r_alicloud_oss_bucket
+	resource "alicloud_oss_bucket" "${1}" {
+		
+	}
+snippet r_alicloud_oss_bucket_object
+	resource "alicloud_oss_bucket_object" "${1}" {
+		bucket = "${2}"
+		key = "${3}"
+	}
+snippet r_alicloud_ots_instance
+	resource "alicloud_ots_instance" "${1}" {
+		description = "${2}"
+		name = "${3}"
+	}
+snippet r_alicloud_ots_instance_attachment
+	resource "alicloud_ots_instance_attachment" "${1}" {
+		instance_name = "${2}"
+		vpc_name = "${3}"
+		vswitch_id = "${4}"
+	}
+snippet r_alicloud_ots_table
+	resource "alicloud_ots_table" "${1}" {
+		instance_name = "${2}"
+		max_version = ${3}
+		primary_key {
+			name = ""
+			type = ""
+		}
+		table_name = "${5}"
+		time_to_live = ${6}
+	}
+snippet r_alicloud_pvtz_zone
+	resource "alicloud_pvtz_zone" "${1}" {
+		
+	}
+snippet r_alicloud_pvtz_zone_attachment
+	resource "alicloud_pvtz_zone_attachment" "${1}" {
+		zone_id = "${2}"
+	}
+snippet r_alicloud_pvtz_zone_record
+	resource "alicloud_pvtz_zone_record" "${1}" {
+		resource_record = "${2}"
+		type = "${3}"
+		value = "${4}"
+		zone_id = "${5}"
+	}
+snippet r_alicloud_ram_access_key
+	resource "alicloud_ram_access_key" "${1}" {
+		
+	}
+snippet r_alicloud_ram_account_alias
+	resource "alicloud_ram_account_alias" "${1}" {
+		account_alias = "${2}"
+	}
+snippet r_alicloud_ram_alias
+	resource "alicloud_ram_alias" "${1}" {
+		account_alias = "${2}"
+	}
+snippet r_alicloud_ram_group
+	resource "alicloud_ram_group" "${1}" {
+		name = "${2}"
+	}
+snippet r_alicloud_ram_group_membership
+	resource "alicloud_ram_group_membership" "${1}" {
+		group_name = "${2}"
+		user_names = ["${3}"]
+	}
+snippet r_alicloud_ram_group_policy_attachment
+	resource "alicloud_ram_group_policy_attachment" "${1}" {
+		group_name = "${2}"
+		policy_name = "${3}"
+		policy_type = "${4}"
+	}
+snippet r_alicloud_ram_login_profile
+	resource "alicloud_ram_login_profile" "${1}" {
+		password = "${2}"
+		user_name = "${3}"
+	}
+snippet r_alicloud_ram_policy
+	resource "alicloud_ram_policy" "${1}" {
+		name = "${2}"
+	}
+snippet r_alicloud_ram_role
+	resource "alicloud_ram_role" "${1}" {
+		name = "${2}"
+	}
+snippet r_alicloud_ram_role_attachment
+	resource "alicloud_ram_role_attachment" "${1}" {
+		instance_ids = ["${2}"]
+		role_name = "${3}"
+	}
+snippet r_alicloud_ram_role_policy_attachment
+	resource "alicloud_ram_role_policy_attachment" "${1}" {
+		policy_name = "${2}"
+		policy_type = "${3}"
+		role_name = "${4}"
+	}
+snippet r_alicloud_ram_user
+	resource "alicloud_ram_user" "${1}" {
+		name = "${2}"
+	}
+snippet r_alicloud_ram_user_policy_attachment
+	resource "alicloud_ram_user_policy_attachment" "${1}" {
+		policy_name = "${2}"
+		policy_type = "${3}"
+		user_name = "${4}"
+	}
+snippet r_alicloud_route_entry
+	resource "alicloud_route_entry" "${1}" {
+		route_table_id = "${2}"
+	}
+snippet r_alicloud_route_table
+	resource "alicloud_route_table" "${1}" {
+		vpc_id = "${2}"
+	}
+snippet r_alicloud_route_table_attachment
+	resource "alicloud_route_table_attachment" "${1}" {
+		route_table_id = "${2}"
+		vswitch_id = "${3}"
+	}
+snippet r_alicloud_router_interface
+	resource "alicloud_router_interface" "${1}" {
+		opposite_region = "${2}"
+		role = "${3}"
+		router_id = "${4}"
+		router_type = "${5}"
+	}
+snippet r_alicloud_router_interface_connection
+	resource "alicloud_router_interface_connection" "${1}" {
+		interface_id = "${2}"
+		opposite_interface_id = "${3}"
+	}
+snippet r_alicloud_security_group
+	resource "alicloud_security_group" "${1}" {
+		
+	}
+snippet r_alicloud_security_group_rule
+	resource "alicloud_security_group_rule" "${1}" {
+		ip_protocol = "${2}"
+		security_group_id = "${3}"
+		type = "${4}"
+	}
+snippet r_alicloud_slb
+	resource "alicloud_slb" "${1}" {
+		
+	}
+snippet r_alicloud_slb_acl
+	resource "alicloud_slb_acl" "${1}" {
+		name = "${2}"
+	}
+snippet r_alicloud_slb_attachment
+	resource "alicloud_slb_attachment" "${1}" {
+		instance_ids = ["${2}"]
+		load_balancer_id = "${3}"
+	}
+snippet r_alicloud_slb_ca_certificate
+	resource "alicloud_slb_ca_certificate" "${1}" {
+		ca_certificate = "${2}"
+	}
+snippet r_alicloud_slb_listener
+	resource "alicloud_slb_listener" "${1}" {
+		backend_port = ${2}
+		bandwidth = ${3}
+		frontend_port = ${4}
+		load_balancer_id = "${5}"
+		protocol = "${6}"
+	}
+snippet r_alicloud_slb_rule
+	resource "alicloud_slb_rule" "${1}" {
+		frontend_port = ${2}
+		load_balancer_id = "${3}"
+		server_group_id = "${4}"
+	}
+snippet r_alicloud_slb_server_certificate
+	resource "alicloud_slb_server_certificate" "${1}" {
+		
+	}
+snippet r_alicloud_slb_server_group
+	resource "alicloud_slb_server_group" "${1}" {
+		load_balancer_id = "${2}"
+	}
+snippet r_alicloud_snat_entry
+	resource "alicloud_snat_entry" "${1}" {
+		snat_ip = "${2}"
+		snat_table_id = "${3}"
+		source_vswitch_id = "${4}"
+	}
+snippet r_alicloud_ssl_vpn_client_cert
+	resource "alicloud_ssl_vpn_client_cert" "${1}" {
+		ssl_vpn_server_id = "${2}"
+	}
+snippet r_alicloud_ssl_vpn_server
+	resource "alicloud_ssl_vpn_server" "${1}" {
+		client_ip_pool = "${2}"
+		local_subnet = "${3}"
+		vpn_gateway_id = "${4}"
+	}
+snippet r_alicloud_subnet
+	resource "alicloud_subnet" "${1}" {
+		availability_zone = "${2}"
+		cidr_block = "${3}"
+		vpc_id = "${4}"
+	}
+snippet r_alicloud_vpc
+	resource "alicloud_vpc" "${1}" {
+		cidr_block = "${2}"
+	}
+snippet r_alicloud_vpn_connection
+	resource "alicloud_vpn_connection" "${1}" {
+		customer_gateway_id = "${2}"
+		local_subnet = ["${3}"]
+		remote_subnet = ["${4}"]
+		vpn_gateway_id = "${5}"
+	}
+snippet r_alicloud_vpn_customer_gateway
+	resource "alicloud_vpn_customer_gateway" "${1}" {
+		ip_address = "${2}"
+	}
+snippet r_alicloud_vpn_gateway
+	resource "alicloud_vpn_gateway" "${1}" {
+		bandwidth = ${2}
+		vpc_id = "${3}"
+	}
+snippet r_alicloud_vswitch
+	resource "alicloud_vswitch" "${1}" {
+		availability_zone = "${2}"
+		cidr_block = "${3}"
+		vpc_id = "${4}"
+	}
+snippet d_alicloud_account
+	data "alicloud_account" "${1}" {
+		
+	}
+snippet d_alicloud_api_gateway_apis
+	data "alicloud_api_gateway_apis" "${1}" {
+		
+	}
+snippet d_alicloud_api_gateway_apps
+	data "alicloud_api_gateway_apps" "${1}" {
+		
+	}
+snippet d_alicloud_api_gateway_groups
+	data "alicloud_api_gateway_groups" "${1}" {
+		
+	}
+snippet d_alicloud_cen_bandwidth_limits
+	data "alicloud_cen_bandwidth_limits" "${1}" {
+		
+	}
+snippet d_alicloud_cen_bandwidth_packages
+	data "alicloud_cen_bandwidth_packages" "${1}" {
+		
+	}
+snippet d_alicloud_cen_instances
+	data "alicloud_cen_instances" "${1}" {
+		
+	}
+snippet d_alicloud_cen_region_route_entries
+	data "alicloud_cen_region_route_entries" "${1}" {
+		instance_id = "${2}"
+		region_id = "${3}"
+	}
+snippet d_alicloud_cen_route_entries
+	data "alicloud_cen_route_entries" "${1}" {
+		instance_id = "${2}"
+		route_table_id = "${3}"
+	}
+snippet d_alicloud_db_instances
+	data "alicloud_db_instances" "${1}" {
+		
+	}
+snippet d_alicloud_disks
+	data "alicloud_disks" "${1}" {
+		
+	}
+snippet d_alicloud_dns_domain_groups
+	data "alicloud_dns_domain_groups" "${1}" {
+		
+	}
+snippet d_alicloud_dns_domain_records
+	data "alicloud_dns_domain_records" "${1}" {
+		domain_name = "${2}"
+	}
+snippet d_alicloud_dns_domains
+	data "alicloud_dns_domains" "${1}" {
+		
+	}
+snippet d_alicloud_dns_groups
+	data "alicloud_dns_groups" "${1}" {
+		
+	}
+snippet d_alicloud_dns_records
+	data "alicloud_dns_records" "${1}" {
+		domain_name = "${2}"
+	}
+snippet d_alicloud_eips
+	data "alicloud_eips" "${1}" {
+		
+	}
+snippet d_alicloud_fc_functions
+	data "alicloud_fc_functions" "${1}" {
+		service_name = "${2}"
+	}
+snippet d_alicloud_fc_services
+	data "alicloud_fc_services" "${1}" {
+		
+	}
+snippet d_alicloud_fc_triggers
+	data "alicloud_fc_triggers" "${1}" {
+		function_name = "${2}"
+		service_name = "${3}"
+	}
+snippet d_alicloud_images
+	data "alicloud_images" "${1}" {
+		
+	}
+snippet d_alicloud_instance_types
+	data "alicloud_instance_types" "${1}" {
+		
+	}
+snippet d_alicloud_instances
+	data "alicloud_instances" "${1}" {
+		
+	}
+snippet d_alicloud_key_pairs
+	data "alicloud_key_pairs" "${1}" {
+		
+	}
+snippet d_alicloud_kms_keys
+	data "alicloud_kms_keys" "${1}" {
+		
+	}
+snippet d_alicloud_kvstore_instances
+	data "alicloud_kvstore_instances" "${1}" {
+		
+	}
+snippet d_alicloud_mns_queues
+	data "alicloud_mns_queues" "${1}" {
+		
+	}
+snippet d_alicloud_mns_topic_subscriptions
+	data "alicloud_mns_topic_subscriptions" "${1}" {
+		topic_name = "${2}"
+	}
+snippet d_alicloud_mns_topics
+	data "alicloud_mns_topics" "${1}" {
+		
+	}
+snippet d_alicloud_mongo_instances
+	data "alicloud_mongo_instances" "${1}" {
+		
+	}
+snippet d_alicloud_network_interfaces
+	data "alicloud_network_interfaces" "${1}" {
+		
+	}
+snippet d_alicloud_oss_bucket_objects
+	data "alicloud_oss_bucket_objects" "${1}" {
+		bucket_name = "${2}"
+	}
+snippet d_alicloud_oss_buckets
+	data "alicloud_oss_buckets" "${1}" {
+		
+	}
+snippet d_alicloud_pvtz_zone_records
+	data "alicloud_pvtz_zone_records" "${1}" {
+		zone_id = "${2}"
+	}
+snippet d_alicloud_pvtz_zones
+	data "alicloud_pvtz_zones" "${1}" {
+		
+	}
+snippet d_alicloud_ram_account_alias
+	data "alicloud_ram_account_alias" "${1}" {
+		
+	}
+snippet d_alicloud_ram_account_aliases
+	data "alicloud_ram_account_aliases" "${1}" {
+		
+	}
+snippet d_alicloud_ram_groups
+	data "alicloud_ram_groups" "${1}" {
+		
+	}
+snippet d_alicloud_ram_policies
+	data "alicloud_ram_policies" "${1}" {
+		
+	}
+snippet d_alicloud_ram_roles
+	data "alicloud_ram_roles" "${1}" {
+		
+	}
+snippet d_alicloud_ram_users
+	data "alicloud_ram_users" "${1}" {
+		
+	}
+snippet d_alicloud_regions
+	data "alicloud_regions" "${1}" {
+		
+	}
+snippet d_alicloud_router_interfaces
+	data "alicloud_router_interfaces" "${1}" {
+		
+	}
+snippet d_alicloud_security_group_rules
+	data "alicloud_security_group_rules" "${1}" {
+		group_id = "${2}"
+	}
+snippet d_alicloud_security_groups
+	data "alicloud_security_groups" "${1}" {
+		
+	}
+snippet d_alicloud_slb_acls
+	data "alicloud_slb_acls" "${1}" {
+		
+	}
+snippet d_alicloud_slb_attachments
+	data "alicloud_slb_attachments" "${1}" {
+		load_balancer_id = "${2}"
+	}
+snippet d_alicloud_slb_ca_certificates
+	data "alicloud_slb_ca_certificates" "${1}" {
+		
+	}
+snippet d_alicloud_slb_listeners
+	data "alicloud_slb_listeners" "${1}" {
+		load_balancer_id = "${2}"
+	}
+snippet d_alicloud_slb_rules
+	data "alicloud_slb_rules" "${1}" {
+		frontend_port = ${2}
+		load_balancer_id = "${3}"
+	}
+snippet d_alicloud_slb_server_certificates
+	data "alicloud_slb_server_certificates" "${1}" {
+		
+	}
+snippet d_alicloud_slb_server_groups
+	data "alicloud_slb_server_groups" "${1}" {
+		load_balancer_id = "${2}"
+	}
+snippet d_alicloud_slbs
+	data "alicloud_slbs" "${1}" {
+		
+	}
+snippet d_alicloud_vpcs
+	data "alicloud_vpcs" "${1}" {
+		
+	}
+snippet d_alicloud_vpn_connections
+	data "alicloud_vpn_connections" "${1}" {
+		
+	}
+snippet d_alicloud_vpn_customer_gateways
+	data "alicloud_vpn_customer_gateways" "${1}" {
+		
+	}
+snippet d_alicloud_vpn_gateways
+	data "alicloud_vpn_gateways" "${1}" {
+		
+	}
+snippet d_alicloud_vswitches
+	data "alicloud_vswitches" "${1}" {
+		
+	}
+snippet d_alicloud_zones
+	data "alicloud_zones" "${1}" {
+		
+	}

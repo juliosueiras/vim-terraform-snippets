@@ -1,0 +1,55 @@
+snippet datadog
+	provider "datadog" {
+		api_key = "${1}"
+		app_key = "${2}"
+	}
+snippet r_datadog_downtime
+	resource "datadog_downtime" "${1}" {
+		scope = ["${2}"]
+	}
+snippet r_datadog_integration_gcp
+	resource "datadog_integration_gcp" "${1}" {
+		client_email = "${2}"
+		client_id = "${3}"
+		private_key = "${4}"
+		private_key_id = "${5}"
+		project_id = "${6}"
+	}
+snippet r_datadog_metric_metadata
+	resource "datadog_metric_metadata" "${1}" {
+		metric = "${2}"
+	}
+snippet r_datadog_monitor
+	resource "datadog_monitor" "${1}" {
+		message = "${2}"
+		name = "${3}"
+		query = "${4}"
+		type = "${5}"
+	}
+snippet r_datadog_screenboard
+	resource "datadog_screenboard" "${1}" {
+		title = "${2}"
+		widget {
+			type = ""
+			x = 1
+			y = 1
+		}
+	}
+snippet r_datadog_timeboard
+	resource "datadog_timeboard" "${1}" {
+		description = "${2}"
+		graph {
+			request {
+				q = ""
+			}
+			title = ""
+			viz = ""
+		}
+		title = "${4}"
+	}
+snippet r_datadog_user
+	resource "datadog_user" "${1}" {
+		email = "${2}"
+		handle = "${3}"
+		name = "${4}"
+	}

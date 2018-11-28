@@ -1,0 +1,125 @@
+snippet oneandone
+	provider "oneandone" {
+		token = "${1}"
+	}
+snippet r_oneandone_baremetal
+	resource "oneandone_baremetal" "${1}" {
+		image = "${2}"
+		name = "${3}"
+	}
+snippet r_oneandone_block_storage
+	resource "oneandone_block_storage" "${1}" {
+		datacenter = "${2}"
+		name = "${3}"
+		size = ${4}
+	}
+snippet r_oneandone_firewall_policy
+	resource "oneandone_firewall_policy" "${1}" {
+		name = "${2}"
+		rules {
+			protocol = ""
+		}
+	}
+snippet r_oneandone_image
+	resource "oneandone_image" "${1}" {
+		name = "${2}"
+	}
+snippet r_oneandone_loadbalancer
+	resource "oneandone_loadbalancer" "${1}" {
+		method = "${2}"
+		name = "${3}"
+		rules {
+			port_balancer = 1
+			port_server = 1
+			protocol = ""
+			source_ip = ""
+		}
+	}
+snippet r_oneandone_monitoring_policy
+	resource "oneandone_monitoring_policy" "${1}" {
+		agent = ${2:false}
+		name = "${3}"
+		thresholds {
+			cpu {
+				critical {
+				alert = false
+				value = 1
+			}
+				warning {
+				alert = false
+				value = 1
+			}
+			}
+			disk {
+				critical {
+				alert = false
+				value = 1
+			}
+				warning {
+				alert = false
+				value = 1
+			}
+			}
+			internal_ping {
+				critical {
+				alert = false
+				value = 1
+			}
+				warning {
+				alert = false
+				value = 1
+			}
+			}
+			ram {
+				critical {
+				alert = false
+				value = 1
+			}
+				warning {
+				alert = false
+				value = 1
+			}
+			}
+			transfer {
+				critical {
+				alert = false
+				value = 1
+			}
+				warning {
+				alert = false
+				value = 1
+			}
+			}
+		}
+	}
+snippet r_oneandone_private_network
+	resource "oneandone_private_network" "${1}" {
+		name = "${2}"
+	}
+snippet r_oneandone_public_ip
+	resource "oneandone_public_ip" "${1}" {
+		ip_type = "${2}"
+	}
+snippet r_oneandone_server
+	resource "oneandone_server" "${1}" {
+		image = "${2}"
+		name = "${3}"
+	}
+snippet r_oneandone_shared_storage
+	resource "oneandone_shared_storage" "${1}" {
+		datacenter = "${2}"
+		name = "${3}"
+		size = ${4}
+	}
+snippet r_oneandone_ssh_key
+	resource "oneandone_ssh_key" "${1}" {
+		name = "${2}"
+	}
+snippet r_oneandone_vpn
+	resource "oneandone_vpn" "${1}" {
+		name = "${2}"
+	}
+snippet d_oneandone_instance_size
+	data "oneandone_instance_size" "${1}" {
+		
+	}

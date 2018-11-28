@@ -1,0 +1,45 @@
+snippet circonus
+	provider "circonus" {
+		key = "${1}"
+	}
+snippet r_circonus_check
+	resource "circonus_check" "${1}" {
+		
+	}
+snippet r_circonus_contact_group
+	resource "circonus_contact_group" "${1}" {
+		name = "${2}"
+	}
+snippet r_circonus_graph
+	resource "circonus_graph" "${1}" {
+		name = "${2}"
+	}
+snippet r_circonus_metric
+	resource "circonus_metric" "${1}" {
+		name = "${2}"
+		type = "${3}"
+	}
+snippet r_circonus_metric_cluster
+	resource "circonus_metric_cluster" "${1}" {
+		name = "${2}"
+	}
+snippet r_circonus_rule_set
+	resource "circonus_rule_set" "${1}" {
+		check = "${2}"
+		if {
+		
+		}
+		metric_name = "${4}"
+	}
+snippet r_circonus_worksheet
+	resource "circonus_worksheet" "${1}" {
+		title = "${2}"
+	}
+snippet d_circonus_account
+	data "circonus_account" "${1}" {
+		
+	}
+snippet d_circonus_collector
+	data "circonus_collector" "${1}" {
+		
+	}

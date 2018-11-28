@@ -1,0 +1,184 @@
+snippet rightscale
+	provider "rightscale" {
+		rightscale_api_token = "${1}"
+		rightscale_project_id = "${2}"
+	}
+snippet r_rightscale_credential
+	resource "rightscale_credential" "${1}" {
+		name = "${2}"
+		value = "${3}"
+	}
+snippet r_rightscale_cwf_process
+	resource "rightscale_cwf_process" "${1}" {
+		source = "${2}"
+	}
+snippet r_rightscale_deployment
+	resource "rightscale_deployment" "${1}" {
+		name = "${2}"
+	}
+snippet r_rightscale_instance
+	resource "rightscale_instance" "${1}" {
+		cloud_href = "${2}"
+		image_href = "${3}"
+		instance_type_href = "${4}"
+		name = "${5}"
+	}
+snippet r_rightscale_network
+	resource "rightscale_network" "${1}" {
+		cloud_href = "${2}"
+	}
+snippet r_rightscale_network_gateway
+	resource "rightscale_network_gateway" "${1}" {
+		cloud_href = "${2}"
+		name = "${3}"
+		type = "${4}"
+	}
+snippet r_rightscale_route
+	resource "rightscale_route" "${1}" {
+		destination_cidr_block = "${2}"
+		next_hop_type = "${3}"
+		route_table_href = "${4}"
+	}
+snippet r_rightscale_route_table
+	resource "rightscale_route_table" "${1}" {
+		cloud_href = "${2}"
+		name = "${3}"
+		network_href = "${4}"
+	}
+snippet r_rightscale_security_group
+	resource "rightscale_security_group" "${1}" {
+		cloud_href = "${2}"
+		name = "${3}"
+		network_href = "${4}"
+	}
+snippet r_rightscale_security_group_rule
+	resource "rightscale_security_group_rule" "${1}" {
+		protocol = "${2}"
+		protocol_details {
+		
+		}
+		security_group_href = "${4}"
+		source_type = "${5}"
+	}
+snippet r_rightscale_server
+	resource "rightscale_server" "${1}" {
+		instance {
+			cloud_href = ""
+			image_href = ""
+			instance_type_href = ""
+			name = ""
+		}
+		name = "${3}"
+	}
+snippet r_rightscale_server_array
+	resource "rightscale_server_array" "${1}" {
+		datacenter_policy {
+			datacenter_href = ""
+			max = 1
+			weight = 1
+		}
+		elasticity_params {
+			bounds {
+				max_count = 1
+				min_count = 1
+			}
+			pacing {
+			
+			}
+		}
+		instance {
+			cloud_href = ""
+			image_href = ""
+			instance_type_href = ""
+			name = ""
+		}
+		name = "${5}"
+		state = "${6}"
+	}
+snippet r_rightscale_ssh_key
+	resource "rightscale_ssh_key" "${1}" {
+		cloud_href = "${2}"
+		name = "${3}"
+	}
+snippet r_rightscale_subnet
+	resource "rightscale_subnet" "${1}" {
+		cidr_block = "${2}"
+		cloud_href = "${3}"
+		network_href = "${4}"
+	}
+snippet d_rightscale_cloud
+	data "rightscale_cloud" "${1}" {
+		
+	}
+snippet d_rightscale_credential
+	data "rightscale_credential" "${1}" {
+		
+	}
+snippet d_rightscale_datacenter
+	data "rightscale_datacenter" "${1}" {
+		cloud_href = "${2}"
+	}
+snippet d_rightscale_deployment
+	data "rightscale_deployment" "${1}" {
+		
+	}
+snippet d_rightscale_image
+	data "rightscale_image" "${1}" {
+		cloud_href = "${2}"
+	}
+snippet d_rightscale_instance
+	data "rightscale_instance" "${1}" {
+		
+	}
+snippet d_rightscale_instance_type
+	data "rightscale_instance_type" "${1}" {
+		cloud_href = "${2}"
+	}
+snippet d_rightscale_multi_cloud_image
+	data "rightscale_multi_cloud_image" "${1}" {
+		
+	}
+snippet d_rightscale_network
+	data "rightscale_network" "${1}" {
+		
+	}
+snippet d_rightscale_network_gateway
+	data "rightscale_network_gateway" "${1}" {
+		
+	}
+snippet d_rightscale_route_table
+	data "rightscale_route_table" "${1}" {
+		
+	}
+snippet d_rightscale_security_group
+	data "rightscale_security_group" "${1}" {
+		cloud_href = "${2}"
+	}
+snippet d_rightscale_server
+	data "rightscale_server" "${1}" {
+		
+	}
+snippet d_rightscale_server_template
+	data "rightscale_server_template" "${1}" {
+		
+	}
+snippet d_rightscale_ssh_key
+	data "rightscale_ssh_key" "${1}" {
+		cloud_href = "${2}"
+	}
+snippet d_rightscale_subnet
+	data "rightscale_subnet" "${1}" {
+		cloud_href = "${2}"
+	}
+snippet d_rightscale_volume
+	data "rightscale_volume" "${1}" {
+		cloud_href = "${2}"
+	}
+snippet d_rightscale_volume_snapshot
+	data "rightscale_volume_snapshot" "${1}" {
+		cloud_href = "${2}"
+	}
+snippet d_rightscale_volume_type
+	data "rightscale_volume_type" "${1}" {
+		cloud_href = "${2}"
+	}

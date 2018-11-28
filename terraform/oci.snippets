@@ -1,0 +1,1271 @@
+snippet oci
+	provider "oci" {
+		region = "${1}"
+	}
+snippet r_oci_audit_configuration
+	resource "oci_audit_configuration" "${1}" {
+		compartment_id = "${2}"
+	}
+snippet r_oci_containerengine_cluster
+	resource "oci_containerengine_cluster" "${1}" {
+		compartment_id = "${2}"
+		kubernetes_version = "${3}"
+		name = "${4}"
+		vcn_id = "${5}"
+	}
+snippet r_oci_containerengine_node_pool
+	resource "oci_containerengine_node_pool" "${1}" {
+		cluster_id = "${2}"
+		compartment_id = "${3}"
+		kubernetes_version = "${4}"
+		name = "${5}"
+		node_image_name = "${6}"
+		node_shape = "${7}"
+		subnet_ids = ["${8}"]
+	}
+snippet r_oci_core_app_catalog_listing_resource_version_agreement
+	resource "oci_core_app_catalog_listing_resource_version_agreement" "${1}" {
+		listing_id = "${2}"
+		listing_resource_version = "${3}"
+	}
+snippet r_oci_core_app_catalog_subscription
+	resource "oci_core_app_catalog_subscription" "${1}" {
+		compartment_id = "${2}"
+		eula_link = "${3}"
+		listing_id = "${4}"
+		listing_resource_version = "${5}"
+		oracle_terms_of_use_link = "${6}"
+		signature = "${7}"
+		time_retrieved = "${8}"
+	}
+snippet r_oci_core_boot_volume
+	resource "oci_core_boot_volume" "${1}" {
+		availability_domain = "${2}"
+		compartment_id = "${3}"
+		source_details {
+			id = ""
+			type = ""
+		}
+	}
+snippet r_oci_core_boot_volume_backup
+	resource "oci_core_boot_volume_backup" "${1}" {
+		boot_volume_id = "${2}"
+	}
+snippet r_oci_core_console_history
+	resource "oci_core_console_history" "${1}" {
+		instance_id = "${2}"
+	}
+snippet r_oci_core_cpe
+	resource "oci_core_cpe" "${1}" {
+		compartment_id = "${2}"
+		ip_address = "${3}"
+	}
+snippet r_oci_core_cross_connect
+	resource "oci_core_cross_connect" "${1}" {
+		compartment_id = "${2}"
+		location_name = "${3}"
+		port_speed_shape_name = "${4}"
+	}
+snippet r_oci_core_cross_connect_group
+	resource "oci_core_cross_connect_group" "${1}" {
+		compartment_id = "${2}"
+	}
+snippet r_oci_core_default_dhcp_options
+	resource "oci_core_default_dhcp_options" "${1}" {
+		manage_default_resource_id = "${2}"
+		options {
+			type = ""
+		}
+	}
+snippet r_oci_core_default_route_table
+	resource "oci_core_default_route_table" "${1}" {
+		manage_default_resource_id = "${2}"
+	}
+snippet r_oci_core_default_security_list
+	resource "oci_core_default_security_list" "${1}" {
+		manage_default_resource_id = "${2}"
+	}
+snippet r_oci_core_dhcp_options
+	resource "oci_core_dhcp_options" "${1}" {
+		compartment_id = "${2}"
+		options {
+			type = ""
+		}
+		vcn_id = "${4}"
+	}
+snippet r_oci_core_drg
+	resource "oci_core_drg" "${1}" {
+		compartment_id = "${2}"
+	}
+snippet r_oci_core_drg_attachment
+	resource "oci_core_drg_attachment" "${1}" {
+		drg_id = "${2}"
+		vcn_id = "${3}"
+	}
+snippet r_oci_core_image
+	resource "oci_core_image" "${1}" {
+		compartment_id = "${2}"
+	}
+snippet r_oci_core_instance
+	resource "oci_core_instance" "${1}" {
+		availability_domain = "${2}"
+		compartment_id = "${3}"
+		shape = "${4}"
+	}
+snippet r_oci_core_instance_console_connection
+	resource "oci_core_instance_console_connection" "${1}" {
+		instance_id = "${2}"
+		public_key = "${3}"
+	}
+snippet r_oci_core_internet_gateway
+	resource "oci_core_internet_gateway" "${1}" {
+		compartment_id = "${2}"
+		vcn_id = "${3}"
+	}
+snippet r_oci_core_ipsec
+	resource "oci_core_ipsec" "${1}" {
+		compartment_id = "${2}"
+		cpe_id = "${3}"
+		drg_id = "${4}"
+	}
+snippet r_oci_core_listing_resource_version_agreement
+	resource "oci_core_listing_resource_version_agreement" "${1}" {
+		listing_id = "${2}"
+		listing_resource_version = "${3}"
+	}
+snippet r_oci_core_local_peering_gateway
+	resource "oci_core_local_peering_gateway" "${1}" {
+		compartment_id = "${2}"
+		vcn_id = "${3}"
+	}
+snippet r_oci_core_nat_gateway
+	resource "oci_core_nat_gateway" "${1}" {
+		compartment_id = "${2}"
+		vcn_id = "${3}"
+	}
+snippet r_oci_core_private_ip
+	resource "oci_core_private_ip" "${1}" {
+		vnic_id = "${2}"
+	}
+snippet r_oci_core_public_ip
+	resource "oci_core_public_ip" "${1}" {
+		compartment_id = "${2}"
+		lifetime = "${3}"
+	}
+snippet r_oci_core_remote_peering_connection
+	resource "oci_core_remote_peering_connection" "${1}" {
+		compartment_id = "${2}"
+		drg_id = "${3}"
+	}
+snippet r_oci_core_route_table
+	resource "oci_core_route_table" "${1}" {
+		compartment_id = "${2}"
+		vcn_id = "${3}"
+	}
+snippet r_oci_core_security_list
+	resource "oci_core_security_list" "${1}" {
+		compartment_id = "${2}"
+		vcn_id = "${3}"
+	}
+snippet r_oci_core_service_gateway
+	resource "oci_core_service_gateway" "${1}" {
+		compartment_id = "${2}"
+		services {
+			service_id = ""
+		}
+		vcn_id = "${4}"
+	}
+snippet r_oci_core_subnet
+	resource "oci_core_subnet" "${1}" {
+		availability_domain = "${2}"
+		cidr_block = "${3}"
+		compartment_id = "${4}"
+		vcn_id = "${5}"
+	}
+snippet r_oci_core_vcn
+	resource "oci_core_vcn" "${1}" {
+		cidr_block = "${2}"
+		compartment_id = "${3}"
+	}
+snippet r_oci_core_virtual_circuit
+	resource "oci_core_virtual_circuit" "${1}" {
+		compartment_id = "${2}"
+		type = "${3}"
+	}
+snippet r_oci_core_virtual_network
+	resource "oci_core_virtual_network" "${1}" {
+		cidr_block = "${2}"
+		compartment_id = "${3}"
+	}
+snippet r_oci_core_vnic_attachment
+	resource "oci_core_vnic_attachment" "${1}" {
+		create_vnic_details {
+			subnet_id = ""
+		}
+		instance_id = "${3}"
+	}
+snippet r_oci_core_volume
+	resource "oci_core_volume" "${1}" {
+		availability_domain = "${2}"
+		compartment_id = "${3}"
+	}
+snippet r_oci_core_volume_attachment
+	resource "oci_core_volume_attachment" "${1}" {
+		attachment_type = "${2}"
+		instance_id = "${3}"
+		volume_id = "${4}"
+	}
+snippet r_oci_core_volume_backup
+	resource "oci_core_volume_backup" "${1}" {
+		volume_id = "${2}"
+	}
+snippet r_oci_core_volume_backup_policy_assignment
+	resource "oci_core_volume_backup_policy_assignment" "${1}" {
+		asset_id = "${2}"
+		policy_id = "${3}"
+	}
+snippet r_oci_core_volume_group
+	resource "oci_core_volume_group" "${1}" {
+		availability_domain = "${2}"
+		compartment_id = "${3}"
+		source_details {
+			type = ""
+		}
+	}
+snippet r_oci_core_volume_group_backup
+	resource "oci_core_volume_group_backup" "${1}" {
+		volume_group_id = "${2}"
+	}
+snippet r_oci_database_autonomous_data_warehouse
+	resource "oci_database_autonomous_data_warehouse" "${1}" {
+		admin_password = "${2}"
+		compartment_id = "${3}"
+		cpu_core_count = ${4}
+		data_storage_size_in_tbs = ${5}
+		db_name = "${6}"
+	}
+snippet r_oci_database_autonomous_data_warehouse_backup
+	resource "oci_database_autonomous_data_warehouse_backup" "${1}" {
+		autonomous_data_warehouse_id = "${2}"
+		display_name = "${3}"
+	}
+snippet r_oci_database_autonomous_database
+	resource "oci_database_autonomous_database" "${1}" {
+		admin_password = "${2}"
+		compartment_id = "${3}"
+		cpu_core_count = ${4}
+		data_storage_size_in_tbs = ${5}
+		db_name = "${6}"
+	}
+snippet r_oci_database_autonomous_database_backup
+	resource "oci_database_autonomous_database_backup" "${1}" {
+		autonomous_database_id = "${2}"
+		display_name = "${3}"
+	}
+snippet r_oci_database_backup
+	resource "oci_database_backup" "${1}" {
+		database_id = "${2}"
+		display_name = "${3}"
+	}
+snippet r_oci_database_db_system
+	resource "oci_database_db_system" "${1}" {
+		availability_domain = "${2}"
+		compartment_id = "${3}"
+		database_edition = "${4}"
+		db_home {
+			database {
+				admin_password = ""
+			}
+		}
+		hostname = "${6}"
+		shape = "${7}"
+		ssh_public_keys = ["${8}"]
+		subnet_id = "${9}"
+	}
+snippet r_oci_dns_record
+	resource "oci_dns_record" "${1}" {
+		zone_name_or_id = "${2}"
+	}
+snippet r_oci_dns_zone
+	resource "oci_dns_zone" "${1}" {
+		compartment_id = "${2}"
+		name = "${3}"
+		zone_type = "${4}"
+	}
+snippet r_oci_email_sender
+	resource "oci_email_sender" "${1}" {
+		compartment_id = "${2}"
+		email_address = "${3}"
+	}
+snippet r_oci_email_suppression
+	resource "oci_email_suppression" "${1}" {
+		compartment_id = "${2}"
+		email_address = "${3}"
+	}
+snippet r_oci_file_storage_export
+	resource "oci_file_storage_export" "${1}" {
+		export_set_id = "${2}"
+		file_system_id = "${3}"
+		path = "${4}"
+	}
+snippet r_oci_file_storage_export_set
+	resource "oci_file_storage_export_set" "${1}" {
+		mount_target_id = "${2}"
+	}
+snippet r_oci_file_storage_file_system
+	resource "oci_file_storage_file_system" "${1}" {
+		availability_domain = "${2}"
+		compartment_id = "${3}"
+	}
+snippet r_oci_file_storage_mount_target
+	resource "oci_file_storage_mount_target" "${1}" {
+		availability_domain = "${2}"
+		compartment_id = "${3}"
+		subnet_id = "${4}"
+	}
+snippet r_oci_file_storage_snapshot
+	resource "oci_file_storage_snapshot" "${1}" {
+		file_system_id = "${2}"
+		name = "${3}"
+	}
+snippet r_oci_identity_api_key
+	resource "oci_identity_api_key" "${1}" {
+		key_value = "${2}"
+		user_id = "${3}"
+	}
+snippet r_oci_identity_auth_token
+	resource "oci_identity_auth_token" "${1}" {
+		description = "${2}"
+		user_id = "${3}"
+	}
+snippet r_oci_identity_compartment
+	resource "oci_identity_compartment" "${1}" {
+		description = "${2}"
+		name = "${3}"
+	}
+snippet r_oci_identity_customer_secret_key
+	resource "oci_identity_customer_secret_key" "${1}" {
+		display_name = "${2}"
+		user_id = "${3}"
+	}
+snippet r_oci_identity_dynamic_group
+	resource "oci_identity_dynamic_group" "${1}" {
+		compartment_id = "${2}"
+		description = "${3}"
+		matching_rule = "${4}"
+		name = "${5}"
+	}
+snippet r_oci_identity_group
+	resource "oci_identity_group" "${1}" {
+		description = "${2}"
+		name = "${3}"
+	}
+snippet r_oci_identity_identity_provider
+	resource "oci_identity_identity_provider" "${1}" {
+		compartment_id = "${2}"
+		description = "${3}"
+		metadata = "${4}"
+		metadata_url = "${5}"
+		name = "${6}"
+		product_type = "${7}"
+		protocol = "${8}"
+	}
+snippet r_oci_identity_idp_group_mapping
+	resource "oci_identity_idp_group_mapping" "${1}" {
+		group_id = "${2}"
+		identity_provider_id = "${3}"
+		idp_group_name = "${4}"
+	}
+snippet r_oci_identity_policy
+	resource "oci_identity_policy" "${1}" {
+		compartment_id = "${2}"
+		description = "${3}"
+		name = "${4}"
+		statements = ["${5}"]
+	}
+snippet r_oci_identity_smtp_credential
+	resource "oci_identity_smtp_credential" "${1}" {
+		description = "${2}"
+		user_id = "${3}"
+	}
+snippet r_oci_identity_swift_password
+	resource "oci_identity_swift_password" "${1}" {
+		description = "${2}"
+		user_id = "${3}"
+	}
+snippet r_oci_identity_tag
+	resource "oci_identity_tag" "${1}" {
+		description = "${2}"
+		name = "${3}"
+		tag_namespace_id = "${4}"
+	}
+snippet r_oci_identity_tag_namespace
+	resource "oci_identity_tag_namespace" "${1}" {
+		compartment_id = "${2}"
+		description = "${3}"
+		name = "${4}"
+	}
+snippet r_oci_identity_ui_password
+	resource "oci_identity_ui_password" "${1}" {
+		user_id = "${2}"
+	}
+snippet r_oci_identity_user
+	resource "oci_identity_user" "${1}" {
+		description = "${2}"
+		name = "${3}"
+	}
+snippet r_oci_identity_user_group_membership
+	resource "oci_identity_user_group_membership" "${1}" {
+		group_id = "${2}"
+		user_id = "${3}"
+	}
+snippet r_oci_kms_encrypted_data
+	resource "oci_kms_encrypted_data" "${1}" {
+		crypto_endpoint = "${2}"
+		key_id = "${3}"
+		plaintext = "${4}"
+	}
+snippet r_oci_kms_generated_key
+	resource "oci_kms_generated_key" "${1}" {
+		crypto_endpoint = "${2}"
+		include_plaintext_key = ${3:false}
+		key_id = "${4}"
+		key_shape {
+			algorithm = ""
+			length = 1
+		}
+	}
+snippet r_oci_kms_key
+	resource "oci_kms_key" "${1}" {
+		compartment_id = "${2}"
+		display_name = "${3}"
+		key_shape {
+			algorithm = ""
+			length = 1
+		}
+		management_endpoint = "${5}"
+	}
+snippet r_oci_kms_key_version
+	resource "oci_kms_key_version" "${1}" {
+		key_id = "${2}"
+		management_endpoint = "${3}"
+	}
+snippet r_oci_kms_vault
+	resource "oci_kms_vault" "${1}" {
+		compartment_id = "${2}"
+		display_name = "${3}"
+		vault_type = "${4}"
+	}
+snippet r_oci_load_balancer
+	resource "oci_load_balancer" "${1}" {
+		compartment_id = "${2}"
+		display_name = "${3}"
+		shape = "${4}"
+		subnet_ids = ["${5}"]
+	}
+snippet r_oci_load_balancer_backend
+	resource "oci_load_balancer_backend" "${1}" {
+		backendset_name = "${2}"
+		ip_address = "${3}"
+		load_balancer_id = "${4}"
+		port = ${5}
+	}
+snippet r_oci_load_balancer_backend_set
+	resource "oci_load_balancer_backend_set" "${1}" {
+		health_checker {
+			protocol = ""
+		}
+		load_balancer_id = "${3}"
+		name = "${4}"
+	}
+snippet r_oci_load_balancer_backendset
+	resource "oci_load_balancer_backendset" "${1}" {
+		health_checker {
+			protocol = ""
+		}
+		load_balancer_id = "${3}"
+		name = "${4}"
+	}
+snippet r_oci_load_balancer_certificate
+	resource "oci_load_balancer_certificate" "${1}" {
+		certificate_name = "${2}"
+		load_balancer_id = "${3}"
+	}
+snippet r_oci_load_balancer_hostname
+	resource "oci_load_balancer_hostname" "${1}" {
+		hostname = "${2}"
+		load_balancer_id = "${3}"
+		name = "${4}"
+	}
+snippet r_oci_load_balancer_listener
+	resource "oci_load_balancer_listener" "${1}" {
+		default_backend_set_name = "${2}"
+		load_balancer_id = "${3}"
+		name = "${4}"
+		port = ${5}
+		protocol = "${6}"
+	}
+snippet r_oci_load_balancer_load_balancer
+	resource "oci_load_balancer_load_balancer" "${1}" {
+		compartment_id = "${2}"
+		display_name = "${3}"
+		shape = "${4}"
+		subnet_ids = ["${5}"]
+	}
+snippet r_oci_load_balancer_path_route_set
+	resource "oci_load_balancer_path_route_set" "${1}" {
+		load_balancer_id = "${2}"
+		name = "${3}"
+		path_routes {
+			backend_set_name = ""
+			path = ""
+			path_match_type {
+				match_type = ""
+			}
+		}
+	}
+snippet r_oci_objectstorage_bucket
+	resource "oci_objectstorage_bucket" "${1}" {
+		compartment_id = "${2}"
+		name = "${3}"
+		namespace = "${4}"
+	}
+snippet r_oci_objectstorage_namespace_metadata
+	resource "oci_objectstorage_namespace_metadata" "${1}" {
+		namespace = "${2}"
+	}
+snippet r_oci_objectstorage_object
+	resource "oci_objectstorage_object" "${1}" {
+		bucket = "${2}"
+		namespace = "${3}"
+		object = "${4}"
+	}
+snippet r_oci_objectstorage_object_lifecycle_policy
+	resource "oci_objectstorage_object_lifecycle_policy" "${1}" {
+		bucket = "${2}"
+		namespace = "${3}"
+	}
+snippet r_oci_objectstorage_preauthrequest
+	resource "oci_objectstorage_preauthrequest" "${1}" {
+		access_type = "${2}"
+		bucket = "${3}"
+		name = "${4}"
+		namespace = "${5}"
+		time_expires = "${6}"
+	}
+snippet d_oci_audit_configuration
+	data "oci_audit_configuration" "${1}" {
+		compartment_id = "${2}"
+	}
+snippet d_oci_audit_events
+	data "oci_audit_events" "${1}" {
+		compartment_id = "${2}"
+		end_time = "${3}"
+		start_time = "${4}"
+	}
+snippet d_oci_containerengine_cluster_kube_config
+	data "oci_containerengine_cluster_kube_config" "${1}" {
+		cluster_id = "${2}"
+	}
+snippet d_oci_containerengine_cluster_option
+	data "oci_containerengine_cluster_option" "${1}" {
+		cluster_option_id = "${2}"
+	}
+snippet d_oci_containerengine_clusters
+	data "oci_containerengine_clusters" "${1}" {
+		compartment_id = "${2}"
+	}
+snippet d_oci_containerengine_node_pool
+	data "oci_containerengine_node_pool" "${1}" {
+		node_pool_id = "${2}"
+	}
+snippet d_oci_containerengine_node_pool_option
+	data "oci_containerengine_node_pool_option" "${1}" {
+		node_pool_option_id = "${2}"
+	}
+snippet d_oci_containerengine_node_pools
+	data "oci_containerengine_node_pools" "${1}" {
+		compartment_id = "${2}"
+	}
+snippet d_oci_containerengine_work_request_errors
+	data "oci_containerengine_work_request_errors" "${1}" {
+		compartment_id = "${2}"
+		work_request_id = "${3}"
+	}
+snippet d_oci_containerengine_work_request_log_entries
+	data "oci_containerengine_work_request_log_entries" "${1}" {
+		compartment_id = "${2}"
+		work_request_id = "${3}"
+	}
+snippet d_oci_containerengine_work_requests
+	data "oci_containerengine_work_requests" "${1}" {
+		compartment_id = "${2}"
+	}
+snippet d_oci_core_app_catalog_listing
+	data "oci_core_app_catalog_listing" "${1}" {
+		listing_id = "${2}"
+	}
+snippet d_oci_core_app_catalog_listing_resource_version
+	data "oci_core_app_catalog_listing_resource_version" "${1}" {
+		listing_id = "${2}"
+		resource_version = "${3}"
+	}
+snippet d_oci_core_app_catalog_listing_resource_versions
+	data "oci_core_app_catalog_listing_resource_versions" "${1}" {
+		listing_id = "${2}"
+	}
+snippet d_oci_core_app_catalog_listings
+	data "oci_core_app_catalog_listings" "${1}" {
+		
+	}
+snippet d_oci_core_app_catalog_subscriptions
+	data "oci_core_app_catalog_subscriptions" "${1}" {
+		compartment_id = "${2}"
+	}
+snippet d_oci_core_boot_volume
+	data "oci_core_boot_volume" "${1}" {
+		boot_volume_id = "${2}"
+	}
+snippet d_oci_core_boot_volume_attachments
+	data "oci_core_boot_volume_attachments" "${1}" {
+		availability_domain = "${2}"
+		compartment_id = "${3}"
+	}
+snippet d_oci_core_boot_volume_backup
+	data "oci_core_boot_volume_backup" "${1}" {
+		boot_volume_backup_id = "${2}"
+	}
+snippet d_oci_core_boot_volume_backups
+	data "oci_core_boot_volume_backups" "${1}" {
+		compartment_id = "${2}"
+	}
+snippet d_oci_core_boot_volumes
+	data "oci_core_boot_volumes" "${1}" {
+		availability_domain = "${2}"
+		compartment_id = "${3}"
+	}
+snippet d_oci_core_console_histories
+	data "oci_core_console_histories" "${1}" {
+		compartment_id = "${2}"
+	}
+snippet d_oci_core_console_history_data
+	data "oci_core_console_history_data" "${1}" {
+		console_history_id = "${2}"
+	}
+snippet d_oci_core_cpes
+	data "oci_core_cpes" "${1}" {
+		compartment_id = "${2}"
+	}
+snippet d_oci_core_cross_connect
+	data "oci_core_cross_connect" "${1}" {
+		cross_connect_id = "${2}"
+	}
+snippet d_oci_core_cross_connect_group
+	data "oci_core_cross_connect_group" "${1}" {
+		cross_connect_group_id = "${2}"
+	}
+snippet d_oci_core_cross_connect_groups
+	data "oci_core_cross_connect_groups" "${1}" {
+		compartment_id = "${2}"
+	}
+snippet d_oci_core_cross_connect_locations
+	data "oci_core_cross_connect_locations" "${1}" {
+		compartment_id = "${2}"
+	}
+snippet d_oci_core_cross_connect_port_speed_shapes
+	data "oci_core_cross_connect_port_speed_shapes" "${1}" {
+		compartment_id = "${2}"
+	}
+snippet d_oci_core_cross_connect_status
+	data "oci_core_cross_connect_status" "${1}" {
+		cross_connect_id = "${2}"
+	}
+snippet d_oci_core_cross_connects
+	data "oci_core_cross_connects" "${1}" {
+		compartment_id = "${2}"
+	}
+snippet d_oci_core_dhcp_options
+	data "oci_core_dhcp_options" "${1}" {
+		compartment_id = "${2}"
+		vcn_id = "${3}"
+	}
+snippet d_oci_core_drg_attachments
+	data "oci_core_drg_attachments" "${1}" {
+		compartment_id = "${2}"
+	}
+snippet d_oci_core_drgs
+	data "oci_core_drgs" "${1}" {
+		compartment_id = "${2}"
+	}
+snippet d_oci_core_fast_connect_provider_service
+	data "oci_core_fast_connect_provider_service" "${1}" {
+		provider_service_id = "${2}"
+	}
+snippet d_oci_core_fast_connect_provider_services
+	data "oci_core_fast_connect_provider_services" "${1}" {
+		compartment_id = "${2}"
+	}
+snippet d_oci_core_images
+	data "oci_core_images" "${1}" {
+		compartment_id = "${2}"
+	}
+snippet d_oci_core_instance
+	data "oci_core_instance" "${1}" {
+		instance_id = "${2}"
+	}
+snippet d_oci_core_instance_console_connections
+	data "oci_core_instance_console_connections" "${1}" {
+		compartment_id = "${2}"
+	}
+snippet d_oci_core_instance_credentials
+	data "oci_core_instance_credentials" "${1}" {
+		instance_id = "${2}"
+	}
+snippet d_oci_core_instances
+	data "oci_core_instances" "${1}" {
+		compartment_id = "${2}"
+	}
+snippet d_oci_core_internet_gateways
+	data "oci_core_internet_gateways" "${1}" {
+		compartment_id = "${2}"
+		vcn_id = "${3}"
+	}
+snippet d_oci_core_ipsec_config
+	data "oci_core_ipsec_config" "${1}" {
+		ipsec_id = "${2}"
+	}
+snippet d_oci_core_ipsec_connections
+	data "oci_core_ipsec_connections" "${1}" {
+		compartment_id = "${2}"
+	}
+snippet d_oci_core_ipsec_status
+	data "oci_core_ipsec_status" "${1}" {
+		ipsec_id = "${2}"
+	}
+snippet d_oci_core_letter_of_authority
+	data "oci_core_letter_of_authority" "${1}" {
+		cross_connect_id = "${2}"
+	}
+snippet d_oci_core_listing_resource_version
+	data "oci_core_listing_resource_version" "${1}" {
+		listing_id = "${2}"
+		resource_version = "${3}"
+	}
+snippet d_oci_core_listing_resource_versions
+	data "oci_core_listing_resource_versions" "${1}" {
+		listing_id = "${2}"
+	}
+snippet d_oci_core_local_peering_gateways
+	data "oci_core_local_peering_gateways" "${1}" {
+		compartment_id = "${2}"
+		vcn_id = "${3}"
+	}
+snippet d_oci_core_nat_gateway
+	data "oci_core_nat_gateway" "${1}" {
+		nat_gateway_id = "${2}"
+	}
+snippet d_oci_core_nat_gateways
+	data "oci_core_nat_gateways" "${1}" {
+		compartment_id = "${2}"
+	}
+snippet d_oci_core_peer_region_for_remote_peerings
+	data "oci_core_peer_region_for_remote_peerings" "${1}" {
+		
+	}
+snippet d_oci_core_private_ips
+	data "oci_core_private_ips" "${1}" {
+		
+	}
+snippet d_oci_core_public_ip
+	data "oci_core_public_ip" "${1}" {
+		
+	}
+snippet d_oci_core_public_ips
+	data "oci_core_public_ips" "${1}" {
+		compartment_id = "${2}"
+		scope = "${3}"
+	}
+snippet d_oci_core_remote_peering_connections
+	data "oci_core_remote_peering_connections" "${1}" {
+		compartment_id = "${2}"
+	}
+snippet d_oci_core_route_tables
+	data "oci_core_route_tables" "${1}" {
+		compartment_id = "${2}"
+		vcn_id = "${3}"
+	}
+snippet d_oci_core_security_lists
+	data "oci_core_security_lists" "${1}" {
+		compartment_id = "${2}"
+		vcn_id = "${3}"
+	}
+snippet d_oci_core_service_gateways
+	data "oci_core_service_gateways" "${1}" {
+		compartment_id = "${2}"
+	}
+snippet d_oci_core_services
+	data "oci_core_services" "${1}" {
+		
+	}
+snippet d_oci_core_shape
+	data "oci_core_shape" "${1}" {
+		compartment_id = "${2}"
+	}
+snippet d_oci_core_shapes
+	data "oci_core_shapes" "${1}" {
+		compartment_id = "${2}"
+	}
+snippet d_oci_core_subnet
+	data "oci_core_subnet" "${1}" {
+		subnet_id = "${2}"
+	}
+snippet d_oci_core_subnets
+	data "oci_core_subnets" "${1}" {
+		compartment_id = "${2}"
+		vcn_id = "${3}"
+	}
+snippet d_oci_core_vcns
+	data "oci_core_vcns" "${1}" {
+		compartment_id = "${2}"
+	}
+snippet d_oci_core_virtual_circuit
+	data "oci_core_virtual_circuit" "${1}" {
+		virtual_circuit_id = "${2}"
+	}
+snippet d_oci_core_virtual_circuit_bandwidth_shapes
+	data "oci_core_virtual_circuit_bandwidth_shapes" "${1}" {
+		provider_service_id = "${2}"
+	}
+snippet d_oci_core_virtual_circuit_public_prefixes
+	data "oci_core_virtual_circuit_public_prefixes" "${1}" {
+		virtual_circuit_id = "${2}"
+	}
+snippet d_oci_core_virtual_circuits
+	data "oci_core_virtual_circuits" "${1}" {
+		compartment_id = "${2}"
+	}
+snippet d_oci_core_virtual_networks
+	data "oci_core_virtual_networks" "${1}" {
+		compartment_id = "${2}"
+	}
+snippet d_oci_core_vnic
+	data "oci_core_vnic" "${1}" {
+		vnic_id = "${2}"
+	}
+snippet d_oci_core_vnic_attachments
+	data "oci_core_vnic_attachments" "${1}" {
+		compartment_id = "${2}"
+	}
+snippet d_oci_core_volume
+	data "oci_core_volume" "${1}" {
+		volume_id = "${2}"
+	}
+snippet d_oci_core_volume_attachments
+	data "oci_core_volume_attachments" "${1}" {
+		compartment_id = "${2}"
+	}
+snippet d_oci_core_volume_backup_policies
+	data "oci_core_volume_backup_policies" "${1}" {
+		
+	}
+snippet d_oci_core_volume_backup_policy_assignments
+	data "oci_core_volume_backup_policy_assignments" "${1}" {
+		asset_id = "${2}"
+	}
+snippet d_oci_core_volume_backups
+	data "oci_core_volume_backups" "${1}" {
+		compartment_id = "${2}"
+	}
+snippet d_oci_core_volume_group_backups
+	data "oci_core_volume_group_backups" "${1}" {
+		compartment_id = "${2}"
+	}
+snippet d_oci_core_volume_groups
+	data "oci_core_volume_groups" "${1}" {
+		compartment_id = "${2}"
+	}
+snippet d_oci_core_volumes
+	data "oci_core_volumes" "${1}" {
+		compartment_id = "${2}"
+	}
+snippet d_oci_database_autonomous_data_warehouse
+	data "oci_database_autonomous_data_warehouse" "${1}" {
+		autonomous_data_warehouse_id = "${2}"
+	}
+snippet d_oci_database_autonomous_data_warehouse_backup
+	data "oci_database_autonomous_data_warehouse_backup" "${1}" {
+		autonomous_data_warehouse_backup_id = "${2}"
+	}
+snippet d_oci_database_autonomous_data_warehouse_backups
+	data "oci_database_autonomous_data_warehouse_backups" "${1}" {
+		
+	}
+snippet d_oci_database_autonomous_data_warehouse_wallet
+	data "oci_database_autonomous_data_warehouse_wallet" "${1}" {
+		autonomous_data_warehouse_id = "${2}"
+		password = "${3}"
+	}
+snippet d_oci_database_autonomous_data_warehouses
+	data "oci_database_autonomous_data_warehouses" "${1}" {
+		compartment_id = "${2}"
+	}
+snippet d_oci_database_autonomous_database
+	data "oci_database_autonomous_database" "${1}" {
+		autonomous_database_id = "${2}"
+	}
+snippet d_oci_database_autonomous_database_backup
+	data "oci_database_autonomous_database_backup" "${1}" {
+		autonomous_database_backup_id = "${2}"
+	}
+snippet d_oci_database_autonomous_database_backups
+	data "oci_database_autonomous_database_backups" "${1}" {
+		
+	}
+snippet d_oci_database_autonomous_database_wallet
+	data "oci_database_autonomous_database_wallet" "${1}" {
+		autonomous_database_id = "${2}"
+		password = "${3}"
+	}
+snippet d_oci_database_autonomous_databases
+	data "oci_database_autonomous_databases" "${1}" {
+		compartment_id = "${2}"
+	}
+snippet d_oci_database_backups
+	data "oci_database_backups" "${1}" {
+		
+	}
+snippet d_oci_database_database
+	data "oci_database_database" "${1}" {
+		database_id = "${2}"
+	}
+snippet d_oci_database_databases
+	data "oci_database_databases" "${1}" {
+		compartment_id = "${2}"
+		db_home_id = "${3}"
+	}
+snippet d_oci_database_db_home
+	data "oci_database_db_home" "${1}" {
+		db_home_id = "${2}"
+	}
+snippet d_oci_database_db_home_patch_history_entries
+	data "oci_database_db_home_patch_history_entries" "${1}" {
+		db_home_id = "${2}"
+	}
+snippet d_oci_database_db_home_patches
+	data "oci_database_db_home_patches" "${1}" {
+		db_home_id = "${2}"
+	}
+snippet d_oci_database_db_homes
+	data "oci_database_db_homes" "${1}" {
+		compartment_id = "${2}"
+		db_system_id = "${3}"
+	}
+snippet d_oci_database_db_node
+	data "oci_database_db_node" "${1}" {
+		db_node_id = "${2}"
+	}
+snippet d_oci_database_db_nodes
+	data "oci_database_db_nodes" "${1}" {
+		compartment_id = "${2}"
+		db_system_id = "${3}"
+	}
+snippet d_oci_database_db_system_patch_history_entries
+	data "oci_database_db_system_patch_history_entries" "${1}" {
+		db_system_id = "${2}"
+	}
+snippet d_oci_database_db_system_patches
+	data "oci_database_db_system_patches" "${1}" {
+		db_system_id = "${2}"
+	}
+snippet d_oci_database_db_system_shapes
+	data "oci_database_db_system_shapes" "${1}" {
+		availability_domain = "${2}"
+		compartment_id = "${3}"
+	}
+snippet d_oci_database_db_systems
+	data "oci_database_db_systems" "${1}" {
+		compartment_id = "${2}"
+	}
+snippet d_oci_database_db_versions
+	data "oci_database_db_versions" "${1}" {
+		compartment_id = "${2}"
+	}
+snippet d_oci_dns_records
+	data "oci_dns_records" "${1}" {
+		zone_name_or_id = "${2}"
+	}
+snippet d_oci_dns_zones
+	data "oci_dns_zones" "${1}" {
+		compartment_id = "${2}"
+	}
+snippet d_oci_email_sender
+	data "oci_email_sender" "${1}" {
+		sender_id = "${2}"
+	}
+snippet d_oci_email_senders
+	data "oci_email_senders" "${1}" {
+		compartment_id = "${2}"
+	}
+snippet d_oci_email_suppression
+	data "oci_email_suppression" "${1}" {
+		suppression_id = "${2}"
+	}
+snippet d_oci_email_suppressions
+	data "oci_email_suppressions" "${1}" {
+		compartment_id = "${2}"
+	}
+snippet d_oci_file_storage_export_sets
+	data "oci_file_storage_export_sets" "${1}" {
+		availability_domain = "${2}"
+		compartment_id = "${3}"
+	}
+snippet d_oci_file_storage_exports
+	data "oci_file_storage_exports" "${1}" {
+		
+	}
+snippet d_oci_file_storage_file_systems
+	data "oci_file_storage_file_systems" "${1}" {
+		availability_domain = "${2}"
+		compartment_id = "${3}"
+	}
+snippet d_oci_file_storage_mount_targets
+	data "oci_file_storage_mount_targets" "${1}" {
+		availability_domain = "${2}"
+		compartment_id = "${3}"
+	}
+snippet d_oci_file_storage_snapshots
+	data "oci_file_storage_snapshots" "${1}" {
+		file_system_id = "${2}"
+	}
+snippet d_oci_identity_api_keys
+	data "oci_identity_api_keys" "${1}" {
+		user_id = "${2}"
+	}
+snippet d_oci_identity_auth_tokens
+	data "oci_identity_auth_tokens" "${1}" {
+		user_id = "${2}"
+	}
+snippet d_oci_identity_availability_domains
+	data "oci_identity_availability_domains" "${1}" {
+		compartment_id = "${2}"
+	}
+snippet d_oci_identity_compartment
+	data "oci_identity_compartment" "${1}" {
+		id = "${2}"
+	}
+snippet d_oci_identity_compartments
+	data "oci_identity_compartments" "${1}" {
+		compartment_id = "${2}"
+	}
+snippet d_oci_identity_customer_secret_keys
+	data "oci_identity_customer_secret_keys" "${1}" {
+		user_id = "${2}"
+	}
+snippet d_oci_identity_dynamic_groups
+	data "oci_identity_dynamic_groups" "${1}" {
+		compartment_id = "${2}"
+	}
+snippet d_oci_identity_fault_domains
+	data "oci_identity_fault_domains" "${1}" {
+		availability_domain = "${2}"
+		compartment_id = "${3}"
+	}
+snippet d_oci_identity_groups
+	data "oci_identity_groups" "${1}" {
+		compartment_id = "${2}"
+	}
+snippet d_oci_identity_identity_providers
+	data "oci_identity_identity_providers" "${1}" {
+		compartment_id = "${2}"
+		protocol = "${3}"
+	}
+snippet d_oci_identity_idp_group_mappings
+	data "oci_identity_idp_group_mappings" "${1}" {
+		identity_provider_id = "${2}"
+	}
+snippet d_oci_identity_policies
+	data "oci_identity_policies" "${1}" {
+		compartment_id = "${2}"
+	}
+snippet d_oci_identity_region_subscriptions
+	data "oci_identity_region_subscriptions" "${1}" {
+		tenancy_id = "${2}"
+	}
+snippet d_oci_identity_regions
+	data "oci_identity_regions" "${1}" {
+		
+	}
+snippet d_oci_identity_smtp_credentials
+	data "oci_identity_smtp_credentials" "${1}" {
+		user_id = "${2}"
+	}
+snippet d_oci_identity_swift_passwords
+	data "oci_identity_swift_passwords" "${1}" {
+		user_id = "${2}"
+	}
+snippet d_oci_identity_tag_namespaces
+	data "oci_identity_tag_namespaces" "${1}" {
+		compartment_id = "${2}"
+	}
+snippet d_oci_identity_tags
+	data "oci_identity_tags" "${1}" {
+		tag_namespace_id = "${2}"
+	}
+snippet d_oci_identity_tenancy
+	data "oci_identity_tenancy" "${1}" {
+		tenancy_id = "${2}"
+	}
+snippet d_oci_identity_user_group_memberships
+	data "oci_identity_user_group_memberships" "${1}" {
+		compartment_id = "${2}"
+	}
+snippet d_oci_identity_users
+	data "oci_identity_users" "${1}" {
+		compartment_id = "${2}"
+	}
+snippet d_oci_kms_decrypted_data
+	data "oci_kms_decrypted_data" "${1}" {
+		ciphertext = "${2}"
+		crypto_endpoint = "${3}"
+		key_id = "${4}"
+	}
+snippet d_oci_kms_encrypted_data
+	data "oci_kms_encrypted_data" "${1}" {
+		crypto_endpoint = "${2}"
+		key_id = "${3}"
+		plaintext = "${4}"
+	}
+snippet d_oci_kms_key
+	data "oci_kms_key" "${1}" {
+		key_id = "${2}"
+		management_endpoint = "${3}"
+	}
+snippet d_oci_kms_key_version
+	data "oci_kms_key_version" "${1}" {
+		key_id = "${2}"
+		key_version_id = "${3}"
+		management_endpoint = "${4}"
+	}
+snippet d_oci_kms_key_versions
+	data "oci_kms_key_versions" "${1}" {
+		key_id = "${2}"
+		management_endpoint = "${3}"
+	}
+snippet d_oci_kms_keys
+	data "oci_kms_keys" "${1}" {
+		compartment_id = "${2}"
+		management_endpoint = "${3}"
+	}
+snippet d_oci_kms_vault
+	data "oci_kms_vault" "${1}" {
+		vault_id = "${2}"
+	}
+snippet d_oci_kms_vaults
+	data "oci_kms_vaults" "${1}" {
+		compartment_id = "${2}"
+	}
+snippet d_oci_load_balancer_backend_health
+	data "oci_load_balancer_backend_health" "${1}" {
+		backend_name = "${2}"
+		backend_set_name = "${3}"
+		load_balancer_id = "${4}"
+	}
+snippet d_oci_load_balancer_backend_set_health
+	data "oci_load_balancer_backend_set_health" "${1}" {
+		backend_set_name = "${2}"
+		load_balancer_id = "${3}"
+	}
+snippet d_oci_load_balancer_backend_sets
+	data "oci_load_balancer_backend_sets" "${1}" {
+		load_balancer_id = "${2}"
+	}
+snippet d_oci_load_balancer_backends
+	data "oci_load_balancer_backends" "${1}" {
+		backendset_name = "${2}"
+		load_balancer_id = "${3}"
+	}
+snippet d_oci_load_balancer_backendsets
+	data "oci_load_balancer_backendsets" "${1}" {
+		load_balancer_id = "${2}"
+	}
+snippet d_oci_load_balancer_certificates
+	data "oci_load_balancer_certificates" "${1}" {
+		load_balancer_id = "${2}"
+	}
+snippet d_oci_load_balancer_health
+	data "oci_load_balancer_health" "${1}" {
+		load_balancer_id = "${2}"
+	}
+snippet d_oci_load_balancer_hostnames
+	data "oci_load_balancer_hostnames" "${1}" {
+		load_balancer_id = "${2}"
+	}
+snippet d_oci_load_balancer_load_balancers
+	data "oci_load_balancer_load_balancers" "${1}" {
+		compartment_id = "${2}"
+	}
+snippet d_oci_load_balancer_path_route_sets
+	data "oci_load_balancer_path_route_sets" "${1}" {
+		load_balancer_id = "${2}"
+	}
+snippet d_oci_load_balancer_policies
+	data "oci_load_balancer_policies" "${1}" {
+		compartment_id = "${2}"
+	}
+snippet d_oci_load_balancer_protocols
+	data "oci_load_balancer_protocols" "${1}" {
+		compartment_id = "${2}"
+	}
+snippet d_oci_load_balancer_shapes
+	data "oci_load_balancer_shapes" "${1}" {
+		compartment_id = "${2}"
+	}
+snippet d_oci_load_balancers
+	data "oci_load_balancers" "${1}" {
+		compartment_id = "${2}"
+	}
+snippet d_oci_objectstorage_bucket
+	data "oci_objectstorage_bucket" "${1}" {
+		name = "${2}"
+		namespace = "${3}"
+	}
+snippet d_oci_objectstorage_bucket_summaries
+	data "oci_objectstorage_bucket_summaries" "${1}" {
+		compartment_id = "${2}"
+		namespace = "${3}"
+	}
+snippet d_oci_objectstorage_namespace
+	data "oci_objectstorage_namespace" "${1}" {
+		
+	}
+snippet d_oci_objectstorage_namespace_metadata
+	data "oci_objectstorage_namespace_metadata" "${1}" {
+		namespace = "${2}"
+	}
+snippet d_oci_objectstorage_object_head
+	data "oci_objectstorage_object_head" "${1}" {
+		bucket = "${2}"
+		namespace = "${3}"
+		object = "${4}"
+	}
+snippet d_oci_objectstorage_object_lifecycle_policy
+	data "oci_objectstorage_object_lifecycle_policy" "${1}" {
+		bucket = "${2}"
+		namespace = "${3}"
+	}
+snippet d_oci_objectstorage_objects
+	data "oci_objectstorage_objects" "${1}" {
+		bucket = "${2}"
+		namespace = "${3}"
+	}
+snippet d_oci_objectstorage_preauthrequest
+	data "oci_objectstorage_preauthrequest" "${1}" {
+		bucket = "${2}"
+		namespace = "${3}"
+		par_id = "${4}"
+	}
+snippet d_oci_objectstorage_preauthrequests
+	data "oci_objectstorage_preauthrequests" "${1}" {
+		bucket = "${2}"
+		namespace = "${3}"
+	}

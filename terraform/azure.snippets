@@ -1,0 +1,111 @@
+snippet azure
+	provider "azure" {
+		
+	}
+snippet r_azure_affinity_group
+	resource "azure_affinity_group" "${1}" {
+		label = "${2}"
+		location = "${3}"
+		name = "${4}"
+	}
+snippet r_azure_data_disk
+	resource "azure_data_disk" "${1}" {
+		lun = ${2}
+		virtual_machine = "${3}"
+	}
+snippet r_azure_dns_server
+	resource "azure_dns_server" "${1}" {
+		dns_address = "${2}"
+		name = "${3}"
+	}
+snippet r_azure_hosted_service
+	resource "azure_hosted_service" "${1}" {
+		ephemeral_contents = ${2:false}
+		location = "${3}"
+		name = "${4}"
+	}
+snippet r_azure_instance
+	resource "azure_instance" "${1}" {
+		image = "${2}"
+		location = "${3}"
+		name = "${4}"
+		size = "${5}"
+		username = "${6}"
+	}
+snippet r_azure_local_network_connection
+	resource "azure_local_network_connection" "${1}" {
+		address_space_prefixes = ["${2}"]
+		name = "${3}"
+		vpn_gateway_address = "${4}"
+	}
+snippet r_azure_security_group
+	resource "azure_security_group" "${1}" {
+		location = "${2}"
+		name = "${3}"
+	}
+snippet r_azure_security_group_rule
+	resource "azure_security_group_rule" "${1}" {
+		action = "${2}"
+		destination_address_prefix = "${3}"
+		destination_port_range = "${4}"
+		name = "${5}"
+		priority = ${6}
+		protocol = "${7}"
+		security_group_names = ["${8}"]
+		source_address_prefix = "${9}"
+		source_port_range = "${10}"
+		type = "${11}"
+	}
+snippet r_azure_sql_database_server
+	resource "azure_sql_database_server" "${1}" {
+		location = "${2}"
+		password = "${3}"
+		username = "${4}"
+	}
+snippet r_azure_sql_database_server_firewall_rule
+	resource "azure_sql_database_server_firewall_rule" "${1}" {
+		database_server_names = ["${2}"]
+		end_ip = "${3}"
+		name = "${4}"
+		start_ip = "${5}"
+	}
+snippet r_azure_sql_database_service
+	resource "azure_sql_database_service" "${1}" {
+		database_server_name = "${2}"
+		name = "${3}"
+	}
+snippet r_azure_storage_blob
+	resource "azure_storage_blob" "${1}" {
+		name = "${2}"
+		size = ${3}
+		storage_container_name = "${4}"
+		storage_service_name = "${5}"
+		type = "${6}"
+	}
+snippet r_azure_storage_container
+	resource "azure_storage_container" "${1}" {
+		container_access_type = "${2}"
+		name = "${3}"
+		storage_service_name = "${4}"
+	}
+snippet r_azure_storage_queue
+	resource "azure_storage_queue" "${1}" {
+		name = "${2}"
+		storage_service_name = "${3}"
+	}
+snippet r_azure_storage_service
+	resource "azure_storage_service" "${1}" {
+		account_type = "${2}"
+		location = "${3}"
+		name = "${4}"
+	}
+snippet r_azure_virtual_network
+	resource "azure_virtual_network" "${1}" {
+		address_space = ["${2}"]
+		location = "${3}"
+		name = "${4}"
+		subnet {
+			address_prefix = ""
+			name = ""
+		}
+	}

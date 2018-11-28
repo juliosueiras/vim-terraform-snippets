@@ -1,0 +1,22 @@
+snippet spotinst
+	provider "spotinst" {
+		
+	}
+snippet r_spotinst_elastigroup_aws
+	resource "spotinst_elastigroup_aws" "${1}" {
+		description = "${2}"
+		fallback_to_ondemand = ${3:false}
+		instance_types_ondemand = "${4}"
+		instance_types_spot = ["${5}"]
+		name = "${6}"
+		orientation = "${7}"
+		product = "${8}"
+		security_groups = ["${9}"]
+	}
+snippet r_spotinst_subscription
+	resource "spotinst_subscription" "${1}" {
+		endpoint = "${2}"
+		event_type = "${3}"
+		protocol = "${4}"
+		resource_id = "${5}"
+	}

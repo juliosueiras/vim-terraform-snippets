@@ -1,0 +1,52 @@
+snippet ns1
+	provider "ns1" {
+		
+	}
+snippet r_ns1_apikey
+	resource "ns1_apikey" "${1}" {
+		name = "${2}"
+	}
+snippet r_ns1_datafeed
+	resource "ns1_datafeed" "${1}" {
+		name = "${2}"
+		source_id = "${3}"
+	}
+snippet r_ns1_datasource
+	resource "ns1_datasource" "${1}" {
+		name = "${2}"
+		sourcetype = "${3}"
+	}
+snippet r_ns1_monitoringjob
+	resource "ns1_monitoringjob" "${1}" {
+		config {
+
+		}
+		frequency = ${3}
+		job_type = "${4}"
+		name = "${5}"
+		regions = ["${6}"]
+	}
+snippet r_ns1_notifylist
+	resource "ns1_notifylist" "${1}" {
+		name = "${2}"
+	}
+snippet r_ns1_record
+	resource "ns1_record" "${1}" {
+		domain = "${2}"
+		type = "${3}"
+		zone = "${4}"
+	}
+snippet r_ns1_team
+	resource "ns1_team" "${1}" {
+		name = "${2}"
+	}
+snippet r_ns1_user
+	resource "ns1_user" "${1}" {
+		email = "${2}"
+		name = "${3}"
+		username = "${4}"
+	}
+snippet r_ns1_zone
+	resource "ns1_zone" "${1}" {
+		zone = "${2}"
+	}

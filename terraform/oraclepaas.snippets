@@ -1,0 +1,82 @@
+snippet oraclepaas
+	provider "oraclepaas" {
+		identity_domain = "${1}"
+		password = "${2}"
+		user = "${3}"
+	}
+snippet r_oraclepaas_application_container
+	resource "oraclepaas_application_container" "${1}" {
+		name = "${2}"
+	}
+snippet r_oraclepaas_database_access_rule
+	resource "oraclepaas_database_access_rule" "${1}" {
+		description = "${2}"
+		name = "${3}"
+		ports = "${4}"
+		service_instance_id = "${5}"
+		source = "${6}"
+	}
+snippet r_oraclepaas_database_service_instance
+	resource "oraclepaas_database_service_instance" "${1}" {
+		database_configuration {
+			admin_password = ""
+			usable_storage = 1
+		}
+		edition = "${3}"
+		name = "${4}"
+		shape = "${5}"
+		ssh_public_key = "${6}"
+		subscription_type = "${7}"
+		version = "${8}"
+	}
+snippet r_oraclepaas_java_access_rule
+	resource "oraclepaas_java_access_rule" "${1}" {
+		description = "${2}"
+		destination = "${3}"
+		name = "${4}"
+		ports = "${5}"
+		service_instance_id = "${6}"
+		source = "${7}"
+	}
+snippet r_oraclepaas_java_service_instance
+	resource "oraclepaas_java_service_instance" "${1}" {
+		backups {
+			cloud_storage_container = ""
+		}
+		edition = "${3}"
+		name = "${4}"
+		ssh_public_key = "${5}"
+		weblogic_server {
+			admin {
+				password = ""
+				username = ""
+			}
+			database {
+				name = ""
+				password = ""
+				username = ""
+			}
+			shape = ""
+		}
+	}
+snippet r_oraclepaas_mysql_access_rule
+	resource "oraclepaas_mysql_access_rule" "${1}" {
+		destination = "${2}"
+		name = "${3}"
+		ports = "${4}"
+		service_instance_id = "${5}"
+		source = "${6}"
+	}
+snippet r_oraclepaas_mysql_service_instance
+	resource "oraclepaas_mysql_service_instance" "${1}" {
+		mysql_configuration {
+		
+		}
+		name = "${3}"
+		shape = "${4}"
+		ssh_public_key = "${5}"
+	}
+snippet d_oraclepaas_database_service_instance
+	data "oraclepaas_database_service_instance" "${1}" {
+		name = "${2}"
+	}

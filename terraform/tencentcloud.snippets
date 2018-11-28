@@ -1,0 +1,179 @@
+snippet tencentcloud
+	provider "tencentcloud" {
+		region = "${1}"
+		secret_id = "${2}"
+		secret_key = "${3}"
+	}
+snippet r_tencentcloud_alb_server_attachment
+	resource "tencentcloud_alb_server_attachment" "${1}" {
+		backends {
+			instance_id = ""
+			port = 1
+		}
+		listener_id = "${3}"
+		loadbalancer_id = "${4}"
+	}
+snippet r_tencentcloud_cbs_snapshot
+	resource "tencentcloud_cbs_snapshot" "${1}" {
+		snapshot_name = "${2}"
+		storage_id = "${3}"
+	}
+snippet r_tencentcloud_cbs_storage
+	resource "tencentcloud_cbs_storage" "${1}" {
+		availability_zone = "${2}"
+		period = ${3}
+		storage_name = "${4}"
+		storage_size = ${5}
+		storage_type = "${6}"
+	}
+snippet r_tencentcloud_cbs_storage_attachment
+	resource "tencentcloud_cbs_storage_attachment" "${1}" {
+		instance_id = "${2}"
+		storage_id = "${3}"
+	}
+snippet r_tencentcloud_container_cluster
+	resource "tencentcloud_container_cluster" "${1}" {
+		bandwidth = ${2}
+		bandwidth_type = "${3}"
+		cluster_cidr = "${4}"
+		cluster_name = "${5}"
+		cpu = ${6}
+		goods_num = ${7}
+		is_vpc_gateway = ${8}
+		mem = ${9}
+		os_name = "${10}"
+		root_size = ${11}
+		storage_size = ${12}
+		subnet_id = "${13}"
+		vpc_id = "${14}"
+		zone_id = "${15}"
+	}
+snippet r_tencentcloud_container_cluster_instance
+	resource "tencentcloud_container_cluster_instance" "${1}" {
+		bandwidth = ${2}
+		bandwidth_type = "${3}"
+		cluster_id = "${4}"
+		cpu = ${5}
+		is_vpc_gateway = ${6}
+		mem = ${7}
+		root_size = ${8}
+		storage_size = ${9}
+		subnet_id = "${10}"
+		zone_id = "${11}"
+	}
+snippet r_tencentcloud_dnat
+	resource "tencentcloud_dnat" "${1}" {
+		elastic_ip = "${2}"
+		elastic_port = "${3}"
+		nat_id = "${4}"
+		private_ip = "${5}"
+		private_port = "${6}"
+		protocol = "${7}"
+		vpc_id = "${8}"
+	}
+snippet r_tencentcloud_eip
+	resource "tencentcloud_eip" "${1}" {
+		
+	}
+snippet r_tencentcloud_eip_association
+	resource "tencentcloud_eip_association" "${1}" {
+		eip_id = "${2}"
+	}
+snippet r_tencentcloud_instance
+	resource "tencentcloud_instance" "${1}" {
+		availability_zone = "${2}"
+		image_id = "${3}"
+	}
+snippet r_tencentcloud_key_pair
+	resource "tencentcloud_key_pair" "${1}" {
+		key_name = "${2}"
+	}
+snippet r_tencentcloud_nat_gateway
+	resource "tencentcloud_nat_gateway" "${1}" {
+		assigned_eip_set = ["${2}"]
+		bandwidth = ${3}
+		max_concurrent = ${4}
+		name = "${5}"
+		vpc_id = "${6}"
+	}
+snippet r_tencentcloud_route_entry
+	resource "tencentcloud_route_entry" "${1}" {
+		cidr_block = "${2}"
+		next_hub = "${3}"
+		next_type = "${4}"
+		route_table_id = "${5}"
+		vpc_id = "${6}"
+	}
+snippet r_tencentcloud_route_table
+	resource "tencentcloud_route_table" "${1}" {
+		name = "${2}"
+		vpc_id = "${3}"
+	}
+snippet r_tencentcloud_security_group
+	resource "tencentcloud_security_group" "${1}" {
+		name = "${2}"
+	}
+snippet r_tencentcloud_security_group_rule
+	resource "tencentcloud_security_group_rule" "${1}" {
+		cidr_ip = "${2}"
+		policy = "${3}"
+		security_group_id = "${4}"
+		type = "${5}"
+	}
+snippet r_tencentcloud_subnet
+	resource "tencentcloud_subnet" "${1}" {
+		availability_zone = "${2}"
+		cidr_block = "${3}"
+		name = "${4}"
+		vpc_id = "${5}"
+	}
+snippet r_tencentcloud_vpc
+	resource "tencentcloud_vpc" "${1}" {
+		cidr_block = "${2}"
+		name = "${3}"
+	}
+snippet d_tencentcloud_availability_zones
+	data "tencentcloud_availability_zones" "${1}" {
+		
+	}
+snippet d_tencentcloud_container_cluster_instances
+	data "tencentcloud_container_cluster_instances" "${1}" {
+		cluster_id = "${2}"
+	}
+snippet d_tencentcloud_container_clusters
+	data "tencentcloud_container_clusters" "${1}" {
+		
+	}
+snippet d_tencentcloud_eip
+	data "tencentcloud_eip" "${1}" {
+		
+	}
+snippet d_tencentcloud_image
+	data "tencentcloud_image" "${1}" {
+		
+	}
+snippet d_tencentcloud_instance_types
+	data "tencentcloud_instance_types" "${1}" {
+		
+	}
+snippet d_tencentcloud_nats
+	data "tencentcloud_nats" "${1}" {
+		
+	}
+snippet d_tencentcloud_route_table
+	data "tencentcloud_route_table" "${1}" {
+		route_table_id = "${2}"
+	}
+snippet d_tencentcloud_security_group
+	data "tencentcloud_security_group" "${1}" {
+		security_group_id = "${2}"
+	}
+snippet d_tencentcloud_subnet
+	data "tencentcloud_subnet" "${1}" {
+		subnet_id = "${2}"
+		vpc_id = "${3}"
+	}
+snippet d_tencentcloud_vpc
+	data "tencentcloud_vpc" "${1}" {
+		
+	}

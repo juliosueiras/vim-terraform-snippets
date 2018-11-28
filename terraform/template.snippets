@@ -1,0 +1,29 @@
+snippet template
+	provider "template" {
+		
+	}
+snippet r_template_cloudinit_config
+	resource "template_cloudinit_config" "${1}" {
+		part {
+			content = ""
+		}
+	}
+snippet r_template_dir
+	resource "template_dir" "${1}" {
+		destination_dir = "${2}"
+		source_dir = "${3}"
+	}
+snippet r_template_file
+	resource "template_file" "${1}" {
+		
+	}
+snippet d_template_cloudinit_config
+	data "template_cloudinit_config" "${1}" {
+		part {
+				content = ""
+			}
+	}
+snippet d_template_file
+	data "template_file" "${1}" {
+		
+	}

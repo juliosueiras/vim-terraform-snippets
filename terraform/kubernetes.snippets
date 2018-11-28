@@ -1,0 +1,162 @@
+snippet kubernetes
+	provider "kubernetes" {
+		
+	}
+snippet r_kubernetes_cluster_role_binding
+	resource "kubernetes_cluster_role_binding" "${1}" {
+		metadata {
+		
+		}
+		role_ref {
+			api_group = ""
+			kind = ""
+			name = ""
+		}
+		subject {
+			kind = ""
+			name = ""
+		}
+	}
+snippet r_kubernetes_config_map
+	resource "kubernetes_config_map" "${1}" {
+		metadata {
+		
+		}
+	}
+snippet r_kubernetes_deployment
+	resource "kubernetes_deployment" "${1}" {
+		metadata {
+		
+		}
+		spec {
+			template {
+				metadata {
+			
+			}
+				spec {
+			
+			}
+			}
+		}
+	}
+snippet r_kubernetes_horizontal_pod_autoscaler
+	resource "kubernetes_horizontal_pod_autoscaler" "${1}" {
+		metadata {
+		
+		}
+		spec {
+			max_replicas = 1
+			scale_target_ref {
+				kind = ""
+				name = ""
+			}
+		}
+	}
+snippet r_kubernetes_limit_range
+	resource "kubernetes_limit_range" "${1}" {
+		metadata {
+		
+		}
+	}
+snippet r_kubernetes_namespace
+	resource "kubernetes_namespace" "${1}" {
+		metadata {
+		
+		}
+	}
+snippet r_kubernetes_persistent_volume
+	resource "kubernetes_persistent_volume" "${1}" {
+		metadata {
+		
+		}
+		spec {
+			access_modes = [""]
+			capacity {
+
+			}
+			persistent_volume_source {
+			
+			}
+		}
+	}
+snippet r_kubernetes_persistent_volume_claim
+	resource "kubernetes_persistent_volume_claim" "${1}" {
+		metadata {
+		
+		}
+		spec {
+			access_modes = [""]
+			resources {
+			
+			}
+		}
+	}
+snippet r_kubernetes_pod
+	resource "kubernetes_pod" "${1}" {
+		metadata {
+		
+		}
+		spec {
+		
+		}
+	}
+snippet r_kubernetes_replication_controller
+	resource "kubernetes_replication_controller" "${1}" {
+		metadata {
+		
+		}
+		spec {
+			selector {
+
+			}
+			template {
+			
+			}
+		}
+	}
+snippet r_kubernetes_resource_quota
+	resource "kubernetes_resource_quota" "${1}" {
+		metadata {
+		
+		}
+	}
+snippet r_kubernetes_secret
+	resource "kubernetes_secret" "${1}" {
+		metadata {
+		
+		}
+	}
+snippet r_kubernetes_service
+	resource "kubernetes_service" "${1}" {
+		metadata {
+		
+		}
+		spec {
+		
+		}
+	}
+snippet r_kubernetes_service_account
+	resource "kubernetes_service_account" "${1}" {
+		metadata {
+		
+		}
+	}
+snippet r_kubernetes_storage_class
+	resource "kubernetes_storage_class" "${1}" {
+		metadata {
+		
+		}
+		storage_provisioner = "${3}"
+	}
+snippet d_kubernetes_service
+	data "kubernetes_service" "${1}" {
+		metadata {
+			
+			}
+	}
+snippet d_kubernetes_storage_class
+	data "kubernetes_storage_class" "${1}" {
+		metadata {
+			
+			}
+	}

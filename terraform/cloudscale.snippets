@@ -1,0 +1,16 @@
+snippet cloudscale
+	provider "cloudscale" {
+		token = "${1}"
+	}
+snippet r_cloudscale_floating_ip
+	resource "cloudscale_floating_ip" "${1}" {
+		ip_version = ${2}
+		server = "${3}"
+	}
+snippet r_cloudscale_server
+	resource "cloudscale_server" "${1}" {
+		flavor_slug = "${2}"
+		image_slug = "${3}"
+		name = "${4}"
+		ssh_keys = ["${5}"]
+	}

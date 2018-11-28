@@ -1,0 +1,58 @@
+snippet rabbitmq
+	provider "rabbitmq" {
+		endpoint = "${1}"
+		password = "${2}"
+		username = "${3}"
+	}
+snippet r_rabbitmq_binding
+	resource "rabbitmq_binding" "${1}" {
+		destination = "${2}"
+		destination_type = "${3}"
+		source = "${4}"
+		vhost = "${5}"
+	}
+snippet r_rabbitmq_exchange
+	resource "rabbitmq_exchange" "${1}" {
+		name = "${2}"
+		settings {
+			type = ""
+		}
+	}
+snippet r_rabbitmq_permissions
+	resource "rabbitmq_permissions" "${1}" {
+		permissions {
+			configure = ""
+			read = ""
+			write = ""
+		}
+		user = "${3}"
+	}
+snippet r_rabbitmq_policy
+	resource "rabbitmq_policy" "${1}" {
+		name = "${2}"
+		policy {
+			apply_to = ""
+			definition {
+
+			}
+			pattern = ""
+			priority = 1
+		}
+		vhost = "${4}"
+	}
+snippet r_rabbitmq_queue
+	resource "rabbitmq_queue" "${1}" {
+		name = "${2}"
+		settings {
+		
+		}
+	}
+snippet r_rabbitmq_user
+	resource "rabbitmq_user" "${1}" {
+		name = "${2}"
+		password = "${3}"
+	}
+snippet r_rabbitmq_vhost
+	resource "rabbitmq_vhost" "${1}" {
+		name = "${2}"
+	}

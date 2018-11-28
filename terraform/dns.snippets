@@ -1,0 +1,58 @@
+snippet dns
+	provider "dns" {
+		
+	}
+snippet r_dns_a_record_set
+	resource "dns_a_record_set" "${1}" {
+		addresses = ["${2}"]
+		name = "${3}"
+		zone = "${4}"
+	}
+snippet r_dns_aaaa_record_set
+	resource "dns_aaaa_record_set" "${1}" {
+		addresses = ["${2}"]
+		name = "${3}"
+		zone = "${4}"
+	}
+snippet r_dns_cname_record
+	resource "dns_cname_record" "${1}" {
+		cname = "${2}"
+		name = "${3}"
+		zone = "${4}"
+	}
+snippet r_dns_ns_record_set
+	resource "dns_ns_record_set" "${1}" {
+		name = "${2}"
+		nameservers = ["${3}"]
+		zone = "${4}"
+	}
+snippet r_dns_ptr_record
+	resource "dns_ptr_record" "${1}" {
+		name = "${2}"
+		ptr = "${3}"
+		zone = "${4}"
+	}
+snippet d_dns_a_record_set
+	data "dns_a_record_set" "${1}" {
+		host = "${2}"
+	}
+snippet d_dns_aaaa_record_set
+	data "dns_aaaa_record_set" "${1}" {
+		host = "${2}"
+	}
+snippet d_dns_cname_record_set
+	data "dns_cname_record_set" "${1}" {
+		host = "${2}"
+	}
+snippet d_dns_ns_record_set
+	data "dns_ns_record_set" "${1}" {
+		host = "${2}"
+	}
+snippet d_dns_ptr_record_set
+	data "dns_ptr_record_set" "${1}" {
+		ip_address = "${2}"
+	}
+snippet d_dns_txt_record_set
+	data "dns_txt_record_set" "${1}" {
+		host = "${2}"
+	}

@@ -1,0 +1,155 @@
+snippet remote_artifactory_backend 
+	data "terraform_remote_state" "${1}" {
+		backend = "artifactory"
+		config {
+			username = "${2}"
+			password = "${3}"
+			url = "https://custom.artifactoryonline.com/artifactory"
+			repo = "${4}"
+			subpath = "${5}"
+		}
+	}
+snippet remote_atlas_backend
+	data "terraform_remote_state" "${1}" {
+		backend = "atlas"
+		config {
+			name = "${2}"
+			access_token = "${3}"
+		}
+	}
+snippet remote_azure_backend
+	data "terraform_remote_state" "${1}" {
+		backend = "azure"
+		config {
+			storage_account_name = "${2}"
+			container_name = "${3}"
+			key = "${4}"
+		}
+	}
+snippet remote_consul_backend
+	data "terraform_remote_state" "${1}" {
+		backend = "consul"
+		config {
+			path = "${2}"
+		}
+	}
+snippet remote_etcd_backend
+	data "terraform_remote_state" "${1}" {
+		backend = "etcd"
+		config {
+			path = "${2}"
+			endpoints = "${3}"
+		}
+	}
+snippet remote_gcs_backend
+	data "terraform_remote_state" "${1}" {
+		backend = "gcs"
+		config {
+			bucket = "${2}"
+			path = "${3}"
+			project = "${4}"
+		}
+	}
+snippet remote_http_backend
+	data "terraform_remote_state" "${1}" {
+		backend = "http"
+		config {
+			address = "${2}"
+		}
+	}
+snippet remote_local_backend
+	data "terraform_remote_state" "${1}" {
+		backend = "local"
+		config {
+			path = "\${path.module}/../../terraform.tfstate"
+		}
+	}
+snippet remote_s3_backend
+	data "terraform_remote_state" "${1}" {
+		backend = "s3"
+		config {
+			bucket = "${2}"
+			key = "${3}"
+			region = "us-east-1"
+		}
+	}
+snippet remote_swift_backend
+	data "terraform_remote_state" "${1}" {
+		backend = "swift"
+		config {
+			path = "${2}"
+		}
+	}
+snippet artifactory_backend 
+	terraform {
+		backend "artifactory" {
+			username = "${2}"
+			password = "${3}"
+			url = "https://custom.artifactoryonline.com/artifactory"
+			repo = "${4}"
+			subpath = "${5}"
+		}
+	}
+snippet atlas_backend
+	terraform {
+		backend "atlas" {
+			name = "${2}"
+			access_token = "${3}"
+		}
+	}
+snippet azure_backend
+	terraform {
+		backend "azure" {
+			storage_account_name = "${2}"
+			container_name = "${3}"
+			key = "${4}"
+		}
+	}
+snippet consul_backend
+	terraform {
+		backend "consul" {
+			path = "${2}"
+		}
+	}
+snippet etcd_backend
+	terraform {
+		backend "etcd" {
+			path = "${2}"
+			endpoints = "${3}"
+		}
+	}
+snippet gcs_backend
+	terraform {
+		backend "gcs" {
+			bucket = "${2}"
+			path = "${3}"
+			project = "${4}"
+		}
+	}
+snippet http_backend
+	terraform {
+		backend "http" {
+			address = "${2}"
+		}
+	}
+snippet s3_backend
+	terraform {
+		backend "s3"
+			bucket = "${2}"
+			key = "${3}"
+			region = "us-east-1"
+		}
+	}
+snippet swift_backend
+	terraform {
+		backend "swift" {
+			path = "${2}"
+		}
+	}
+snippet manta_backend
+	terraform {
+		backend "manta" {
+			path = "${1}"
+			object_name = "${2}"
+		}
+	}

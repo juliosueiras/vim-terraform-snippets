@@ -1,0 +1,133 @@
+snippet heroku
+	provider "heroku" {
+		
+	}
+snippet r_heroku_account_feature
+	resource "heroku_account_feature" "${1}" {
+		enabled = ${2:false}
+		name = "${3}"
+	}
+snippet r_heroku_addon
+	resource "heroku_addon" "${1}" {
+		app = "${2}"
+		plan = "${3}"
+	}
+snippet r_heroku_addon_attachment
+	resource "heroku_addon_attachment" "${1}" {
+		addon_id = "${2}"
+		app_id = "${3}"
+	}
+snippet r_heroku_app
+	resource "heroku_app" "${1}" {
+		name = "${2}"
+		region = "${3}"
+	}
+snippet r_heroku_app_feature
+	resource "heroku_app_feature" "${1}" {
+		app = "${2}"
+		name = "${3}"
+	}
+snippet r_heroku_app_release
+	resource "heroku_app_release" "${1}" {
+		app = "${2}"
+		slug_id = "${3}"
+	}
+snippet r_heroku_cert
+	resource "heroku_cert" "${1}" {
+		app = "${2}"
+		certificate_chain = "${3}"
+		private_key = "${4}"
+	}
+snippet r_heroku_domain
+	resource "heroku_domain" "${1}" {
+		app = "${2}"
+		hostname = "${3}"
+	}
+snippet r_heroku_drain
+	resource "heroku_drain" "${1}" {
+		app = "${2}"
+		url = "${3}"
+	}
+snippet r_heroku_formation
+	resource "heroku_formation" "${1}" {
+		app = "${2}"
+		quantity = ${3}
+		size = "${4}"
+		type = "${5}"
+	}
+snippet r_heroku_pipeline
+	resource "heroku_pipeline" "${1}" {
+		name = "${2}"
+	}
+snippet r_heroku_pipeline_coupling
+	resource "heroku_pipeline_coupling" "${1}" {
+		app = "${2}"
+		pipeline = "${3}"
+		stage = "${4}"
+	}
+snippet r_heroku_slug
+	resource "heroku_slug" "${1}" {
+		app = "${2}"
+			process_types {
+
+			}
+	}
+snippet r_heroku_space
+	resource "heroku_space" "${1}" {
+		name = "${2}"
+		organization = "${3}"
+	}
+snippet r_heroku_space_app_access
+	resource "heroku_space_app_access" "${1}" {
+		email = "${2}"
+		permissions = ["${3}"]
+		space = "${4}"
+	}
+snippet r_heroku_space_inbound_ruleset
+	resource "heroku_space_inbound_ruleset" "${1}" {
+		rule {
+			action = ""
+			source = ""
+		}
+		space = "${3}"
+	}
+snippet r_heroku_space_peering_connection_accepter
+	resource "heroku_space_peering_connection_accepter" "${1}" {
+		space = "${2}"
+		vpc_peering_connection_id = "${3}"
+	}
+snippet r_heroku_space_vpn_connection
+	resource "heroku_space_vpn_connection" "${1}" {
+		name = "${2}"
+		public_ip = "${3}"
+		routable_cidrs = ["${4}"]
+		space = "${5}"
+	}
+snippet r_heroku_team_collaborator
+	resource "heroku_team_collaborator" "${1}" {
+		app = "${2}"
+		email = "${3}"
+		permissions = ["${4}"]
+	}
+snippet r_heroku_team_member
+	resource "heroku_team_member" "${1}" {
+		email = "${2}"
+		role = "${3}"
+		team = "${4}"
+	}
+snippet d_heroku_addon
+	data "heroku_addon" "${1}" {
+		name = "${2}"
+	}
+snippet d_heroku_app
+	data "heroku_app" "${1}" {
+		name = "${2}"
+	}
+snippet d_heroku_space
+	data "heroku_space" "${1}" {
+		name = "${2}"
+	}
+snippet d_heroku_space_peering_info
+	data "heroku_space_peering_info" "${1}" {
+		name = "${2}"
+	}

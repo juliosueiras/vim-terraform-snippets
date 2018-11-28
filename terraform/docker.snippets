@@ -1,0 +1,44 @@
+snippet docker
+	provider "docker" {
+		host = "${1}"
+	}
+snippet r_docker_config
+	resource "docker_config" "${1}" {
+		data = "${2}"
+		name = "${3}"
+	}
+snippet r_docker_container
+	resource "docker_container" "${1}" {
+		image = "${2}"
+		name = "${3}"
+	}
+snippet r_docker_image
+	resource "docker_image" "${1}" {
+		name = "${2}"
+	}
+snippet r_docker_network
+	resource "docker_network" "${1}" {
+		name = "${2}"
+	}
+snippet r_docker_secret
+	resource "docker_secret" "${1}" {
+		data = "${2}"
+		name = "${3}"
+	}
+snippet r_docker_service
+	resource "docker_service" "${1}" {
+		name = "${2}"
+		task_spec {
+			container_spec {
+				image = ""
+			}
+		}
+	}
+snippet r_docker_volume
+	resource "docker_volume" "${1}" {
+		
+	}
+snippet d_docker_registry_image
+	data "docker_registry_image" "${1}" {
+		
+	}

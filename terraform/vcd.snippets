@@ -1,0 +1,54 @@
+snippet vcd
+	provider "vcd" {
+		org = "${1}"
+		password = "${2}"
+		url = "${3}"
+		user = "${4}"
+	}
+snippet r_vcd_dnat
+	resource "vcd_dnat" "${1}" {
+		edge_gateway = "${2}"
+		external_ip = "${3}"
+		internal_ip = "${4}"
+		port = ${5}
+	}
+snippet r_vcd_edgegateway_vpn
+	resource "vcd_edgegateway_vpn" "${1}" {
+		edge_gateway = "${2}"
+		encryption_protocol = "${3}"
+		local_id = "${4}"
+		local_ip_address = "${5}"
+		mtu = ${6}
+		name = "${7}"
+		peer_id = "${8}"
+		peer_ip_address = "${9}"
+		shared_secret = "${10}"
+	}
+snippet r_vcd_firewall_rules
+	resource "vcd_firewall_rules" "${1}" {
+		default_action = "${2}"
+		edge_gateway = "${3}"
+	}
+snippet r_vcd_network
+	resource "vcd_network" "${1}" {
+		edge_gateway = "${2}"
+		gateway = "${3}"
+		name = "${4}"
+	}
+snippet r_vcd_snat
+	resource "vcd_snat" "${1}" {
+		edge_gateway = "${2}"
+		external_ip = "${3}"
+		internal_ip = "${4}"
+	}
+snippet r_vcd_vapp
+	resource "vcd_vapp" "${1}" {
+		name = "${2}"
+	}
+snippet r_vcd_vapp_vm
+	resource "vcd_vapp_vm" "${1}" {
+		catalog_name = "${2}"
+		name = "${3}"
+		template_name = "${4}"
+		vapp_name = "${5}"
+	}

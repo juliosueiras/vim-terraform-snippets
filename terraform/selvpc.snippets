@@ -1,0 +1,19 @@
+snippet selvpc
+	provider "selvpc" {
+		token = "${1}"
+	}
+snippet r_selvpc_resell_floatingip_v2
+	resource "selvpc_resell_floatingip_v2" "${1}" {
+		project_id = "${2}"
+		region = "${3}"
+	}
+snippet r_selvpc_resell_license_v2
+	resource "selvpc_resell_license_v2" "${1}" {
+		project_id = "${2}"
+		region = "${3}"
+		type = "${4}"
+	}
+snippet r_selvpc_resell_project_v2
+	resource "selvpc_resell_project_v2" "${1}" {
+		name = "${2}"
+	}

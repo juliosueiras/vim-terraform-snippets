@@ -1,0 +1,111 @@
+snippet nsxt
+	provider "nsxt" {
+		
+	}
+snippet r_nsxt_algorithm_type_ns_service
+	resource "nsxt_algorithm_type_ns_service" "${1}" {
+		algorithm = "${2}"
+		destination_port = "${3}"
+	}
+snippet r_nsxt_dhcp_relay_profile
+	resource "nsxt_dhcp_relay_profile" "${1}" {
+		server_addresses = ["${2}"]
+	}
+snippet r_nsxt_dhcp_relay_service
+	resource "nsxt_dhcp_relay_service" "${1}" {
+		dhcp_relay_profile_id = "${2}"
+	}
+snippet r_nsxt_ether_type_ns_service
+	resource "nsxt_ether_type_ns_service" "${1}" {
+		ether_type = ${2}
+	}
+snippet r_nsxt_firewall_section
+	resource "nsxt_firewall_section" "${1}" {
+		section_type = "${2}"
+		stateful = ${3:false}
+	}
+snippet r_nsxt_icmp_type_ns_service
+	resource "nsxt_icmp_type_ns_service" "${1}" {
+		protocol = "${2}"
+	}
+snippet r_nsxt_igmp_type_ns_service
+	resource "nsxt_igmp_type_ns_service" "${1}" {
+		
+	}
+snippet r_nsxt_ip_protocol_ns_service
+	resource "nsxt_ip_protocol_ns_service" "${1}" {
+		protocol = ${2}
+	}
+snippet r_nsxt_ip_set
+	resource "nsxt_ip_set" "${1}" {
+		
+	}
+snippet r_nsxt_l4_port_set_ns_service
+	resource "nsxt_l4_port_set_ns_service" "${1}" {
+		protocol = "${2}"
+	}
+snippet r_nsxt_logical_port
+	resource "nsxt_logical_port" "${1}" {
+		logical_switch_id = "${2}"
+	}
+snippet r_nsxt_logical_router_downlink_port
+	resource "nsxt_logical_router_downlink_port" "${1}" {
+		ip_address = "${2}"
+		linked_logical_switch_port_id = "${3}"
+		logical_router_id = "${4}"
+	}
+snippet r_nsxt_logical_router_link_port_on_tier0
+	resource "nsxt_logical_router_link_port_on_tier0" "${1}" {
+		logical_router_id = "${2}"
+	}
+snippet r_nsxt_logical_router_link_port_on_tier1
+	resource "nsxt_logical_router_link_port_on_tier1" "${1}" {
+		linked_logical_router_port_id = "${2}"
+		logical_router_id = "${3}"
+	}
+snippet r_nsxt_logical_switch
+	resource "nsxt_logical_switch" "${1}" {
+		transport_zone_id = "${2}"
+	}
+snippet r_nsxt_logical_tier1_router
+	resource "nsxt_logical_tier1_router" "${1}" {
+		
+	}
+snippet r_nsxt_nat_rule
+	resource "nsxt_nat_rule" "${1}" {
+		action = "${2}"
+		logical_router_id = "${3}"
+	}
+snippet r_nsxt_ns_group
+	resource "nsxt_ns_group" "${1}" {
+		
+	}
+snippet r_nsxt_static_route
+	resource "nsxt_static_route" "${1}" {
+		logical_router_id = "${2}"
+		network = "${3}"
+	}
+snippet r_nsxt_vm_tags
+	resource "nsxt_vm_tags" "${1}" {
+		instance_id = "${2}"
+	}
+snippet d_nsxt_edge_cluster
+	data "nsxt_edge_cluster" "${1}" {
+		
+	}
+snippet d_nsxt_logical_tier0_router
+	data "nsxt_logical_tier0_router" "${1}" {
+		
+	}
+snippet d_nsxt_ns_service
+	data "nsxt_ns_service" "${1}" {
+		
+	}
+snippet d_nsxt_switching_profile
+	data "nsxt_switching_profile" "${1}" {
+		
+	}
+snippet d_nsxt_transport_zone
+	data "nsxt_transport_zone" "${1}" {
+		
+	}

@@ -1,0 +1,42 @@
+snippet nomad
+	provider "nomad" {
+		address = "${1}"
+	}
+snippet r_nomad_acl_policy
+	resource "nomad_acl_policy" "${1}" {
+		name = "${2}"
+		rules_hcl = "${3}"
+	}
+snippet r_nomad_acl_token
+	resource "nomad_acl_token" "${1}" {
+		type = "${2}"
+	}
+snippet r_nomad_job
+	resource "nomad_job" "${1}" {
+		jobspec = "${2}"
+	}
+snippet r_nomad_namespace
+	resource "nomad_namespace" "${1}" {
+		name = "${2}"
+	}
+snippet r_nomad_quota_specification
+	resource "nomad_quota_specification" "${1}" {
+		limits {
+			region = ""
+			region_limit {
+			
+			}
+		}
+		name = "${3}"
+	}
+snippet r_nomad_sentinel_policy
+	resource "nomad_sentinel_policy" "${1}" {
+		enforcement_level = "${2}"
+		name = "${3}"
+		policy = "${4}"
+		scope = "${5}"
+	}
+snippet d_nomad_regions
+	data "nomad_regions" "${1}" {
+		
+	}

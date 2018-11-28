@@ -1,0 +1,20 @@
+snippet postgresql
+	provider "postgresql" {
+		
+	}
+snippet r_postgresql_database
+	resource "postgresql_database" "${1}" {
+		name = "${2}"
+	}
+snippet r_postgresql_extension
+	resource "postgresql_extension" "${1}" {
+		name = "${2}"
+	}
+snippet r_postgresql_role
+	resource "postgresql_role" "${1}" {
+		name = "${2}"
+	}
+snippet r_postgresql_schema
+	resource "postgresql_schema" "${1}" {
+		name = "${2}"
+	}

@@ -1,0 +1,31 @@
+snippet logicmonitor
+	provider "logicmonitor" {
+		api_id = "${1}"
+		api_key = "${2}"
+		company = "${3}"
+	}
+snippet r_logicmonitor_collector
+	resource "logicmonitor_collector" "${1}" {
+		
+	}
+snippet r_logicmonitor_collector_group
+	resource "logicmonitor_collector_group" "${1}" {
+		
+	}
+snippet r_logicmonitor_device
+	resource "logicmonitor_device" "${1}" {
+		collector = ${2}
+		ip_addr = "${3}"
+	}
+snippet r_logicmonitor_device_group
+	resource "logicmonitor_device_group" "${1}" {
+		name = "${2}"
+	}
+snippet d_logicmonitor_collectors
+	data "logicmonitor_collectors" "${1}" {
+		
+	}
+snippet d_logicmonitor_device_group
+	data "logicmonitor_device_group" "${1}" {
+		
+	}

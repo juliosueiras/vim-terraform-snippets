@@ -1,0 +1,29 @@
+snippet icinga2
+	provider "icinga2" {
+		api_password = "${1}"
+		api_url = "${2}"
+		api_user = "${3}"
+	}
+snippet r_icinga2_checkcommand
+	resource "icinga2_checkcommand" "${1}" {
+		command = "${2}"
+		name = "${3}"
+		templates = ["${4}"]
+	}
+snippet r_icinga2_host
+	resource "icinga2_host" "${1}" {
+		address = "${2}"
+		check_command = "${3}"
+		hostname = "${4}"
+	}
+snippet r_icinga2_hostgroup
+	resource "icinga2_hostgroup" "${1}" {
+		display_name = "${2}"
+		name = "${3}"
+	}
+snippet r_icinga2_service
+	resource "icinga2_service" "${1}" {
+		check_command = "${2}"
+		hostname = "${3}"
+		name = "${4}"
+	}

@@ -1,0 +1,69 @@
+snippet rancher
+	provider "rancher" {
+		
+	}
+snippet r_rancher_certificate
+	resource "rancher_certificate" "${1}" {
+		cert = "${2}"
+		environment_id = "${3}"
+		key = "${4}"
+		name = "${5}"
+	}
+snippet r_rancher_environment
+	resource "rancher_environment" "${1}" {
+		name = "${2}"
+	}
+snippet r_rancher_host
+	resource "rancher_host" "${1}" {
+		environment_id = "${2}"
+		hostname = "${3}"
+		name = "${4}"
+	}
+snippet r_rancher_registration_token
+	resource "rancher_registration_token" "${1}" {
+		environment_id = "${2}"
+		name = "${3}"
+	}
+snippet r_rancher_registry
+	resource "rancher_registry" "${1}" {
+		environment_id = "${2}"
+		name = "${3}"
+		server_address = "${4}"
+	}
+snippet r_rancher_registry_credential
+	resource "rancher_registry_credential" "${1}" {
+		name = "${2}"
+		public_value = "${3}"
+		registry_id = "${4}"
+		secret_value = "${5}"
+	}
+snippet r_rancher_secret
+	resource "rancher_secret" "${1}" {
+		environment_id = "${2}"
+		name = "${3}"
+		value = "${4}"
+	}
+snippet r_rancher_stack
+	resource "rancher_stack" "${1}" {
+		environment_id = "${2}"
+		name = "${3}"
+	}
+snippet r_rancher_volume
+	resource "rancher_volume" "${1}" {
+		driver = "${2}"
+		environment_id = "${3}"
+		name = "${4}"
+	}
+snippet d_rancher_certificate
+	data "rancher_certificate" "${1}" {
+		environment_id = "${2}"
+		name = "${3}"
+	}
+snippet d_rancher_environment
+	data "rancher_environment" "${1}" {
+		name = "${2}"
+	}
+snippet d_rancher_setting
+	data "rancher_setting" "${1}" {
+		name = "${2}"
+	}

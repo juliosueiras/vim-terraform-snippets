@@ -1,0 +1,20 @@
+snippet softlayer
+	provider "softlayer" {
+		api_key = "${1}"
+		username = "${2}"
+	}
+snippet r_softlayer_ssh_key
+	resource "softlayer_ssh_key" "${1}" {
+		name = "${2}"
+		public_key = "${3}"
+	}
+snippet r_softlayer_virtual_guest
+	resource "softlayer_virtual_guest" "${1}" {
+		cpu = ${2}
+		domain = "${3}"
+		hourly_billing = ${4:false}
+		local_disk = ${5:false}
+		name = "${6}"
+		ram = ${7}
+		region = "${8}"
+	}

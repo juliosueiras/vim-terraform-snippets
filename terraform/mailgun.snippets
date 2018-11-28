@@ -1,0 +1,9 @@
+snippet mailgun
+	provider "mailgun" {
+		api_key = "${1}"
+	}
+snippet r_mailgun_domain
+	resource "mailgun_domain" "${1}" {
+		name = "${2}"
+		smtp_password = "${3}"
+	}

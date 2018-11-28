@@ -1,0 +1,14 @@
+snippet archive
+	provider "archive" {
+		
+	}
+snippet r_archive_file
+	resource "archive_file" "${1}" {
+		output_path = "${2}"
+		type = "${3}"
+	}
+snippet d_archive_file
+	data "archive_file" "${1}" {
+		output_path = "${2}"
+		type = "${3}"
+	}

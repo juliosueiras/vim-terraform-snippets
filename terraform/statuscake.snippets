@@ -1,0 +1,11 @@
+snippet statuscake
+	provider "statuscake" {
+		apikey = "${1}"
+		username = "${2}"
+	}
+snippet r_statuscake_test
+	resource "statuscake_test" "${1}" {
+		test_type = "${2}"
+		website_name = "${3}"
+		website_url = "${4}"
+	}

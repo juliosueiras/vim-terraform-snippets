@@ -1,0 +1,82 @@
+snippet chef_basic
+	provisioner "chef" {
+		node_name = "${1}"
+		run_list = ["cookbook::recipe"]
+		user_name = "${2}"
+		user_key = "${3}"
+		server_url = "${4}"
+	}
+snippet chef_complete
+	provisioner "chef" {
+		attributes_json = <<-EOF
+		{
+			"key": "value",
+				"app": {
+					"cluster1": {
+						"nodes": [
+							"webserver1",
+						"webserver2"
+						]
+					}
+				}
+		}
+	EOF
+
+			environment     = "_default"
+			run_list        = ["cookbook::recipe"]
+			node_name       = "webserver1"
+			secret_key      = "${file("../encrypted_data_bag_secret")}"
+			server_url      = "https://chef.company.com/organizations/org1"
+			recreate_client = true
+			user_name       = "bork"
+			user_key        = "${file("../bork.pem")}"
+			version         = "12.4.1"
+			# If you have a self signed cert on your chef server change this to :verify_none
+			ssl_verify_mode = ":verify_peer"
+	}
+
+snippet ssh
+	connection {
+		type     = "ssh"
+		user     = "root"
+		password = "${var.root_password}"
+	}
+snippet winrm
+	connection {
+		type     = "winrm"
+		user     = "Administrator"
+		password = "${var.admin_password}"
+	}
+
+snippet local_exec
+	provisioner "local-exec" {
+		command = "${1}"
+	}
+snippet remote_exec
+	provisioner "remote-exec" {
+		inline = [
+			"${1}"
+		]
+	}
+snippet salt
+	provisioner "sal-masterless" {
+		"local_state_tree" = "${1}"
+	}
+snippet file
+	provisioner "file" {
+		source = "${1}"
+		destination = "${2}"
+	}
+
+snippet habitat
+	provisioner "habitat" {
+		peer = "${1}"
+		use_sudo = true
+		service_type = "systemd"
+
+		service {
+			name = "core/redis"
+				topology = "leader"
+				user_toml = "${file("conf/redis.toml")}"
+		}
+	}

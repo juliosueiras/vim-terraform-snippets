@@ -1,0 +1,8 @@
+snippet external
+	provider "external" {
+		
+	}
+snippet d_external
+	data "external" "${1}" {
+		program = ["${2}"]
+	}

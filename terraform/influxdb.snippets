@@ -1,0 +1,19 @@
+snippet influxdb
+	provider "influxdb" {
+		
+	}
+snippet r_influxdb_continuous_query
+	resource "influxdb_continuous_query" "${1}" {
+		database = "${2}"
+		name = "${3}"
+		query = "${4}"
+	}
+snippet r_influxdb_database
+	resource "influxdb_database" "${1}" {
+		name = "${2}"
+	}
+snippet r_influxdb_user
+	resource "influxdb_user" "${1}" {
+		name = "${2}"
+		password = "${3}"
+	}

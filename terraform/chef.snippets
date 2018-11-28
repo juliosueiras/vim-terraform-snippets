@@ -1,0 +1,26 @@
+snippet chef
+	provider "chef" {
+		client_name = "${1}"
+		server_url = "${2}"
+	}
+snippet r_chef_data_bag
+	resource "chef_data_bag" "${1}" {
+		name = "${2}"
+	}
+snippet r_chef_data_bag_item
+	resource "chef_data_bag_item" "${1}" {
+		content_json = "${2}"
+		data_bag_name = "${3}"
+	}
+snippet r_chef_environment
+	resource "chef_environment" "${1}" {
+		name = "${2}"
+	}
+snippet r_chef_node
+	resource "chef_node" "${1}" {
+		name = "${2}"
+	}
+snippet r_chef_role
+	resource "chef_role" "${1}" {
+		name = "${2}"
+	}

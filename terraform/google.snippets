@@ -1,0 +1,930 @@
+snippet google
+	provider "google" {
+		
+	}
+snippet r_google_app_engine_application
+	resource "google_app_engine_application" "${1}" {
+		location_id = "${2}"
+	}
+snippet r_google_bigquery_dataset
+	resource "google_bigquery_dataset" "${1}" {
+		dataset_id = "${2}"
+	}
+snippet r_google_bigquery_table
+	resource "google_bigquery_table" "${1}" {
+		dataset_id = "${2}"
+		table_id = "${3}"
+	}
+snippet r_google_bigtable_instance
+	resource "google_bigtable_instance" "${1}" {
+		name = "${2}"
+	}
+snippet r_google_bigtable_table
+	resource "google_bigtable_table" "${1}" {
+		instance_name = "${2}"
+		name = "${3}"
+	}
+snippet r_google_binary_authorization_attestor
+	resource "google_binary_authorization_attestor" "${1}" {
+		attestation_authority_note {
+			note_reference = ""
+		}
+		name = "${3}"
+	}
+snippet r_google_binary_authorization_policy
+	resource "google_binary_authorization_policy" "${1}" {
+		default_admission_rule {
+			enforcement_mode = ""
+			evaluation_mode = ""
+		}
+	}
+snippet r_google_cloudbuild_trigger
+	resource "google_cloudbuild_trigger" "${1}" {
+		
+	}
+snippet r_google_cloudfunctions_function
+	resource "google_cloudfunctions_function" "${1}" {
+		name = "${2}"
+		source_archive_bucket = "${3}"
+		source_archive_object = "${4}"
+	}
+snippet r_google_cloudiot_registry
+	resource "google_cloudiot_registry" "${1}" {
+		name = "${2}"
+	}
+snippet r_google_composer_environment
+	resource "google_composer_environment" "${1}" {
+		name = "${2}"
+	}
+snippet r_google_compute_address
+	resource "google_compute_address" "${1}" {
+		name = "${2}"
+	}
+snippet r_google_compute_attached_disk
+	resource "google_compute_attached_disk" "${1}" {
+		disk = "${2}"
+		instance = "${3}"
+	}
+snippet r_google_compute_autoscaler
+	resource "google_compute_autoscaler" "${1}" {
+		autoscaling_policy {
+			max_replicas = 1
+			min_replicas = 1
+		}
+		name = "${3}"
+		target = "${4}"
+	}
+snippet r_google_compute_backend_bucket
+	resource "google_compute_backend_bucket" "${1}" {
+		bucket_name = "${2}"
+		name = "${3}"
+	}
+snippet r_google_compute_backend_service
+	resource "google_compute_backend_service" "${1}" {
+		health_checks = ["${2}"]
+		name = "${3}"
+	}
+snippet r_google_compute_disk
+	resource "google_compute_disk" "${1}" {
+		name = "${2}"
+	}
+snippet r_google_compute_firewall
+	resource "google_compute_firewall" "${1}" {
+		name = "${2}"
+		network = "${3}"
+	}
+snippet r_google_compute_forwarding_rule
+	resource "google_compute_forwarding_rule" "${1}" {
+		name = "${2}"
+	}
+snippet r_google_compute_global_address
+	resource "google_compute_global_address" "${1}" {
+		name = "${2}"
+	}
+snippet r_google_compute_global_forwarding_rule
+	resource "google_compute_global_forwarding_rule" "${1}" {
+		name = "${2}"
+		target = "${3}"
+	}
+snippet r_google_compute_health_check
+	resource "google_compute_health_check" "${1}" {
+		name = "${2}"
+	}
+snippet r_google_compute_http_health_check
+	resource "google_compute_http_health_check" "${1}" {
+		name = "${2}"
+	}
+snippet r_google_compute_https_health_check
+	resource "google_compute_https_health_check" "${1}" {
+		name = "${2}"
+	}
+snippet r_google_compute_image
+	resource "google_compute_image" "${1}" {
+		name = "${2}"
+	}
+snippet r_google_compute_instance
+	resource "google_compute_instance" "${1}" {
+		boot_disk {
+		
+		}
+		machine_type = "${3}"
+		name = "${4}"
+		network_interface {
+		
+		}
+	}
+snippet r_google_compute_instance_from_template
+	resource "google_compute_instance_from_template" "${1}" {
+		name = "${2}"
+		source_instance_template = "${3}"
+	}
+snippet r_google_compute_instance_group
+	resource "google_compute_instance_group" "${1}" {
+		name = "${2}"
+	}
+snippet r_google_compute_instance_group_manager
+	resource "google_compute_instance_group_manager" "${1}" {
+		base_instance_name = "${2}"
+		name = "${3}"
+	}
+snippet r_google_compute_instance_template
+	resource "google_compute_instance_template" "${1}" {
+		disk {
+		
+		}
+		machine_type = "${3}"
+	}
+snippet r_google_compute_interconnect_attachment
+	resource "google_compute_interconnect_attachment" "${1}" {
+		interconnect = "${2}"
+		name = "${3}"
+		router = "${4}"
+	}
+snippet r_google_compute_network
+	resource "google_compute_network" "${1}" {
+		name = "${2}"
+	}
+snippet r_google_compute_network_peering
+	resource "google_compute_network_peering" "${1}" {
+		name = "${2}"
+		network = "${3}"
+		peer_network = "${4}"
+	}
+snippet r_google_compute_project_metadata
+	resource "google_compute_project_metadata" "${1}" {
+		metadata = ["${2}"]
+	}
+snippet r_google_compute_project_metadata_item
+	resource "google_compute_project_metadata_item" "${1}" {
+		key = "${2}"
+		value = "${3}"
+	}
+snippet r_google_compute_region_autoscaler
+	resource "google_compute_region_autoscaler" "${1}" {
+		autoscaling_policy {
+			max_replicas = 1
+			min_replicas = 1
+		}
+		name = "${3}"
+		target = "${4}"
+	}
+snippet r_google_compute_region_backend_service
+	resource "google_compute_region_backend_service" "${1}" {
+		health_checks = ["${2}"]
+		name = "${3}"
+	}
+snippet r_google_compute_region_disk
+	resource "google_compute_region_disk" "${1}" {
+		name = "${2}"
+		replica_zones = ["${3}"]
+	}
+snippet r_google_compute_region_instance_group_manager
+	resource "google_compute_region_instance_group_manager" "${1}" {
+		base_instance_name = "${2}"
+		name = "${3}"
+		region = "${4}"
+	}
+snippet r_google_compute_route
+	resource "google_compute_route" "${1}" {
+		dest_range = "${2}"
+		name = "${3}"
+		network = "${4}"
+	}
+snippet r_google_compute_router
+	resource "google_compute_router" "${1}" {
+		name = "${2}"
+		network = "${3}"
+	}
+snippet r_google_compute_router_interface
+	resource "google_compute_router_interface" "${1}" {
+		name = "${2}"
+		router = "${3}"
+		vpn_tunnel = "${4}"
+	}
+snippet r_google_compute_router_peer
+	resource "google_compute_router_peer" "${1}" {
+		interface = "${2}"
+		name = "${3}"
+		peer_asn = ${4}
+		router = "${5}"
+	}
+snippet r_google_compute_security_policy
+	resource "google_compute_security_policy" "${1}" {
+		name = "${2}"
+	}
+snippet r_google_compute_shared_vpc_host_project
+	resource "google_compute_shared_vpc_host_project" "${1}" {
+		project = "${2}"
+	}
+snippet r_google_compute_shared_vpc_service_project
+	resource "google_compute_shared_vpc_service_project" "${1}" {
+		host_project = "${2}"
+		service_project = "${3}"
+	}
+snippet r_google_compute_snapshot
+	resource "google_compute_snapshot" "${1}" {
+		name = "${2}"
+		source_disk = "${3}"
+	}
+snippet r_google_compute_ssl_certificate
+	resource "google_compute_ssl_certificate" "${1}" {
+		certificate = "${2}"
+		private_key = "${3}"
+	}
+snippet r_google_compute_ssl_policy
+	resource "google_compute_ssl_policy" "${1}" {
+		name = "${2}"
+	}
+snippet r_google_compute_subnetwork
+	resource "google_compute_subnetwork" "${1}" {
+		ip_cidr_range = "${2}"
+		name = "${3}"
+		network = "${4}"
+	}
+snippet r_google_compute_subnetwork_iam_binding
+	resource "google_compute_subnetwork_iam_binding" "${1}" {
+		members = ["${2}"]
+		role = "${3}"
+		subnetwork = "${4}"
+	}
+snippet r_google_compute_subnetwork_iam_member
+	resource "google_compute_subnetwork_iam_member" "${1}" {
+		member = "${2}"
+		role = "${3}"
+		subnetwork = "${4}"
+	}
+snippet r_google_compute_subnetwork_iam_policy
+	resource "google_compute_subnetwork_iam_policy" "${1}" {
+		policy_data = "${2}"
+		subnetwork = "${3}"
+	}
+snippet r_google_compute_target_http_proxy
+	resource "google_compute_target_http_proxy" "${1}" {
+		name = "${2}"
+		url_map = "${3}"
+	}
+snippet r_google_compute_target_https_proxy
+	resource "google_compute_target_https_proxy" "${1}" {
+		name = "${2}"
+		ssl_certificates = ["${3}"]
+		url_map = "${4}"
+	}
+snippet r_google_compute_target_pool
+	resource "google_compute_target_pool" "${1}" {
+		name = "${2}"
+	}
+snippet r_google_compute_target_ssl_proxy
+	resource "google_compute_target_ssl_proxy" "${1}" {
+		backend_service = "${2}"
+		name = "${3}"
+		ssl_certificates = ["${4}"]
+	}
+snippet r_google_compute_target_tcp_proxy
+	resource "google_compute_target_tcp_proxy" "${1}" {
+		backend_service = "${2}"
+		name = "${3}"
+	}
+snippet r_google_compute_url_map
+	resource "google_compute_url_map" "${1}" {
+		default_service = "${2}"
+		name = "${3}"
+	}
+snippet r_google_compute_vpn_gateway
+	resource "google_compute_vpn_gateway" "${1}" {
+		name = "${2}"
+		network = "${3}"
+	}
+snippet r_google_compute_vpn_tunnel
+	resource "google_compute_vpn_tunnel" "${1}" {
+		name = "${2}"
+		peer_ip = "${3}"
+		shared_secret = "${4}"
+		target_vpn_gateway = "${5}"
+	}
+snippet r_google_container_analysis_note
+	resource "google_container_analysis_note" "${1}" {
+		attestation_authority {
+			hint {
+				human_readable_name = ""
+			}
+		}
+		name = "${3}"
+	}
+snippet r_google_container_cluster
+	resource "google_container_cluster" "${1}" {
+		name = "${2}"
+	}
+snippet r_google_container_node_pool
+	resource "google_container_node_pool" "${1}" {
+		cluster = "${2}"
+	}
+snippet r_google_dataflow_job
+	resource "google_dataflow_job" "${1}" {
+		name = "${2}"
+		temp_gcs_location = "${3}"
+		template_gcs_path = "${4}"
+	}
+snippet r_google_dataproc_cluster
+	resource "google_dataproc_cluster" "${1}" {
+		name = "${2}"
+	}
+snippet r_google_dataproc_job
+	resource "google_dataproc_job" "${1}" {
+		placement {
+			cluster_name = ""
+		}
+	}
+snippet r_google_dns_managed_zone
+	resource "google_dns_managed_zone" "${1}" {
+		dns_name = "${2}"
+		name = "${3}"
+	}
+snippet r_google_dns_record_set
+	resource "google_dns_record_set" "${1}" {
+		managed_zone = "${2}"
+		name = "${3}"
+		rrdatas = ["${4}"]
+		ttl = ${5}
+		type = "${6}"
+	}
+snippet r_google_endpoints_service
+	resource "google_endpoints_service" "${1}" {
+		service_name = "${2}"
+	}
+snippet r_google_filestore_instance
+	resource "google_filestore_instance" "${1}" {
+		file_shares {
+			capacity_gb = 1
+			name = ""
+		}
+		name = "${3}"
+		networks {
+			modes = [""]
+			network = ""
+		}
+		tier = "${5}"
+		zone = "${6}"
+	}
+snippet r_google_folder
+	resource "google_folder" "${1}" {
+		display_name = "${2}"
+		parent = "${3}"
+	}
+snippet r_google_folder_iam_binding
+	resource "google_folder_iam_binding" "${1}" {
+		folder = "${2}"
+		members = ["${3}"]
+		role = "${4}"
+	}
+snippet r_google_folder_iam_member
+	resource "google_folder_iam_member" "${1}" {
+		folder = "${2}"
+		member = "${3}"
+		role = "${4}"
+	}
+snippet r_google_folder_iam_policy
+	resource "google_folder_iam_policy" "${1}" {
+		folder = "${2}"
+		policy_data = "${3}"
+	}
+snippet r_google_folder_organization_policy
+	resource "google_folder_organization_policy" "${1}" {
+		constraint = "${2}"
+		folder = "${3}"
+	}
+snippet r_google_kms_crypto_key
+	resource "google_kms_crypto_key" "${1}" {
+		key_ring = "${2}"
+		name = "${3}"
+	}
+snippet r_google_kms_crypto_key_iam_binding
+	resource "google_kms_crypto_key_iam_binding" "${1}" {
+		crypto_key_id = "${2}"
+		members = ["${3}"]
+		role = "${4}"
+	}
+snippet r_google_kms_crypto_key_iam_member
+	resource "google_kms_crypto_key_iam_member" "${1}" {
+		crypto_key_id = "${2}"
+		member = "${3}"
+		role = "${4}"
+	}
+snippet r_google_kms_key_ring
+	resource "google_kms_key_ring" "${1}" {
+		location = "${2}"
+		name = "${3}"
+	}
+snippet r_google_kms_key_ring_iam_binding
+	resource "google_kms_key_ring_iam_binding" "${1}" {
+		key_ring_id = "${2}"
+		members = ["${3}"]
+		role = "${4}"
+	}
+snippet r_google_kms_key_ring_iam_member
+	resource "google_kms_key_ring_iam_member" "${1}" {
+		key_ring_id = "${2}"
+		member = "${3}"
+		role = "${4}"
+	}
+snippet r_google_kms_key_ring_iam_policy
+	resource "google_kms_key_ring_iam_policy" "${1}" {
+		key_ring_id = "${2}"
+		policy_data = "${3}"
+	}
+snippet r_google_logging_billing_account_exclusion
+	resource "google_logging_billing_account_exclusion" "${1}" {
+		billing_account = "${2}"
+		filter = "${3}"
+		name = "${4}"
+	}
+snippet r_google_logging_billing_account_sink
+	resource "google_logging_billing_account_sink" "${1}" {
+		billing_account = "${2}"
+		destination = "${3}"
+		name = "${4}"
+	}
+snippet r_google_logging_folder_exclusion
+	resource "google_logging_folder_exclusion" "${1}" {
+		filter = "${2}"
+		folder = "${3}"
+		name = "${4}"
+	}
+snippet r_google_logging_folder_sink
+	resource "google_logging_folder_sink" "${1}" {
+		destination = "${2}"
+		folder = "${3}"
+		name = "${4}"
+	}
+snippet r_google_logging_organization_exclusion
+	resource "google_logging_organization_exclusion" "${1}" {
+		filter = "${2}"
+		name = "${3}"
+		org_id = "${4}"
+	}
+snippet r_google_logging_organization_sink
+	resource "google_logging_organization_sink" "${1}" {
+		destination = "${2}"
+		name = "${3}"
+		org_id = "${4}"
+	}
+snippet r_google_logging_project_exclusion
+	resource "google_logging_project_exclusion" "${1}" {
+		filter = "${2}"
+		name = "${3}"
+	}
+snippet r_google_logging_project_sink
+	resource "google_logging_project_sink" "${1}" {
+		destination = "${2}"
+		name = "${3}"
+	}
+snippet r_google_monitoring_alert_policy
+	resource "google_monitoring_alert_policy" "${1}" {
+		combiner = "${2}"
+		conditions {
+			display_name = ""
+		}
+		display_name = "${4}"
+		enabled = ${5:false}
+	}
+snippet r_google_organization_iam_binding
+	resource "google_organization_iam_binding" "${1}" {
+		members = ["${2}"]
+		org_id = "${3}"
+		role = "${4}"
+	}
+snippet r_google_organization_iam_custom_role
+	resource "google_organization_iam_custom_role" "${1}" {
+		org_id = "${2}"
+		permissions = ["${3}"]
+		role_id = "${4}"
+		title = "${5}"
+	}
+snippet r_google_organization_iam_member
+	resource "google_organization_iam_member" "${1}" {
+		member = "${2}"
+		org_id = "${3}"
+		role = "${4}"
+	}
+snippet r_google_organization_iam_policy
+	resource "google_organization_iam_policy" "${1}" {
+		org_id = "${2}"
+		policy_data = "${3}"
+	}
+snippet r_google_organization_policy
+	resource "google_organization_policy" "${1}" {
+		constraint = "${2}"
+		org_id = "${3}"
+	}
+snippet r_google_project
+	resource "google_project" "${1}" {
+		name = "${2}"
+		project_id = "${3}"
+	}
+snippet r_google_project_iam_binding
+	resource "google_project_iam_binding" "${1}" {
+		members = ["${2}"]
+		role = "${3}"
+	}
+snippet r_google_project_iam_custom_role
+	resource "google_project_iam_custom_role" "${1}" {
+		permissions = ["${2}"]
+		role_id = "${3}"
+		title = "${4}"
+	}
+snippet r_google_project_iam_member
+	resource "google_project_iam_member" "${1}" {
+		member = "${2}"
+		role = "${3}"
+	}
+snippet r_google_project_iam_policy
+	resource "google_project_iam_policy" "${1}" {
+		policy_data = "${2}"
+	}
+snippet r_google_project_organization_policy
+	resource "google_project_organization_policy" "${1}" {
+		constraint = "${2}"
+		project = "${3}"
+	}
+snippet r_google_project_service
+	resource "google_project_service" "${1}" {
+		service = "${2}"
+	}
+snippet r_google_project_services
+	resource "google_project_services" "${1}" {
+		services = ["${2}"]
+	}
+snippet r_google_project_usage_export_bucket
+	resource "google_project_usage_export_bucket" "${1}" {
+		bucket_name = "${2}"
+	}
+snippet r_google_pubsub_subscription
+	resource "google_pubsub_subscription" "${1}" {
+		name = "${2}"
+		topic = "${3}"
+	}
+snippet r_google_pubsub_subscription_iam_binding
+	resource "google_pubsub_subscription_iam_binding" "${1}" {
+		members = ["${2}"]
+		role = "${3}"
+		subscription = "${4}"
+	}
+snippet r_google_pubsub_subscription_iam_member
+	resource "google_pubsub_subscription_iam_member" "${1}" {
+		member = "${2}"
+		role = "${3}"
+		subscription = "${4}"
+	}
+snippet r_google_pubsub_subscription_iam_policy
+	resource "google_pubsub_subscription_iam_policy" "${1}" {
+		policy_data = "${2}"
+		subscription = "${3}"
+	}
+snippet r_google_pubsub_topic
+	resource "google_pubsub_topic" "${1}" {
+		name = "${2}"
+	}
+snippet r_google_pubsub_topic_iam_binding
+	resource "google_pubsub_topic_iam_binding" "${1}" {
+		members = ["${2}"]
+		role = "${3}"
+		topic = "${4}"
+	}
+snippet r_google_pubsub_topic_iam_member
+	resource "google_pubsub_topic_iam_member" "${1}" {
+		member = "${2}"
+		role = "${3}"
+		topic = "${4}"
+	}
+snippet r_google_pubsub_topic_iam_policy
+	resource "google_pubsub_topic_iam_policy" "${1}" {
+		policy_data = "${2}"
+		topic = "${3}"
+	}
+snippet r_google_redis_instance
+	resource "google_redis_instance" "${1}" {
+		memory_size_gb = ${2}
+		name = "${3}"
+	}
+snippet r_google_resource_manager_lien
+	resource "google_resource_manager_lien" "${1}" {
+		origin = "${2}"
+		parent = "${3}"
+		reason = "${4}"
+		restrictions = ["${5}"]
+	}
+snippet r_google_runtimeconfig_config
+	resource "google_runtimeconfig_config" "${1}" {
+		name = "${2}"
+	}
+snippet r_google_runtimeconfig_variable
+	resource "google_runtimeconfig_variable" "${1}" {
+		name = "${2}"
+		parent = "${3}"
+	}
+snippet r_google_service_account
+	resource "google_service_account" "${1}" {
+		account_id = "${2}"
+	}
+snippet r_google_service_account_iam_binding
+	resource "google_service_account_iam_binding" "${1}" {
+		members = ["${2}"]
+		role = "${3}"
+		service_account_id = "${4}"
+	}
+snippet r_google_service_account_iam_member
+	resource "google_service_account_iam_member" "${1}" {
+		member = "${2}"
+		role = "${3}"
+		service_account_id = "${4}"
+	}
+snippet r_google_service_account_iam_policy
+	resource "google_service_account_iam_policy" "${1}" {
+		policy_data = "${2}"
+		service_account_id = "${3}"
+	}
+snippet r_google_service_account_key
+	resource "google_service_account_key" "${1}" {
+		service_account_id = "${2}"
+	}
+snippet r_google_sourcerepo_repository
+	resource "google_sourcerepo_repository" "${1}" {
+		name = "${2}"
+	}
+snippet r_google_spanner_database
+	resource "google_spanner_database" "${1}" {
+		instance = "${2}"
+		name = "${3}"
+	}
+snippet r_google_spanner_database_iam_binding
+	resource "google_spanner_database_iam_binding" "${1}" {
+		database = "${2}"
+		instance = "${3}"
+		members = ["${4}"]
+		role = "${5}"
+	}
+snippet r_google_spanner_database_iam_member
+	resource "google_spanner_database_iam_member" "${1}" {
+		database = "${2}"
+		instance = "${3}"
+		member = "${4}"
+		role = "${5}"
+	}
+snippet r_google_spanner_database_iam_policy
+	resource "google_spanner_database_iam_policy" "${1}" {
+		database = "${2}"
+		instance = "${3}"
+		policy_data = "${4}"
+	}
+snippet r_google_spanner_instance
+	resource "google_spanner_instance" "${1}" {
+		config = "${2}"
+		display_name = "${3}"
+	}
+snippet r_google_spanner_instance_iam_binding
+	resource "google_spanner_instance_iam_binding" "${1}" {
+		instance = "${2}"
+		members = ["${3}"]
+		role = "${4}"
+	}
+snippet r_google_spanner_instance_iam_member
+	resource "google_spanner_instance_iam_member" "${1}" {
+		instance = "${2}"
+		member = "${3}"
+		role = "${4}"
+	}
+snippet r_google_spanner_instance_iam_policy
+	resource "google_spanner_instance_iam_policy" "${1}" {
+		instance = "${2}"
+		policy_data = "${3}"
+	}
+snippet r_google_sql_database
+	resource "google_sql_database" "${1}" {
+		instance = "${2}"
+		name = "${3}"
+	}
+snippet r_google_sql_database_instance
+	resource "google_sql_database_instance" "${1}" {
+		settings {
+			tier = ""
+		}
+	}
+snippet r_google_sql_user
+	resource "google_sql_user" "${1}" {
+		instance = "${2}"
+		name = "${3}"
+	}
+snippet r_google_storage_bucket
+	resource "google_storage_bucket" "${1}" {
+		name = "${2}"
+	}
+snippet r_google_storage_bucket_acl
+	resource "google_storage_bucket_acl" "${1}" {
+		bucket = "${2}"
+	}
+snippet r_google_storage_bucket_iam_binding
+	resource "google_storage_bucket_iam_binding" "${1}" {
+		bucket = "${2}"
+		members = ["${3}"]
+		role = "${4}"
+	}
+snippet r_google_storage_bucket_iam_member
+	resource "google_storage_bucket_iam_member" "${1}" {
+		bucket = "${2}"
+		member = "${3}"
+		role = "${4}"
+	}
+snippet r_google_storage_bucket_iam_policy
+	resource "google_storage_bucket_iam_policy" "${1}" {
+		bucket = "${2}"
+		policy_data = "${3}"
+	}
+snippet r_google_storage_bucket_object
+	resource "google_storage_bucket_object" "${1}" {
+		bucket = "${2}"
+		name = "${3}"
+	}
+snippet r_google_storage_default_object_acl
+	resource "google_storage_default_object_acl" "${1}" {
+		bucket = "${2}"
+	}
+snippet r_google_storage_notification
+	resource "google_storage_notification" "${1}" {
+		bucket = "${2}"
+		payload_format = "${3}"
+		topic = "${4}"
+	}
+snippet r_google_storage_object_acl
+	resource "google_storage_object_acl" "${1}" {
+		bucket = "${2}"
+		object = "${3}"
+	}
+snippet d_google_active_folder
+	data "google_active_folder" "${1}" {
+		display_name = "${2}"
+		parent = "${3}"
+	}
+snippet d_google_billing_account
+	data "google_billing_account" "${1}" {
+		
+	}
+snippet d_google_client_config
+	data "google_client_config" "${1}" {
+		
+	}
+snippet d_google_cloudfunctions_function
+	data "google_cloudfunctions_function" "${1}" {
+		name = "${2}"
+	}
+snippet d_google_compute_address
+	data "google_compute_address" "${1}" {
+		name = "${2}"
+	}
+snippet d_google_compute_backend_service
+	data "google_compute_backend_service" "${1}" {
+		name = "${2}"
+	}
+snippet d_google_compute_default_service_account
+	data "google_compute_default_service_account" "${1}" {
+		
+	}
+snippet d_google_compute_forwarding_rule
+	data "google_compute_forwarding_rule" "${1}" {
+		name = "${2}"
+	}
+snippet d_google_compute_global_address
+	data "google_compute_global_address" "${1}" {
+		name = "${2}"
+	}
+snippet d_google_compute_image
+	data "google_compute_image" "${1}" {
+		
+	}
+snippet d_google_compute_instance
+	data "google_compute_instance" "${1}" {
+		name = "${2}"
+	}
+snippet d_google_compute_instance_group
+	data "google_compute_instance_group" "${1}" {
+		
+	}
+snippet d_google_compute_lb_ip_ranges
+	data "google_compute_lb_ip_ranges" "${1}" {
+		
+	}
+snippet d_google_compute_network
+	data "google_compute_network" "${1}" {
+		name = "${2}"
+	}
+snippet d_google_compute_region_instance_group
+	data "google_compute_region_instance_group" "${1}" {
+		
+	}
+snippet d_google_compute_regions
+	data "google_compute_regions" "${1}" {
+		
+	}
+snippet d_google_compute_ssl_policy
+	data "google_compute_ssl_policy" "${1}" {
+		name = "${2}"
+	}
+snippet d_google_compute_subnetwork
+	data "google_compute_subnetwork" "${1}" {
+		name = "${2}"
+	}
+snippet d_google_compute_vpn_gateway
+	data "google_compute_vpn_gateway" "${1}" {
+		name = "${2}"
+	}
+snippet d_google_compute_zones
+	data "google_compute_zones" "${1}" {
+		
+	}
+snippet d_google_container_cluster
+	data "google_container_cluster" "${1}" {
+		name = "${2}"
+	}
+snippet d_google_container_engine_versions
+	data "google_container_engine_versions" "${1}" {
+		
+	}
+snippet d_google_container_registry_image
+	data "google_container_registry_image" "${1}" {
+		name = "${2}"
+	}
+snippet d_google_container_registry_repository
+	data "google_container_registry_repository" "${1}" {
+		
+	}
+snippet d_google_dns_managed_zone
+	data "google_dns_managed_zone" "${1}" {
+		name = "${2}"
+	}
+snippet d_google_folder
+	data "google_folder" "${1}" {
+		folder = "${2}"
+	}
+snippet d_google_iam_policy
+	data "google_iam_policy" "${1}" {
+		binding {
+				members = [""]
+				role = ""
+			}
+	}
+snippet d_google_kms_secret
+	data "google_kms_secret" "${1}" {
+		ciphertext = "${2}"
+		crypto_key = "${3}"
+	}
+snippet d_google_netblock_ip_ranges
+	data "google_netblock_ip_ranges" "${1}" {
+		
+	}
+snippet d_google_organization
+	data "google_organization" "${1}" {
+		
+	}
+snippet d_google_project
+	data "google_project" "${1}" {
+		
+	}
+snippet d_google_project_services
+	data "google_project_services" "${1}" {
+		
+	}
+snippet d_google_service_account
+	data "google_service_account" "${1}" {
+		account_id = "${2}"
+	}
+snippet d_google_service_account_key
+	data "google_service_account_key" "${1}" {
+		
+	}
+snippet d_google_storage_object_signed_url
+	data "google_storage_object_signed_url" "${1}" {
+		bucket = "${2}"
+		path = "${3}"
+	}
+snippet d_google_storage_project_service_account
+	data "google_storage_project_service_account" "${1}" {
+		
+	}

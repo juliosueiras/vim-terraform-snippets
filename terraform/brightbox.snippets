@@ -1,0 +1,57 @@
+snippet brightbox
+	provider "brightbox" {
+		
+	}
+snippet r_brightbox_cloudip
+	resource "brightbox_cloudip" "${1}" {
+		
+	}
+snippet r_brightbox_container
+	resource "brightbox_container" "${1}" {
+		name = "${2}"
+	}
+snippet r_brightbox_database_server
+	resource "brightbox_database_server" "${1}" {
+		allow_access = ["${2}"]
+	}
+snippet r_brightbox_firewall_policy
+	resource "brightbox_firewall_policy" "${1}" {
+		
+	}
+snippet r_brightbox_firewall_rule
+	resource "brightbox_firewall_rule" "${1}" {
+		firewall_policy = "${2}"
+	}
+snippet r_brightbox_load_balancer
+	resource "brightbox_load_balancer" "${1}" {
+		healthcheck {
+			port = 1
+			type = ""
+		}
+		listener {
+			in = 1
+			out = 1
+			protocol = ""
+		}
+	}
+snippet r_brightbox_server
+	resource "brightbox_server" "${1}" {
+		image = "${2}"
+		server_groups = ["${3}"]
+	}
+snippet r_brightbox_server_group
+	resource "brightbox_server_group" "${1}" {
+		
+	}
+snippet d_brightbox_database_type
+	data "brightbox_database_type" "${1}" {
+		
+	}
+snippet d_brightbox_image
+	data "brightbox_image" "${1}" {
+		
+	}
+snippet d_brightbox_server_group
+	data "brightbox_server_group" "${1}" {
+		
+	}

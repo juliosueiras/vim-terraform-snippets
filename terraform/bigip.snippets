@@ -1,0 +1,163 @@
+snippet bigip
+	provider "bigip" {
+		address = "${1}"
+		password = "${2}"
+		username = "${3}"
+	}
+snippet r_bigip_cm_device
+	resource "bigip_cm_device" "${1}" {
+		configsync_ip = "${2}"
+		name = "${3}"
+	}
+snippet r_bigip_cm_devicegroup
+	resource "bigip_cm_devicegroup" "${1}" {
+		
+	}
+snippet r_bigip_ltm_datagroup
+	resource "bigip_ltm_datagroup" "${1}" {
+		name = "${2}"
+		type = "${3}"
+	}
+snippet r_bigip_ltm_irule
+	resource "bigip_ltm_irule" "${1}" {
+		irule = "${2}"
+		name = "${3}"
+	}
+snippet r_bigip_ltm_monitor
+	resource "bigip_ltm_monitor" "${1}" {
+		name = "${2}"
+		parent = "${3}"
+	}
+snippet r_bigip_ltm_node
+	resource "bigip_ltm_node" "${1}" {
+		address = "${2}"
+		name = "${3}"
+	}
+snippet r_bigip_ltm_persistence_profile_cookie
+	resource "bigip_ltm_persistence_profile_cookie" "${1}" {
+		defaults_from = "${2}"
+		name = "${3}"
+	}
+snippet r_bigip_ltm_persistence_profile_dstaddr
+	resource "bigip_ltm_persistence_profile_dstaddr" "${1}" {
+		defaults_from = "${2}"
+		name = "${3}"
+	}
+snippet r_bigip_ltm_persistence_profile_srcaddr
+	resource "bigip_ltm_persistence_profile_srcaddr" "${1}" {
+		defaults_from = "${2}"
+		name = "${3}"
+	}
+snippet r_bigip_ltm_persistence_profile_ssl
+	resource "bigip_ltm_persistence_profile_ssl" "${1}" {
+		defaults_from = "${2}"
+		name = "${3}"
+	}
+snippet r_bigip_ltm_policy
+	resource "bigip_ltm_policy" "${1}" {
+		controls = ["${2}"]
+		name = "${3}"
+		requires = ["${4}"]
+		rule {
+			name = ""
+		}
+	}
+snippet r_bigip_ltm_pool
+	resource "bigip_ltm_pool" "${1}" {
+		name = "${2}"
+	}
+snippet r_bigip_ltm_pool_attachment
+	resource "bigip_ltm_pool_attachment" "${1}" {
+		node = "${2}"
+		pool = "${3}"
+	}
+snippet r_bigip_ltm_profile_fasthttp
+	resource "bigip_ltm_profile_fasthttp" "${1}" {
+		name = "${2}"
+	}
+snippet r_bigip_ltm_profile_fastl4
+	resource "bigip_ltm_profile_fastl4" "${1}" {
+		name = "${2}"
+	}
+snippet r_bigip_ltm_profile_http2
+	resource "bigip_ltm_profile_http2" "${1}" {
+		name = "${2}"
+	}
+snippet r_bigip_ltm_profile_httpcompress
+	resource "bigip_ltm_profile_httpcompress" "${1}" {
+		name = "${2}"
+	}
+snippet r_bigip_ltm_profile_oneconnect
+	resource "bigip_ltm_profile_oneconnect" "${1}" {
+		name = "${2}"
+	}
+snippet r_bigip_ltm_profile_tcp
+	resource "bigip_ltm_profile_tcp" "${1}" {
+		name = "${2}"
+	}
+snippet r_bigip_ltm_snat
+	resource "bigip_ltm_snat" "${1}" {
+		name = "${2}"
+		origins {
+		
+		}
+	}
+snippet r_bigip_ltm_snatpool
+	resource "bigip_ltm_snatpool" "${1}" {
+		members = ["${2}"]
+		name = "${3}"
+	}
+snippet r_bigip_ltm_virtual_address
+	resource "bigip_ltm_virtual_address" "${1}" {
+		name = "${2}"
+	}
+snippet r_bigip_ltm_virtual_server
+	resource "bigip_ltm_virtual_server" "${1}" {
+		destination = "${2}"
+		name = "${3}"
+		port = ${4}
+	}
+snippet r_bigip_net_route
+	resource "bigip_net_route" "${1}" {
+		name = "${2}"
+		network = "${3}"
+	}
+snippet r_bigip_net_selfip
+	resource "bigip_net_selfip" "${1}" {
+		ip = "${2}"
+		name = "${3}"
+		vlan = "${4}"
+	}
+snippet r_bigip_net_vlan
+	resource "bigip_net_vlan" "${1}" {
+		name = "${2}"
+	}
+snippet r_bigip_sys_bigiplicense
+	resource "bigip_sys_bigiplicense" "${1}" {
+		command = "${2}"
+		registration_key = "${3}"
+	}
+snippet r_bigip_sys_dns
+	resource "bigip_sys_dns" "${1}" {
+		description = "${2}"
+	}
+snippet r_bigip_sys_iapp
+	resource "bigip_sys_iapp" "${1}" {
+		
+	}
+snippet r_bigip_sys_ntp
+	resource "bigip_sys_ntp" "${1}" {
+		description = "${2}"
+	}
+snippet r_bigip_sys_provision
+	resource "bigip_sys_provision" "${1}" {
+		name = "${2}"
+	}
+snippet r_bigip_sys_snmp
+	resource "bigip_sys_snmp" "${1}" {
+		
+	}
+snippet r_bigip_sys_snmp_traps
+	resource "bigip_sys_snmp_traps" "${1}" {
+		
+	}

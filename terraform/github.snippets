@@ -1,0 +1,103 @@
+snippet github
+	provider "github" {
+		organization = "${1}"
+		token = "${2}"
+	}
+snippet r_github_branch_protection
+	resource "github_branch_protection" "${1}" {
+		branch = "${2}"
+		repository = "${3}"
+	}
+snippet r_github_issue_label
+	resource "github_issue_label" "${1}" {
+		color = "${2}"
+		name = "${3}"
+		repository = "${4}"
+	}
+snippet r_github_membership
+	resource "github_membership" "${1}" {
+		username = "${2}"
+	}
+snippet r_github_organization_project
+	resource "github_organization_project" "${1}" {
+		name = "${2}"
+	}
+snippet r_github_organization_webhook
+	resource "github_organization_webhook" "${1}" {
+		events = ["${2}"]
+		name = "${3}"
+	}
+snippet r_github_project_column
+	resource "github_project_column" "${1}" {
+		name = "${2}"
+		project_id = "${3}"
+	}
+snippet r_github_repository
+	resource "github_repository" "${1}" {
+		name = "${2}"
+	}
+snippet r_github_repository_collaborator
+	resource "github_repository_collaborator" "${1}" {
+		repository = "${2}"
+		username = "${3}"
+	}
+snippet r_github_repository_deploy_key
+	resource "github_repository_deploy_key" "${1}" {
+		key = "${2}"
+		repository = "${3}"
+		title = "${4}"
+	}
+snippet r_github_repository_project
+	resource "github_repository_project" "${1}" {
+		name = "${2}"
+		repository = "${3}"
+	}
+snippet r_github_repository_webhook
+	resource "github_repository_webhook" "${1}" {
+		events = ["${2}"]
+		name = "${3}"
+		repository = "${4}"
+	}
+snippet r_github_team
+	resource "github_team" "${1}" {
+		name = "${2}"
+	}
+snippet r_github_team_membership
+	resource "github_team_membership" "${1}" {
+		team_id = "${2}"
+		username = "${3}"
+	}
+snippet r_github_team_repository
+	resource "github_team_repository" "${1}" {
+		repository = "${2}"
+		team_id = "${3}"
+	}
+snippet r_github_user_gpg_key
+	resource "github_user_gpg_key" "${1}" {
+		armored_public_key = "${2}"
+	}
+snippet r_github_user_ssh_key
+	resource "github_user_ssh_key" "${1}" {
+		key = "${2}"
+		title = "${3}"
+	}
+snippet d_github_ip_ranges
+	data "github_ip_ranges" "${1}" {
+		
+	}
+snippet d_github_repositories
+	data "github_repositories" "${1}" {
+		query = "${2}"
+	}
+snippet d_github_repository
+	data "github_repository" "${1}" {
+		
+	}
+snippet d_github_team
+	data "github_team" "${1}" {
+		slug = "${2}"
+	}
+snippet d_github_user
+	data "github_user" "${1}" {
+		username = "${2}"
+	}

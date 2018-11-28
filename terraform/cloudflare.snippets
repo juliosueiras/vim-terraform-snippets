@@ -1,0 +1,127 @@
+snippet cloudflare
+	provider "cloudflare" {
+		email = "${1}"
+		token = "${2}"
+	}
+snippet r_cloudflare_access_application
+	resource "cloudflare_access_application" "${1}" {
+		domain = "${2}"
+		name = "${3}"
+		zone_id = "${4}"
+	}
+snippet r_cloudflare_access_policy
+	resource "cloudflare_access_policy" "${1}" {
+		application_id = "${2}"
+		decision = "${3}"
+		name = "${4}"
+		require {
+		
+		}
+		zone_id = "${6}"
+	}
+snippet r_cloudflare_access_rule
+	resource "cloudflare_access_rule" "${1}" {
+		configuration {
+			target = ""
+			value = ""
+		}
+		mode = "${3}"
+	}
+snippet r_cloudflare_account_member
+	resource "cloudflare_account_member" "${1}" {
+		email_address = "${2}"
+		role_ids = ["${3}"]
+	}
+snippet r_cloudflare_custom_pages
+	resource "cloudflare_custom_pages" "${1}" {
+		type = "${2}"
+		url = "${3}"
+	}
+snippet r_cloudflare_filter
+	resource "cloudflare_filter" "${1}" {
+		expression = "${2}"
+	}
+snippet r_cloudflare_firewall_rule
+	resource "cloudflare_firewall_rule" "${1}" {
+		action = "${2}"
+		filter_id = "${3}"
+	}
+snippet r_cloudflare_load_balancer
+	resource "cloudflare_load_balancer" "${1}" {
+		default_pool_ids = ["${2}"]
+		fallback_pool_id = "${3}"
+		name = "${4}"
+		zone = "${5}"
+	}
+snippet r_cloudflare_load_balancer_monitor
+	resource "cloudflare_load_balancer_monitor" "${1}" {
+		expected_body = "${2}"
+		expected_codes = "${3}"
+	}
+snippet r_cloudflare_load_balancer_pool
+	resource "cloudflare_load_balancer_pool" "${1}" {
+		name = "${2}"
+		origins {
+			address = ""
+			name = ""
+		}
+	}
+snippet r_cloudflare_page_rule
+	resource "cloudflare_page_rule" "${1}" {
+		actions {
+		
+		}
+		target = "${3}"
+		zone = "${4}"
+	}
+snippet r_cloudflare_rate_limit
+	resource "cloudflare_rate_limit" "${1}" {
+		action {
+			mode = ""
+			timeout = 1
+		}
+		period = ${3}
+		threshold = ${4}
+		zone = "${5}"
+	}
+snippet r_cloudflare_record
+	resource "cloudflare_record" "${1}" {
+		domain = "${2}"
+		name = "${3}"
+		type = "${4}"
+	}
+snippet r_cloudflare_waf_rule
+	resource "cloudflare_waf_rule" "${1}" {
+		mode = "${2}"
+		rule_id = "${3}"
+		zone = "${4}"
+	}
+snippet r_cloudflare_worker_route
+	resource "cloudflare_worker_route" "${1}" {
+		pattern = "${2}"
+		zone = "${3}"
+	}
+snippet r_cloudflare_worker_script
+	resource "cloudflare_worker_script" "${1}" {
+		content = "${2}"
+	}
+snippet r_cloudflare_zone
+	resource "cloudflare_zone" "${1}" {
+		zone = "${2}"
+	}
+snippet r_cloudflare_zone_lockdown
+	resource "cloudflare_zone_lockdown" "${1}" {
+		configurations {
+			target = ""
+			value = ""
+		}
+		urls = ["${3}"]
+	}
+snippet r_cloudflare_zone_settings_override
+	resource "cloudflare_zone_settings_override" "${1}" {
+		name = "${2}"
+	}
+snippet d_cloudflare_ip_ranges
+	data "cloudflare_ip_ranges" "${1}" {
+		
+	}

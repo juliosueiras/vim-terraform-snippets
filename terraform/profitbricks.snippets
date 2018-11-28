@@ -1,0 +1,113 @@
+snippet profitbricks
+	provider "profitbricks" {
+		password = "${1}"
+		username = "${2}"
+	}
+snippet r_profitbricks_datacenter
+	resource "profitbricks_datacenter" "${1}" {
+		location = "${2}"
+		name = "${3}"
+	}
+snippet r_profitbricks_firewall
+	resource "profitbricks_firewall" "${1}" {
+		datacenter_id = "${2}"
+		nic_id = "${3}"
+		protocol = "${4}"
+		server_id = "${5}"
+	}
+snippet r_profitbricks_group
+	resource "profitbricks_group" "${1}" {
+		name = "${2}"
+	}
+snippet r_profitbricks_ipblock
+	resource "profitbricks_ipblock" "${1}" {
+		location = "${2}"
+		size = ${3}
+	}
+snippet r_profitbricks_ipfailover
+	resource "profitbricks_ipfailover" "${1}" {
+		datacenter_id = "${2}"
+		ip = "${3}"
+		lan_id = "${4}"
+		nicuuid = "${5}"
+	}
+snippet r_profitbricks_lan
+	resource "profitbricks_lan" "${1}" {
+		datacenter_id = "${2}"
+		public = ${3:false}
+	}
+snippet r_profitbricks_loadbalancer
+	resource "profitbricks_loadbalancer" "${1}" {
+		datacenter_id = "${2}"
+		name = "${3}"
+		nic_ids = ["${4}"]
+	}
+snippet r_profitbricks_nic
+	resource "profitbricks_nic" "${1}" {
+		datacenter_id = "${2}"
+		lan = ${3}
+		server_id = "${4}"
+	}
+snippet r_profitbricks_server
+	resource "profitbricks_server" "${1}" {
+		cores = ${2}
+		datacenter_id = "${3}"
+		name = "${4}"
+		nic {
+			lan = 1
+		}
+		ram = ${6}
+		volume {
+			disk_type = ""
+			size = 1
+		}
+	}
+snippet r_profitbricks_share
+	resource "profitbricks_share" "${1}" {
+		edit_privilege = ${2:false}
+		group_id = "${3}"
+		resource_id = "${4}"
+		share_privilege = ${5:false}
+	}
+snippet r_profitbricks_snapshot
+	resource "profitbricks_snapshot" "${1}" {
+		datacenter_id = "${2}"
+		name = "${3}"
+		volume_id = "${4}"
+	}
+snippet r_profitbricks_user
+	resource "profitbricks_user" "${1}" {
+		administrator = ${2:false}
+		email = "${3}"
+		first_name = "${4}"
+		force_sec_auth = ${5:false}
+		last_name = "${6}"
+		password = "${7}"
+	}
+snippet r_profitbricks_volume
+	resource "profitbricks_volume" "${1}" {
+		datacenter_id = "${2}"
+		disk_type = "${3}"
+		server_id = "${4}"
+		size = ${5}
+	}
+snippet d_profitbricks_datacenter
+	data "profitbricks_datacenter" "${1}" {
+		name = "${2}"
+	}
+snippet d_profitbricks_image
+	data "profitbricks_image" "${1}" {
+		
+	}
+snippet d_profitbricks_location
+	data "profitbricks_location" "${1}" {
+		
+	}
+snippet d_profitbricks_resource
+	data "profitbricks_resource" "${1}" {
+		
+	}
+snippet d_profitbricks_snapshot
+	data "profitbricks_snapshot" "${1}" {
+		name = "${2}"
+	}

@@ -1,0 +1,13 @@
+snippet dme
+	provider "dme" {
+		akey = "${1}"
+		skey = "${2}"
+		usesandbox = ${3:false}
+	}
+snippet r_dme_record
+	resource "dme_record" "${1}" {
+		domainid = "${2}"
+		name = "${3}"
+		type = "${4}"
+		value = "${5}"
+	}

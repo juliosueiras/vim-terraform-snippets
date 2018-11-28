@@ -1,0 +1,27 @@
+snippet grafana
+	provider "grafana" {
+		auth = "${1}"
+		url = "${2}"
+	}
+snippet r_grafana_alert_notification
+	resource "grafana_alert_notification" "${1}" {
+		name = "${2}"
+		type = "${3}"
+	}
+snippet r_grafana_dashboard
+	resource "grafana_dashboard" "${1}" {
+		config_json = "${2}"
+	}
+snippet r_grafana_data_source
+	resource "grafana_data_source" "${1}" {
+		name = "${2}"
+		type = "${3}"
+	}
+snippet r_grafana_folder
+	resource "grafana_folder" "${1}" {
+		title = "${2}"
+	}
+snippet r_grafana_organization
+	resource "grafana_organization" "${1}" {
+		name = "${2}"
+	}

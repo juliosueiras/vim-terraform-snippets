@@ -1,0 +1,15 @@
+snippet helm
+	provider "helm" {
+		home = "${1}"
+		host = "${2}"
+	}
+snippet r_helm_release
+	resource "helm_release" "${1}" {
+		chart = "${2}"
+		name = "${3}"
+	}
+snippet r_helm_repository
+	resource "helm_repository" "${1}" {
+		name = "${2}"
+		url = "${3}"
+	}

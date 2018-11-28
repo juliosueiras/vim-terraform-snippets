@@ -1,0 +1,14 @@
+snippet atlas
+	provider "atlas" {
+		token = "${1}"
+	}
+snippet r_atlas_artifact
+	resource "atlas_artifact" "${1}" {
+		name = "${2}"
+		type = "${3}"
+	}
+snippet d_atlas_artifact
+	data "atlas_artifact" "${1}" {
+		name = "${2}"
+		type = "${3}"
+	}

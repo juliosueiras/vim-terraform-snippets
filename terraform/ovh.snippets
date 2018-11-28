@@ -1,0 +1,122 @@
+snippet ovh
+	provider "ovh" {
+		endpoint = "${1}"
+	}
+snippet r_ovh_cloud_network_private
+	resource "ovh_cloud_network_private" "${1}" {
+		name = "${2}"
+		project_id = "${3}"
+	}
+snippet r_ovh_cloud_network_private_subnet
+	resource "ovh_cloud_network_private_subnet" "${1}" {
+		end = "${2}"
+		network = "${3}"
+		network_id = "${4}"
+		project_id = "${5}"
+		region = "${6}"
+		start = "${7}"
+	}
+snippet r_ovh_cloud_user
+	resource "ovh_cloud_user" "${1}" {
+		project_id = "${2}"
+	}
+snippet r_ovh_domain_zone_record
+	resource "ovh_domain_zone_record" "${1}" {
+		fieldtype = "${2}"
+		target = "${3}"
+		zone = "${4}"
+	}
+snippet r_ovh_domain_zone_redirection
+	resource "ovh_domain_zone_redirection" "${1}" {
+		target = "${2}"
+		type = "${3}"
+		zone = "${4}"
+	}
+snippet r_ovh_iploadbalancing_http_route
+	resource "ovh_iploadbalancing_http_route" "${1}" {
+		action {
+			type = ""
+		}
+		service_name = "${3}"
+	}
+snippet r_ovh_iploadbalancing_http_route_rule
+	resource "ovh_iploadbalancing_http_route_rule" "${1}" {
+		field = "${2}"
+		match = "${3}"
+		route_id = "${4}"
+		service_name = "${5}"
+	}
+snippet r_ovh_iploadbalancing_tcp_farm
+	resource "ovh_iploadbalancing_tcp_farm" "${1}" {
+		service_name = "${2}"
+		zone = "${3}"
+	}
+snippet r_ovh_iploadbalancing_tcp_farm_server
+	resource "ovh_iploadbalancing_tcp_farm_server" "${1}" {
+		address = "${2}"
+		farm_id = ${3}
+		service_name = "${4}"
+		status = "${5}"
+	}
+snippet r_ovh_publiccloud_private_network
+	resource "ovh_publiccloud_private_network" "${1}" {
+		name = "${2}"
+		project_id = "${3}"
+	}
+snippet r_ovh_publiccloud_private_network_subnet
+	resource "ovh_publiccloud_private_network_subnet" "${1}" {
+		end = "${2}"
+		network = "${3}"
+		network_id = "${4}"
+		project_id = "${5}"
+		region = "${6}"
+		start = "${7}"
+	}
+snippet r_ovh_publiccloud_user
+	resource "ovh_publiccloud_user" "${1}" {
+		project_id = "${2}"
+	}
+snippet r_ovh_vrack_cloudproject
+	resource "ovh_vrack_cloudproject" "${1}" {
+		project_id = "${2}"
+		vrack_id = "${3}"
+	}
+snippet r_ovh_vrack_publiccloud_attachment
+	resource "ovh_vrack_publiccloud_attachment" "${1}" {
+		project_id = "${2}"
+		vrack_id = "${3}"
+	}
+snippet d_ovh_bank_account
+	data "ovh_bank_account" "${1}" {
+		
+	}
+snippet d_ovh_cloud_region
+	data "ovh_cloud_region" "${1}" {
+		name = "${2}"
+		project_id = "${3}"
+	}
+snippet d_ovh_cloud_regions
+	data "ovh_cloud_regions" "${1}" {
+		project_id = "${2}"
+	}
+snippet d_ovh_credit_card
+	data "ovh_credit_card" "${1}" {
+		
+	}
+snippet d_ovh_domain_zone
+	data "ovh_domain_zone" "${1}" {
+		name = "${2}"
+	}
+snippet d_ovh_iploadbalancing
+	data "ovh_iploadbalancing" "${1}" {
+		
+	}
+snippet d_ovh_publiccloud_region
+	data "ovh_publiccloud_region" "${1}" {
+		name = "${2}"
+		project_id = "${3}"
+	}
+snippet d_ovh_publiccloud_regions
+	data "ovh_publiccloud_regions" "${1}" {
+		project_id = "${2}"
+	}

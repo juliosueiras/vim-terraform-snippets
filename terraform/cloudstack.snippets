@@ -1,0 +1,153 @@
+snippet cloudstack
+	provider "cloudstack" {
+		http_get_only = ${1:false}
+		timeout = ${2}
+	}
+snippet r_cloudstack_affinity_group
+	resource "cloudstack_affinity_group" "${1}" {
+		name = "${2}"
+		type = "${3}"
+	}
+snippet r_cloudstack_disk
+	resource "cloudstack_disk" "${1}" {
+		name = "${2}"
+		zone = "${3}"
+	}
+snippet r_cloudstack_egress_firewall
+	resource "cloudstack_egress_firewall" "${1}" {
+		network_id = "${2}"
+	}
+snippet r_cloudstack_firewall
+	resource "cloudstack_firewall" "${1}" {
+		ip_address_id = "${2}"
+	}
+snippet r_cloudstack_instance
+	resource "cloudstack_instance" "${1}" {
+		service_offering = "${2}"
+		template = "${3}"
+		zone = "${4}"
+	}
+snippet r_cloudstack_ipaddress
+	resource "cloudstack_ipaddress" "${1}" {
+		
+	}
+snippet r_cloudstack_loadbalancer_rule
+	resource "cloudstack_loadbalancer_rule" "${1}" {
+		algorithm = "${2}"
+		ip_address_id = "${3}"
+		member_ids = ["${4}"]
+		name = "${5}"
+		private_port = ${6}
+		public_port = ${7}
+	}
+snippet r_cloudstack_network
+	resource "cloudstack_network" "${1}" {
+		cidr = "${2}"
+		name = "${3}"
+		network_offering = "${4}"
+		zone = "${5}"
+	}
+snippet r_cloudstack_network_acl
+	resource "cloudstack_network_acl" "${1}" {
+		name = "${2}"
+		vpc_id = "${3}"
+	}
+snippet r_cloudstack_network_acl_rule
+	resource "cloudstack_network_acl_rule" "${1}" {
+		acl_id = "${2}"
+	}
+snippet r_cloudstack_nic
+	resource "cloudstack_nic" "${1}" {
+		network_id = "${2}"
+		virtual_machine_id = "${3}"
+	}
+snippet r_cloudstack_port_forward
+	resource "cloudstack_port_forward" "${1}" {
+		forward {
+			private_port = 1
+			protocol = ""
+			public_port = 1
+			virtual_machine_id = ""
+		}
+		ip_address_id = "${3}"
+	}
+snippet r_cloudstack_private_gateway
+	resource "cloudstack_private_gateway" "${1}" {
+		acl_id = "${2}"
+		gateway = "${3}"
+		ip_address = "${4}"
+		netmask = "${5}"
+		vlan = "${6}"
+		vpc_id = "${7}"
+	}
+snippet r_cloudstack_secondary_ipaddress
+	resource "cloudstack_secondary_ipaddress" "${1}" {
+		virtual_machine_id = "${2}"
+	}
+snippet r_cloudstack_security_group
+	resource "cloudstack_security_group" "${1}" {
+		name = "${2}"
+	}
+snippet r_cloudstack_security_group_rule
+	resource "cloudstack_security_group_rule" "${1}" {
+		rule {
+			protocol = ""
+		}
+		security_group_id = "${3}"
+	}
+snippet r_cloudstack_ssh_keypair
+	resource "cloudstack_ssh_keypair" "${1}" {
+		name = "${2}"
+	}
+snippet r_cloudstack_static_nat
+	resource "cloudstack_static_nat" "${1}" {
+		ip_address_id = "${2}"
+		virtual_machine_id = "${3}"
+	}
+snippet r_cloudstack_static_route
+	resource "cloudstack_static_route" "${1}" {
+		cidr = "${2}"
+		gateway_id = "${3}"
+	}
+snippet r_cloudstack_template
+	resource "cloudstack_template" "${1}" {
+		format = "${2}"
+		hypervisor = "${3}"
+		name = "${4}"
+		os_type = "${5}"
+		url = "${6}"
+		zone = "${7}"
+	}
+snippet r_cloudstack_vpc
+	resource "cloudstack_vpc" "${1}" {
+		cidr = "${2}"
+		name = "${3}"
+		vpc_offering = "${4}"
+		zone = "${5}"
+	}
+snippet r_cloudstack_vpn_connection
+	resource "cloudstack_vpn_connection" "${1}" {
+		customer_gateway_id = "${2}"
+		vpn_gateway_id = "${3}"
+	}
+snippet r_cloudstack_vpn_customer_gateway
+	resource "cloudstack_vpn_customer_gateway" "${1}" {
+		cidr = "${2}"
+		esp_policy = "${3}"
+		gateway = "${4}"
+		ike_policy = "${5}"
+		ipsec_psk = "${6}"
+		name = "${7}"
+	}
+snippet r_cloudstack_vpn_gateway
+	resource "cloudstack_vpn_gateway" "${1}" {
+		vpc_id = "${2}"
+	}
+snippet d_cloudstack_template
+	data "cloudstack_template" "${1}" {
+		filter {
+				name = ""
+				value = ""
+			}
+		template_filter = "${3}"
+	}

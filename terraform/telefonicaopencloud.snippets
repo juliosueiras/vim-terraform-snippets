@@ -1,0 +1,215 @@
+snippet telefonicaopencloud
+	provider "telefonicaopencloud" {
+		
+	}
+snippet r_telefonicaopencloud_as_configuration_v1
+	resource "telefonicaopencloud_as_configuration_v1" "${1}" {
+		instance_config {
+			key_name = ""
+		}
+		scaling_configuration_name = "${3}"
+	}
+snippet r_telefonicaopencloud_as_group_v1
+	resource "telefonicaopencloud_as_group_v1" "${1}" {
+		networks {
+			id = ""
+		}
+		scaling_group_name = "${3}"
+		security_groups {
+			id = ""
+		}
+		vpc_id = "${5}"
+	}
+snippet r_telefonicaopencloud_as_policy_v1
+	resource "telefonicaopencloud_as_policy_v1" "${1}" {
+		scaling_group_id = "${2}"
+		scaling_policy_name = "${3}"
+		scaling_policy_type = "${4}"
+	}
+snippet r_telefonicaopencloud_blockstorage_volume_v2
+	resource "telefonicaopencloud_blockstorage_volume_v2" "${1}" {
+		size = ${2}
+	}
+snippet r_telefonicaopencloud_ces_alarmrule
+	resource "telefonicaopencloud_ces_alarmrule" "${1}" {
+		alarm_name = "${2}"
+		condition {
+			comparison_operator = ""
+			count = 1
+			filter = ""
+			period = 1
+			value = 1
+		}
+		metric {
+			dimensions {
+				name = ""
+				value = ""
+			}
+			metric_name = ""
+			namespace = ""
+		}
+	}
+snippet r_telefonicaopencloud_compute_floatingip_associate_v2
+	resource "telefonicaopencloud_compute_floatingip_associate_v2" "${1}" {
+		floating_ip = "${2}"
+		instance_id = "${3}"
+	}
+snippet r_telefonicaopencloud_compute_floatingip_v2
+	resource "telefonicaopencloud_compute_floatingip_v2" "${1}" {
+		pool = "${2}"
+	}
+snippet r_telefonicaopencloud_compute_instance_v2
+	resource "telefonicaopencloud_compute_instance_v2" "${1}" {
+		name = "${2}"
+	}
+snippet r_telefonicaopencloud_compute_keypair_v2
+	resource "telefonicaopencloud_compute_keypair_v2" "${1}" {
+		name = "${2}"
+	}
+snippet r_telefonicaopencloud_compute_secgroup_v2
+	resource "telefonicaopencloud_compute_secgroup_v2" "${1}" {
+		description = "${2}"
+		name = "${3}"
+	}
+snippet r_telefonicaopencloud_compute_servergroup_v2
+	resource "telefonicaopencloud_compute_servergroup_v2" "${1}" {
+		name = "${2}"
+	}
+snippet r_telefonicaopencloud_compute_volume_attach_v2
+	resource "telefonicaopencloud_compute_volume_attach_v2" "${1}" {
+		instance_id = "${2}"
+		volume_id = "${3}"
+	}
+snippet r_telefonicaopencloud_dns_recordset_v2
+	resource "telefonicaopencloud_dns_recordset_v2" "${1}" {
+		name = "${2}"
+		zone_id = "${3}"
+	}
+snippet r_telefonicaopencloud_dns_zone_v2
+	resource "telefonicaopencloud_dns_zone_v2" "${1}" {
+		name = "${2}"
+	}
+snippet r_telefonicaopencloud_elb_backendecs
+	resource "telefonicaopencloud_elb_backendecs" "${1}" {
+		listener_id = "${2}"
+		private_address = "${3}"
+		server_id = "${4}"
+	}
+snippet r_telefonicaopencloud_elb_healthcheck
+	resource "telefonicaopencloud_elb_healthcheck" "${1}" {
+		listener_id = "${2}"
+	}
+snippet r_telefonicaopencloud_elb_listener
+	resource "telefonicaopencloud_elb_listener" "${1}" {
+		backend_port = ${2}
+		backend_protocol = "${3}"
+		lb_algorithm = "${4}"
+		loadbalancer_id = "${5}"
+		name = "${6}"
+		port = ${7}
+		protocol = "${8}"
+	}
+snippet r_telefonicaopencloud_elb_loadbalancer
+	resource "telefonicaopencloud_elb_loadbalancer" "${1}" {
+		admin_state_up = ${2}
+		name = "${3}"
+		type = "${4}"
+		vpc_id = "${5}"
+	}
+snippet r_telefonicaopencloud_networking_floatingip_v2
+	resource "telefonicaopencloud_networking_floatingip_v2" "${1}" {
+		pool = "${2}"
+	}
+snippet r_telefonicaopencloud_networking_network_v2
+	resource "telefonicaopencloud_networking_network_v2" "${1}" {
+		
+	}
+snippet r_telefonicaopencloud_networking_port_v2
+	resource "telefonicaopencloud_networking_port_v2" "${1}" {
+		network_id = "${2}"
+	}
+snippet r_telefonicaopencloud_networking_router_interface_v2
+	resource "telefonicaopencloud_networking_router_interface_v2" "${1}" {
+		router_id = "${2}"
+	}
+snippet r_telefonicaopencloud_networking_router_route_v2
+	resource "telefonicaopencloud_networking_router_route_v2" "${1}" {
+		destination_cidr = "${2}"
+		next_hop = "${3}"
+		router_id = "${4}"
+	}
+snippet r_telefonicaopencloud_networking_router_v2
+	resource "telefonicaopencloud_networking_router_v2" "${1}" {
+		
+	}
+snippet r_telefonicaopencloud_networking_secgroup_rule_v2
+	resource "telefonicaopencloud_networking_secgroup_rule_v2" "${1}" {
+		direction = "${2}"
+		ethertype = "${3}"
+		security_group_id = "${4}"
+	}
+snippet r_telefonicaopencloud_networking_secgroup_v2
+	resource "telefonicaopencloud_networking_secgroup_v2" "${1}" {
+		name = "${2}"
+	}
+snippet r_telefonicaopencloud_networking_subnet_v2
+	resource "telefonicaopencloud_networking_subnet_v2" "${1}" {
+		cidr = "${2}"
+		network_id = "${3}"
+	}
+snippet r_telefonicaopencloud_s3_bucket
+	resource "telefonicaopencloud_s3_bucket" "${1}" {
+		
+	}
+snippet r_telefonicaopencloud_s3_bucket_object
+	resource "telefonicaopencloud_s3_bucket_object" "${1}" {
+		bucket = "${2}"
+		key = "${3}"
+	}
+snippet r_telefonicaopencloud_s3_bucket_policy
+	resource "telefonicaopencloud_s3_bucket_policy" "${1}" {
+		bucket = "${2}"
+		policy = "${3}"
+	}
+snippet r_telefonicaopencloud_smn_subscription_v2
+	resource "telefonicaopencloud_smn_subscription_v2" "${1}" {
+		endpoint = "${2}"
+		protocol = "${3}"
+		topic_urn = "${4}"
+	}
+snippet r_telefonicaopencloud_smn_topic_v2
+	resource "telefonicaopencloud_smn_topic_v2" "${1}" {
+		name = "${2}"
+	}
+snippet r_telefonicaopencloud_vpc_eip_v1
+	resource "telefonicaopencloud_vpc_eip_v1" "${1}" {
+		bandwidth {
+			name = ""
+			share_type = ""
+			size = 1
+		}
+		publicip {
+			type = ""
+		}
+	}
+snippet d_telefonicaopencloud_dns_zone_v2
+	data "telefonicaopencloud_dns_zone_v2" "${1}" {
+		
+	}
+snippet d_telefonicaopencloud_networking_network_v2
+	data "telefonicaopencloud_networking_network_v2" "${1}" {
+		
+	}
+snippet d_telefonicaopencloud_networking_secgroup_v2
+	data "telefonicaopencloud_networking_secgroup_v2" "${1}" {
+		
+	}
+snippet d_telefonicaopencloud_networking_subnet_v2
+	data "telefonicaopencloud_networking_subnet_v2" "${1}" {
+		
+	}
+snippet d_telefonicaopencloud_s3_bucket_object
+	data "telefonicaopencloud_s3_bucket_object" "${1}" {
+		bucket = "${2}"
+		key = "${3}"
+	}

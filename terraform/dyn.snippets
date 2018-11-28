@@ -1,0 +1,12 @@
+snippet dyn
+	provider "dyn" {
+		customer_name = "${1}"
+		password = "${2}"
+		username = "${3}"
+	}
+snippet r_dyn_record
+	resource "dyn_record" "${1}" {
+		type = "${2}"
+		value = "${3}"
+		zone = "${4}"
+	}

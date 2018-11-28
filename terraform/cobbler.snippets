@@ -1,0 +1,40 @@
+snippet cobbler
+	provider "cobbler" {
+		password = "${1}"
+		url = "${2}"
+		username = "${3}"
+	}
+snippet r_cobbler_distro
+	resource "cobbler_distro" "${1}" {
+		breed = "${2}"
+		initrd = "${3}"
+		kernel = "${4}"
+		name = "${5}"
+		os_version = "${6}"
+	}
+snippet r_cobbler_kickstart_file
+	resource "cobbler_kickstart_file" "${1}" {
+		body = "${2}"
+		name = "${3}"
+	}
+snippet r_cobbler_profile
+	resource "cobbler_profile" "${1}" {
+		distro = "${2}"
+		name = "${3}"
+	}
+snippet r_cobbler_repo
+	resource "cobbler_repo" "${1}" {
+		breed = "${2}"
+		mirror = "${3}"
+		name = "${4}"
+	}
+snippet r_cobbler_snippet
+	resource "cobbler_snippet" "${1}" {
+		body = "${2}"
+		name = "${3}"
+	}
+snippet r_cobbler_system
+	resource "cobbler_system" "${1}" {
+		name = "${2}"
+		profile = "${3}"
+	}

@@ -1,0 +1,48 @@
+snippet nutanix
+	provider "nutanix" {
+		endpoint = "${1}"
+		password = "${2}"
+		username = "${3}"
+	}
+snippet r_nutanix_category_key
+	resource "nutanix_category_key" "${1}" {
+		name = "${2}"
+	}
+snippet r_nutanix_category_value
+	resource "nutanix_category_value" "${1}" {
+		name = "${2}"
+		value = "${3}"
+	}
+snippet r_nutanix_image
+	resource "nutanix_image" "${1}" {
+		name = "${2}"
+	}
+snippet r_nutanix_subnet
+	resource "nutanix_subnet" "${1}" {
+		name = "${2}"
+		subnet_type = "${3}"
+	}
+snippet r_nutanix_virtual_machine
+	resource "nutanix_virtual_machine" "${1}" {
+		name = "${2}"
+	}
+snippet d_nutanix_cluster
+	data "nutanix_cluster" "${1}" {
+		cluster_id = "${2}"
+	}
+snippet d_nutanix_clusters
+	data "nutanix_clusters" "${1}" {
+		
+	}
+snippet d_nutanix_image
+	data "nutanix_image" "${1}" {
+		
+	}
+snippet d_nutanix_subnet
+	data "nutanix_subnet" "${1}" {
+		
+	}
+snippet d_nutanix_virtual_machine
+	data "nutanix_virtual_machine" "${1}" {
+		vm_id = "${2}"
+	}

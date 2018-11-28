@@ -1,0 +1,388 @@
+snippet openstack
+	provider "openstack" {
+		
+	}
+snippet r_openstack_blockstorage_volume_attach_v2
+	resource "openstack_blockstorage_volume_attach_v2" "${1}" {
+		host_name = "${2}"
+		volume_id = "${3}"
+	}
+snippet r_openstack_blockstorage_volume_attach_v3
+	resource "openstack_blockstorage_volume_attach_v3" "${1}" {
+		host_name = "${2}"
+		volume_id = "${3}"
+	}
+snippet r_openstack_blockstorage_volume_v1
+	resource "openstack_blockstorage_volume_v1" "${1}" {
+		size = ${2}
+	}
+snippet r_openstack_blockstorage_volume_v2
+	resource "openstack_blockstorage_volume_v2" "${1}" {
+		size = ${2}
+	}
+snippet r_openstack_blockstorage_volume_v3
+	resource "openstack_blockstorage_volume_v3" "${1}" {
+		size = ${2}
+	}
+snippet r_openstack_compute_flavor_access_v2
+	resource "openstack_compute_flavor_access_v2" "${1}" {
+		flavor_id = "${2}"
+		tenant_id = "${3}"
+	}
+snippet r_openstack_compute_flavor_v2
+	resource "openstack_compute_flavor_v2" "${1}" {
+		disk = ${2}
+		name = "${3}"
+		ram = ${4}
+		vcpus = ${5}
+	}
+snippet r_openstack_compute_floatingip_associate_v2
+	resource "openstack_compute_floatingip_associate_v2" "${1}" {
+		floating_ip = "${2}"
+		instance_id = "${3}"
+	}
+snippet r_openstack_compute_floatingip_v2
+	resource "openstack_compute_floatingip_v2" "${1}" {
+		pool = "${2}"
+	}
+snippet r_openstack_compute_instance_v2
+	resource "openstack_compute_instance_v2" "${1}" {
+		name = "${2}"
+	}
+snippet r_openstack_compute_interface_attach_v2
+	resource "openstack_compute_interface_attach_v2" "${1}" {
+		instance_id = "${2}"
+	}
+snippet r_openstack_compute_keypair_v2
+	resource "openstack_compute_keypair_v2" "${1}" {
+		name = "${2}"
+	}
+snippet r_openstack_compute_secgroup_v2
+	resource "openstack_compute_secgroup_v2" "${1}" {
+		description = "${2}"
+		name = "${3}"
+	}
+snippet r_openstack_compute_servergroup_v2
+	resource "openstack_compute_servergroup_v2" "${1}" {
+		name = "${2}"
+	}
+snippet r_openstack_compute_volume_attach_v2
+	resource "openstack_compute_volume_attach_v2" "${1}" {
+		instance_id = "${2}"
+		volume_id = "${3}"
+	}
+snippet r_openstack_containerinfra_cluster_v1
+	resource "openstack_containerinfra_cluster_v1" "${1}" {
+		cluster_template_id = "${2}"
+	}
+snippet r_openstack_containerinfra_clustertemplate_v1
+	resource "openstack_containerinfra_clustertemplate_v1" "${1}" {
+		coe = "${2}"
+		image = "${3}"
+		name = "${4}"
+	}
+snippet r_openstack_db_configuration_v1
+	resource "openstack_db_configuration_v1" "${1}" {
+		datastore {
+			type = ""
+			version = ""
+		}
+		description = "${3}"
+		name = "${4}"
+		region = "${5}"
+	}
+snippet r_openstack_db_database_v1
+	resource "openstack_db_database_v1" "${1}" {
+		instance_id = "${2}"
+		name = "${3}"
+	}
+snippet r_openstack_db_instance_v1
+	resource "openstack_db_instance_v1" "${1}" {
+		datastore {
+			type = ""
+			version = ""
+		}
+		name = "${3}"
+		region = "${4}"
+		size = ${5}
+	}
+snippet r_openstack_db_user_v1
+	resource "openstack_db_user_v1" "${1}" {
+		instance_id = "${2}"
+		name = "${3}"
+		password = "${4}"
+		region = "${5}"
+	}
+snippet r_openstack_dns_recordset_v2
+	resource "openstack_dns_recordset_v2" "${1}" {
+		name = "${2}"
+		zone_id = "${3}"
+	}
+snippet r_openstack_dns_zone_v2
+	resource "openstack_dns_zone_v2" "${1}" {
+		name = "${2}"
+	}
+snippet r_openstack_fw_firewall_v1
+	resource "openstack_fw_firewall_v1" "${1}" {
+		policy_id = "${2}"
+	}
+snippet r_openstack_fw_policy_v1
+	resource "openstack_fw_policy_v1" "${1}" {
+		
+	}
+snippet r_openstack_fw_rule_v1
+	resource "openstack_fw_rule_v1" "${1}" {
+		action = "${2}"
+		protocol = "${3}"
+	}
+snippet r_openstack_identity_project_v3
+	resource "openstack_identity_project_v3" "${1}" {
+		
+	}
+snippet r_openstack_identity_role_assignment_v3
+	resource "openstack_identity_role_assignment_v3" "${1}" {
+		role_id = "${2}"
+	}
+snippet r_openstack_identity_role_v3
+	resource "openstack_identity_role_v3" "${1}" {
+		name = "${2}"
+	}
+snippet r_openstack_identity_user_v3
+	resource "openstack_identity_user_v3" "${1}" {
+		
+	}
+snippet r_openstack_images_image_v2
+	resource "openstack_images_image_v2" "${1}" {
+		container_format = "${2}"
+		disk_format = "${3}"
+		name = "${4}"
+	}
+snippet r_openstack_lb_listener_v2
+	resource "openstack_lb_listener_v2" "${1}" {
+		loadbalancer_id = "${2}"
+		protocol = "${3}"
+		protocol_port = ${4}
+	}
+snippet r_openstack_lb_loadbalancer_v2
+	resource "openstack_lb_loadbalancer_v2" "${1}" {
+		vip_subnet_id = "${2}"
+	}
+snippet r_openstack_lb_member_v1
+	resource "openstack_lb_member_v1" "${1}" {
+		address = "${2}"
+		pool_id = "${3}"
+		port = ${4}
+	}
+snippet r_openstack_lb_member_v2
+	resource "openstack_lb_member_v2" "${1}" {
+		address = "${2}"
+		pool_id = "${3}"
+		protocol_port = ${4}
+	}
+snippet r_openstack_lb_monitor_v1
+	resource "openstack_lb_monitor_v1" "${1}" {
+		delay = ${2}
+		max_retries = ${3}
+		timeout = ${4}
+		type = "${5}"
+	}
+snippet r_openstack_lb_monitor_v2
+	resource "openstack_lb_monitor_v2" "${1}" {
+		delay = ${2}
+		max_retries = ${3}
+		pool_id = "${4}"
+		timeout = ${5}
+		type = "${6}"
+	}
+snippet r_openstack_lb_pool_v1
+	resource "openstack_lb_pool_v1" "${1}" {
+		lb_method = "${2}"
+		name = "${3}"
+		protocol = "${4}"
+		subnet_id = "${5}"
+	}
+snippet r_openstack_lb_pool_v2
+	resource "openstack_lb_pool_v2" "${1}" {
+		lb_method = "${2}"
+		protocol = "${3}"
+	}
+snippet r_openstack_lb_vip_v1
+	resource "openstack_lb_vip_v1" "${1}" {
+		name = "${2}"
+		pool_id = "${3}"
+		port = ${4}
+		protocol = "${5}"
+		subnet_id = "${6}"
+	}
+snippet r_openstack_networking_floatingip_associate_v2
+	resource "openstack_networking_floatingip_associate_v2" "${1}" {
+		floating_ip = "${2}"
+		port_id = "${3}"
+	}
+snippet r_openstack_networking_floatingip_v2
+	resource "openstack_networking_floatingip_v2" "${1}" {
+		pool = "${2}"
+	}
+snippet r_openstack_networking_network_v2
+	resource "openstack_networking_network_v2" "${1}" {
+		
+	}
+snippet r_openstack_networking_port_v2
+	resource "openstack_networking_port_v2" "${1}" {
+		network_id = "${2}"
+	}
+snippet r_openstack_networking_router_interface_v2
+	resource "openstack_networking_router_interface_v2" "${1}" {
+		router_id = "${2}"
+	}
+snippet r_openstack_networking_router_route_v2
+	resource "openstack_networking_router_route_v2" "${1}" {
+		destination_cidr = "${2}"
+		next_hop = "${3}"
+		router_id = "${4}"
+	}
+snippet r_openstack_networking_router_v2
+	resource "openstack_networking_router_v2" "${1}" {
+		
+	}
+snippet r_openstack_networking_secgroup_rule_v2
+	resource "openstack_networking_secgroup_rule_v2" "${1}" {
+		direction = "${2}"
+		ethertype = "${3}"
+		security_group_id = "${4}"
+	}
+snippet r_openstack_networking_secgroup_v2
+	resource "openstack_networking_secgroup_v2" "${1}" {
+		name = "${2}"
+	}
+snippet r_openstack_networking_subnet_route_v2
+	resource "openstack_networking_subnet_route_v2" "${1}" {
+		destination_cidr = "${2}"
+		next_hop = "${3}"
+		subnet_id = "${4}"
+	}
+snippet r_openstack_networking_subnet_v2
+	resource "openstack_networking_subnet_v2" "${1}" {
+		network_id = "${2}"
+	}
+snippet r_openstack_networking_subnetpool_v2
+	resource "openstack_networking_subnetpool_v2" "${1}" {
+		name = "${2}"
+		prefixes = ["${3}"]
+	}
+snippet r_openstack_networking_trunk_v2
+	resource "openstack_networking_trunk_v2" "${1}" {
+		port_id = "${2}"
+	}
+snippet r_openstack_objectstorage_container_v1
+	resource "openstack_objectstorage_container_v1" "${1}" {
+		name = "${2}"
+	}
+snippet r_openstack_objectstorage_object_v1
+	resource "openstack_objectstorage_object_v1" "${1}" {
+		container_name = "${2}"
+		name = "${3}"
+	}
+snippet r_openstack_objectstorage_tempurl_v1
+	resource "openstack_objectstorage_tempurl_v1" "${1}" {
+		container = "${2}"
+		object = "${3}"
+		ttl = ${4}
+	}
+snippet r_openstack_vpnaas_endpoint_group_v2
+	resource "openstack_vpnaas_endpoint_group_v2" "${1}" {
+		
+	}
+snippet r_openstack_vpnaas_ike_policy_v2
+	resource "openstack_vpnaas_ike_policy_v2" "${1}" {
+		
+	}
+snippet r_openstack_vpnaas_ipsec_policy_v2
+	resource "openstack_vpnaas_ipsec_policy_v2" "${1}" {
+		
+	}
+snippet r_openstack_vpnaas_service_v2
+	resource "openstack_vpnaas_service_v2" "${1}" {
+		router_id = "${2}"
+	}
+snippet r_openstack_vpnaas_site_connection_v2
+	resource "openstack_vpnaas_site_connection_v2" "${1}" {
+		ikepolicy_id = "${2}"
+		ipsecpolicy_id = "${3}"
+		peer_address = "${4}"
+		peer_id = "${5}"
+		psk = "${6}"
+		vpnservice_id = "${7}"
+	}
+snippet d_openstack_compute_flavor_v2
+	data "openstack_compute_flavor_v2" "${1}" {
+		
+	}
+snippet d_openstack_compute_keypair_v2
+	data "openstack_compute_keypair_v2" "${1}" {
+		name = "${2}"
+	}
+snippet d_openstack_containerinfra_clustertemplate_v1
+	data "openstack_containerinfra_clustertemplate_v1" "${1}" {
+		name = "${2}"
+	}
+snippet d_openstack_dns_zone_v2
+	data "openstack_dns_zone_v2" "${1}" {
+		
+	}
+snippet d_openstack_fw_policy_v1
+	data "openstack_fw_policy_v1" "${1}" {
+		
+	}
+snippet d_openstack_identity_auth_scope_v3
+	data "openstack_identity_auth_scope_v3" "${1}" {
+		name = "${2}"
+	}
+snippet d_openstack_identity_endpoint_v3
+	data "openstack_identity_endpoint_v3" "${1}" {
+		
+	}
+snippet d_openstack_identity_group_v3
+	data "openstack_identity_group_v3" "${1}" {
+		name = "${2}"
+	}
+snippet d_openstack_identity_project_v3
+	data "openstack_identity_project_v3" "${1}" {
+		
+	}
+snippet d_openstack_identity_role_v3
+	data "openstack_identity_role_v3" "${1}" {
+		name = "${2}"
+	}
+snippet d_openstack_identity_user_v3
+	data "openstack_identity_user_v3" "${1}" {
+		
+	}
+snippet d_openstack_images_image_v2
+	data "openstack_images_image_v2" "${1}" {
+		
+	}
+snippet d_openstack_networking_floatingip_v2
+	data "openstack_networking_floatingip_v2" "${1}" {
+		
+	}
+snippet d_openstack_networking_network_v2
+	data "openstack_networking_network_v2" "${1}" {
+		
+	}
+snippet d_openstack_networking_router_v2
+	data "openstack_networking_router_v2" "${1}" {
+		
+	}
+snippet d_openstack_networking_secgroup_v2
+	data "openstack_networking_secgroup_v2" "${1}" {
+		
+	}
+snippet d_openstack_networking_subnet_v2
+	data "openstack_networking_subnet_v2" "${1}" {
+		
+	}
+snippet d_openstack_networking_subnetpool_v2
+	data "openstack_networking_subnetpool_v2" "${1}" {
+		
+	}

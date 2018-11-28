@@ -1,0 +1,24 @@
+snippet bitbucket
+	provider "bitbucket" {
+		password = "${1}"
+		username = "${2}"
+	}
+snippet r_bitbucket_default_reviewers
+	resource "bitbucket_default_reviewers" "${1}" {
+		owner = "${2}"
+		repository = "${3}"
+		reviewers = ["${4}"]
+	}
+snippet r_bitbucket_hook
+	resource "bitbucket_hook" "${1}" {
+		description = "${2}"
+		events = ["${3}"]
+		owner = "${4}"
+		repository = "${5}"
+		url = "${6}"
+	}
+snippet r_bitbucket_repository
+	resource "bitbucket_repository" "${1}" {
+		name = "${2}"
+		owner = "${3}"
+	}

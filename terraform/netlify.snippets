@@ -1,0 +1,27 @@
+snippet netlify
+	provider "netlify" {
+		token = "${1}"
+	}
+snippet r_netlify_build_hook
+	resource "netlify_build_hook" "${1}" {
+		branch = "${2}"
+		site_id = "${3}"
+		title = "${4}"
+	}
+snippet r_netlify_deploy_key
+	resource "netlify_deploy_key" "${1}" {
+		
+	}
+snippet r_netlify_hook
+	resource "netlify_hook" "${1}" {
+		data {
+
+		}
+		event = "${3}"
+		site_id = "${4}"
+		type = "${5}"
+	}
+snippet r_netlify_site
+	resource "netlify_site" "${1}" {
+		
+	}

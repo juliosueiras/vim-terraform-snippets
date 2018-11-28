@@ -1,0 +1,242 @@
+snippet vsphere
+	provider "vsphere" {
+		password = "${1}"
+		user = "${2}"
+	}
+snippet r_vsphere_compute_cluster
+	resource "vsphere_compute_cluster" "${1}" {
+		datacenter_id = "${2}"
+		name = "${3}"
+	}
+snippet r_vsphere_compute_cluster_host_group
+	resource "vsphere_compute_cluster_host_group" "${1}" {
+		compute_cluster_id = "${2}"
+		name = "${3}"
+	}
+snippet r_vsphere_compute_cluster_vm_affinity_rule
+	resource "vsphere_compute_cluster_vm_affinity_rule" "${1}" {
+		compute_cluster_id = "${2}"
+		name = "${3}"
+		virtual_machine_ids = ["${4}"]
+	}
+snippet r_vsphere_compute_cluster_vm_anti_affinity_rule
+	resource "vsphere_compute_cluster_vm_anti_affinity_rule" "${1}" {
+		compute_cluster_id = "${2}"
+		name = "${3}"
+		virtual_machine_ids = ["${4}"]
+	}
+snippet r_vsphere_compute_cluster_vm_dependency_rule
+	resource "vsphere_compute_cluster_vm_dependency_rule" "${1}" {
+		compute_cluster_id = "${2}"
+		dependency_vm_group_name = "${3}"
+		name = "${4}"
+		vm_group_name = "${5}"
+	}
+snippet r_vsphere_compute_cluster_vm_group
+	resource "vsphere_compute_cluster_vm_group" "${1}" {
+		compute_cluster_id = "${2}"
+		name = "${3}"
+	}
+snippet r_vsphere_compute_cluster_vm_host_rule
+	resource "vsphere_compute_cluster_vm_host_rule" "${1}" {
+		compute_cluster_id = "${2}"
+		name = "${3}"
+		vm_group_name = "${4}"
+	}
+snippet r_vsphere_custom_attribute
+	resource "vsphere_custom_attribute" "${1}" {
+		name = "${2}"
+	}
+snippet r_vsphere_datacenter
+	resource "vsphere_datacenter" "${1}" {
+		name = "${2}"
+	}
+snippet r_vsphere_datastore_cluster
+	resource "vsphere_datastore_cluster" "${1}" {
+		datacenter_id = "${2}"
+		name = "${3}"
+	}
+snippet r_vsphere_datastore_cluster_vm_anti_affinity_rule
+	resource "vsphere_datastore_cluster_vm_anti_affinity_rule" "${1}" {
+		datastore_cluster_id = "${2}"
+		name = "${3}"
+		virtual_machine_ids = ["${4}"]
+	}
+snippet r_vsphere_distributed_port_group
+	resource "vsphere_distributed_port_group" "${1}" {
+		distributed_virtual_switch_uuid = "${2}"
+		name = "${3}"
+	}
+snippet r_vsphere_distributed_virtual_switch
+	resource "vsphere_distributed_virtual_switch" "${1}" {
+		datacenter_id = "${2}"
+		name = "${3}"
+	}
+snippet r_vsphere_dpm_host_override
+	resource "vsphere_dpm_host_override" "${1}" {
+		compute_cluster_id = "${2}"
+		host_system_id = "${3}"
+	}
+snippet r_vsphere_drs_vm_override
+	resource "vsphere_drs_vm_override" "${1}" {
+		compute_cluster_id = "${2}"
+		virtual_machine_id = "${3}"
+	}
+snippet r_vsphere_file
+	resource "vsphere_file" "${1}" {
+		datastore = "${2}"
+		destination_file = "${3}"
+		source_file = "${4}"
+	}
+snippet r_vsphere_folder
+	resource "vsphere_folder" "${1}" {
+		path = "${2}"
+		type = "${3}"
+	}
+snippet r_vsphere_ha_vm_override
+	resource "vsphere_ha_vm_override" "${1}" {
+		compute_cluster_id = "${2}"
+		virtual_machine_id = "${3}"
+	}
+snippet r_vsphere_host_port_group
+	resource "vsphere_host_port_group" "${1}" {
+		host_system_id = "${2}"
+		name = "${3}"
+		virtual_switch_name = "${4}"
+	}
+snippet r_vsphere_host_virtual_switch
+	resource "vsphere_host_virtual_switch" "${1}" {
+		active_nics = ["${2}"]
+		host_system_id = "${3}"
+		name = "${4}"
+		network_adapters = ["${5}"]
+		standby_nics = ["${6}"]
+	}
+snippet r_vsphere_license
+	resource "vsphere_license" "${1}" {
+		license_key = "${2}"
+	}
+snippet r_vsphere_nas_datastore
+	resource "vsphere_nas_datastore" "${1}" {
+		host_system_ids = ["${2}"]
+		name = "${3}"
+		remote_hosts = ["${4}"]
+		remote_path = "${5}"
+	}
+snippet r_vsphere_resource_pool
+	resource "vsphere_resource_pool" "${1}" {
+		name = "${2}"
+		parent_resource_pool_id = "${3}"
+	}
+snippet r_vsphere_storage_drs_vm_override
+	resource "vsphere_storage_drs_vm_override" "${1}" {
+		datastore_cluster_id = "${2}"
+		virtual_machine_id = "${3}"
+	}
+snippet r_vsphere_tag
+	resource "vsphere_tag" "${1}" {
+		category_id = "${2}"
+		name = "${3}"
+	}
+snippet r_vsphere_tag_category
+	resource "vsphere_tag_category" "${1}" {
+		associable_types = ["${2}"]
+		cardinality = "${3}"
+		name = "${4}"
+	}
+snippet r_vsphere_vapp_container
+	resource "vsphere_vapp_container" "${1}" {
+		name = "${2}"
+		parent_resource_pool_id = "${3}"
+	}
+snippet r_vsphere_vapp_entity
+	resource "vsphere_vapp_entity" "${1}" {
+		container_id = "${2}"
+		target_id = "${3}"
+	}
+snippet r_vsphere_virtual_disk
+	resource "vsphere_virtual_disk" "${1}" {
+		datastore = "${2}"
+		size = ${3}
+		vmdk_path = "${4}"
+	}
+snippet r_vsphere_virtual_machine
+	resource "vsphere_virtual_machine" "${1}" {
+		name = "${2}"
+		network_interface {
+			network_id = ""
+		}
+		resource_pool_id = "${4}"
+	}
+snippet r_vsphere_virtual_machine_snapshot
+	resource "vsphere_virtual_machine_snapshot" "${1}" {
+		description = "${2}"
+		memory = ${3:false}
+		quiesce = ${4:false}
+		snapshot_name = "${5}"
+		virtual_machine_uuid = "${6}"
+	}
+snippet r_vsphere_vmfs_datastore
+	resource "vsphere_vmfs_datastore" "${1}" {
+		disks = ["${2}"]
+		host_system_id = "${3}"
+		name = "${4}"
+	}
+snippet d_vsphere_compute_cluster
+	data "vsphere_compute_cluster" "${1}" {
+		name = "${2}"
+	}
+snippet d_vsphere_custom_attribute
+	data "vsphere_custom_attribute" "${1}" {
+		name = "${2}"
+	}
+snippet d_vsphere_datacenter
+	data "vsphere_datacenter" "${1}" {
+		
+	}
+snippet d_vsphere_datastore
+	data "vsphere_datastore" "${1}" {
+		name = "${2}"
+	}
+snippet d_vsphere_datastore_cluster
+	data "vsphere_datastore_cluster" "${1}" {
+		name = "${2}"
+	}
+snippet d_vsphere_distributed_virtual_switch
+	data "vsphere_distributed_virtual_switch" "${1}" {
+		name = "${2}"
+	}
+snippet d_vsphere_host
+	data "vsphere_host" "${1}" {
+		datacenter_id = "${2}"
+	}
+snippet d_vsphere_network
+	data "vsphere_network" "${1}" {
+		name = "${2}"
+	}
+snippet d_vsphere_resource_pool
+	data "vsphere_resource_pool" "${1}" {
+		
+	}
+snippet d_vsphere_tag
+	data "vsphere_tag" "${1}" {
+		category_id = "${2}"
+		name = "${3}"
+	}
+snippet d_vsphere_tag_category
+	data "vsphere_tag_category" "${1}" {
+		name = "${2}"
+	}
+snippet d_vsphere_vapp_container
+	data "vsphere_vapp_container" "${1}" {
+		datacenter_id = "${2}"
+		name = "${3}"
+	}
+snippet d_vsphere_virtual_machine
+	data "vsphere_virtual_machine" "${1}" {
+		name = "${2}"
+	}
+snippet d_vsphere_vmfs_disks
+	data "vsphere_vmfs_disks" "${1}" {
+		host_system_id = "${2}"
+	}

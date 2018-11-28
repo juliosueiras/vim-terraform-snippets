@@ -1,0 +1,51 @@
+snippet ultradns
+	provider "ultradns" {
+		password = "${1}"
+		username = "${2}"
+	}
+snippet r_ultradns_dirpool
+	resource "ultradns_dirpool" "${1}" {
+		description = "${2}"
+		name = "${3}"
+		rdata {
+			host = ""
+		}
+		type = "${5}"
+		zone = "${6}"
+	}
+snippet r_ultradns_probe_http
+	resource "ultradns_probe_http" "${1}" {
+		agents = ["${2}"]
+		name = "${3}"
+		threshold = ${4}
+		zone = "${5}"
+	}
+snippet r_ultradns_probe_ping
+	resource "ultradns_probe_ping" "${1}" {
+		agents = ["${2}"]
+		name = "${3}"
+		threshold = ${4}
+		zone = "${5}"
+	}
+snippet r_ultradns_rdpool
+	resource "ultradns_rdpool" "${1}" {
+		name = "${2}"
+		rdata = ["${3}"]
+		zone = "${4}"
+	}
+snippet r_ultradns_record
+	resource "ultradns_record" "${1}" {
+		name = "${2}"
+		rdata = ["${3}"]
+		type = "${4}"
+		zone = "${5}"
+	}
+snippet r_ultradns_tcpool
+	resource "ultradns_tcpool" "${1}" {
+		description = "${2}"
+		name = "${3}"
+		rdata {
+			host = ""
+		}
+		zone = "${5}"
+	}

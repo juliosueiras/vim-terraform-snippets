@@ -1,0 +1,49 @@
+snippet runscope
+	provider "runscope" {
+		access_token = "${1}"
+	}
+snippet r_runscope_bucket
+	resource "runscope_bucket" "${1}" {
+		name = "${2}"
+		team_uuid = "${3}"
+	}
+snippet r_runscope_environment
+	resource "runscope_environment" "${1}" {
+		bucket_id = "${2}"
+		name = "${3}"
+	}
+snippet r_runscope_schedule
+	resource "runscope_schedule" "${1}" {
+		bucket_id = "${2}"
+		environment_id = "${3}"
+		test_id = "${4}"
+	}
+snippet r_runscope_step
+	resource "runscope_step" "${1}" {
+		bucket_id = "${2}"
+		step_type = "${3}"
+		test_id = "${4}"
+	}
+snippet r_runscope_test
+	resource "runscope_test" "${1}" {
+		bucket_id = "${2}"
+		description = "${3}"
+		name = "${4}"
+	}
+snippet d_runscope_bucket
+	data "runscope_bucket" "${1}" {
+		key = "${2}"
+	}
+snippet d_runscope_buckets
+	data "runscope_buckets" "${1}" {
+		
+	}
+snippet d_runscope_integration
+	data "runscope_integration" "${1}" {
+		team_uuid = "${2}"
+		type = "${3}"
+	}
+snippet d_runscope_integrations
+	data "runscope_integrations" "${1}" {
+		team_uuid = "${2}"
+	}

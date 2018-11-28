@@ -1,0 +1,78 @@
+snippet scaleway
+	provider "scaleway" {
+		organization = "${1}"
+		token = "${2}"
+	}
+snippet r_scaleway_bucket
+	resource "scaleway_bucket" "${1}" {
+		name = "${2}"
+	}
+snippet r_scaleway_ip
+	resource "scaleway_ip" "${1}" {
+		
+	}
+snippet r_scaleway_ip_reverse_dns
+	resource "scaleway_ip_reverse_dns" "${1}" {
+		ip = "${2}"
+		reverse = "${3}"
+	}
+snippet r_scaleway_security_group
+	resource "scaleway_security_group" "${1}" {
+		description = "${2}"
+		name = "${3}"
+	}
+snippet r_scaleway_security_group_rule
+	resource "scaleway_security_group_rule" "${1}" {
+		action = "${2}"
+		direction = "${3}"
+		ip_range = "${4}"
+		protocol = "${5}"
+		security_group = "${6}"
+	}
+snippet r_scaleway_server
+	resource "scaleway_server" "${1}" {
+		image = "${2}"
+		name = "${3}"
+		type = "${4}"
+	}
+snippet r_scaleway_ssh_key
+	resource "scaleway_ssh_key" "${1}" {
+		key = "${2}"
+	}
+snippet r_scaleway_token
+	resource "scaleway_token" "${1}" {
+		
+	}
+snippet r_scaleway_user_data
+	resource "scaleway_user_data" "${1}" {
+		key = "${2}"
+		server = "${3}"
+		value = "${4}"
+	}
+snippet r_scaleway_volume
+	resource "scaleway_volume" "${1}" {
+		name = "${2}"
+		size_in_gb = ${3}
+		type = "${4}"
+	}
+snippet r_scaleway_volume_attachment
+	resource "scaleway_volume_attachment" "${1}" {
+		server = "${2}"
+		volume = "${3}"
+	}
+snippet d_scaleway_bootscript
+	data "scaleway_bootscript" "${1}" {
+		
+	}
+snippet d_scaleway_image
+	data "scaleway_image" "${1}" {
+		architecture = "${2}"
+	}
+snippet d_scaleway_security_group
+	data "scaleway_security_group" "${1}" {
+		name = "${2}"
+	}
+snippet d_scaleway_volume
+	data "scaleway_volume" "${1}" {
+		name = "${2}"
+	}

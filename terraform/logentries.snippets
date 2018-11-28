@@ -1,0 +1,17 @@
+snippet logentries
+	provider "logentries" {
+		account_key = "${1}"
+	}
+snippet r_logentries_log
+	resource "logentries_log" "${1}" {
+		logset_id = "${2}"
+		name = "${3}"
+	}
+snippet r_logentries_logset
+	resource "logentries_logset" "${1}" {
+		name = "${2}"
+	}
+snippet d_logentries_logset
+	data "logentries_logset" "${1}" {
+		name = "${2}"
+	}

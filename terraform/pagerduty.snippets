@@ -1,0 +1,93 @@
+snippet pagerduty
+	provider "pagerduty" {
+		token = "${1}"
+	}
+snippet r_pagerduty_addon
+	resource "pagerduty_addon" "${1}" {
+		name = "${2}"
+		src = "${3}"
+	}
+snippet r_pagerduty_escalation_policy
+	resource "pagerduty_escalation_policy" "${1}" {
+		name = "${2}"
+		rule {
+			escalation_delay_in_minutes = 1
+			target {
+				id = ""
+			}
+		}
+	}
+snippet r_pagerduty_extension
+	resource "pagerduty_extension" "${1}" {
+		extension_objects = ["${2}"]
+		extension_schema = "${3}"
+	}
+snippet r_pagerduty_maintenance_window
+	resource "pagerduty_maintenance_window" "${1}" {
+		end_time = "${2}"
+		services = ["${3}"]
+		start_time = "${4}"
+	}
+snippet r_pagerduty_schedule
+	resource "pagerduty_schedule" "${1}" {
+		layer {
+			rotation_turn_length_seconds = 1
+			rotation_virtual_start = ""
+			start = ""
+			users = [""]
+		}
+		time_zone = "${3}"
+	}
+snippet r_pagerduty_service
+	resource "pagerduty_service" "${1}" {
+		escalation_policy = "${2}"
+	}
+snippet r_pagerduty_service_integration
+	resource "pagerduty_service_integration" "${1}" {
+		service = "${2}"
+	}
+snippet r_pagerduty_team
+	resource "pagerduty_team" "${1}" {
+		name = "${2}"
+	}
+snippet r_pagerduty_team_membership
+	resource "pagerduty_team_membership" "${1}" {
+		team_id = "${2}"
+		user_id = "${3}"
+	}
+snippet r_pagerduty_user
+	resource "pagerduty_user" "${1}" {
+		email = "${2}"
+		name = "${3}"
+	}
+snippet r_pagerduty_user_contact_method
+	resource "pagerduty_user_contact_method" "${1}" {
+		address = "${2}"
+		label = "${3}"
+		type = "${4}"
+		user_id = "${5}"
+	}
+snippet d_pagerduty_escalation_policy
+	data "pagerduty_escalation_policy" "${1}" {
+		name = "${2}"
+	}
+snippet d_pagerduty_extension_schema
+	data "pagerduty_extension_schema" "${1}" {
+		name = "${2}"
+	}
+snippet d_pagerduty_schedule
+	data "pagerduty_schedule" "${1}" {
+		name = "${2}"
+	}
+snippet d_pagerduty_team
+	data "pagerduty_team" "${1}" {
+		name = "${2}"
+	}
+snippet d_pagerduty_user
+	data "pagerduty_user" "${1}" {
+		email = "${2}"
+	}
+snippet d_pagerduty_vendor
+	data "pagerduty_vendor" "${1}" {
+		name = "${2}"
+	}

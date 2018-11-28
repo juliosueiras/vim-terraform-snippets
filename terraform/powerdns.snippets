@@ -1,0 +1,13 @@
+snippet powerdns
+	provider "powerdns" {
+		api_key = "${1}"
+		server_url = "${2}"
+	}
+snippet r_powerdns_record
+	resource "powerdns_record" "${1}" {
+		name = "${2}"
+		records = ["${3}"]
+		ttl = ${4}
+		type = "${5}"
+		zone = "${6}"
+	}

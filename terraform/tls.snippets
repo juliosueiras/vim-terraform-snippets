@@ -1,0 +1,39 @@
+snippet tls
+	provider "tls" {
+		
+	}
+snippet r_tls_cert_request
+	resource "tls_cert_request" "${1}" {
+		key_algorithm = "${2}"
+		private_key_pem = "${3}"
+		subject {
+		
+		}
+	}
+snippet r_tls_locally_signed_cert
+	resource "tls_locally_signed_cert" "${1}" {
+		allowed_uses = ["${2}"]
+		ca_cert_pem = "${3}"
+		ca_key_algorithm = "${4}"
+		ca_private_key_pem = "${5}"
+		cert_request_pem = "${6}"
+		validity_period_hours = ${7}
+	}
+snippet r_tls_private_key
+	resource "tls_private_key" "${1}" {
+		algorithm = "${2}"
+	}
+snippet r_tls_self_signed_cert
+	resource "tls_self_signed_cert" "${1}" {
+		allowed_uses = ["${2}"]
+		key_algorithm = "${3}"
+		private_key_pem = "${4}"
+		subject {
+		
+		}
+		validity_period_hours = ${6}
+	}
+snippet d_tls_public_key
+	data "tls_public_key" "${1}" {
+		private_key_pem = "${2}"
+	}

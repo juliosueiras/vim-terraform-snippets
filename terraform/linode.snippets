@@ -1,0 +1,89 @@
+snippet linode
+	provider "linode" {
+		token = "${1}"
+	}
+snippet r_linode_domain
+	resource "linode_domain" "${1}" {
+		domain = "${2}"
+		type = "${3}"
+	}
+snippet r_linode_domain_record
+	resource "linode_domain_record" "${1}" {
+		domain_id = ${2}
+		name = "${3}"
+		record_type = "${4}"
+		target = "${5}"
+	}
+snippet r_linode_image
+	resource "linode_image" "${1}" {
+		disk_id = ${2}
+		label = "${3}"
+		linode_id = ${4}
+	}
+snippet r_linode_instance
+	resource "linode_instance" "${1}" {
+		region = "${2}"
+	}
+snippet r_linode_nodebalancer
+	resource "linode_nodebalancer" "${1}" {
+		region = "${2}"
+	}
+snippet r_linode_nodebalancer_config
+	resource "linode_nodebalancer_config" "${1}" {
+		nodebalancer_id = ${2}
+	}
+snippet r_linode_nodebalancer_node
+	resource "linode_nodebalancer_node" "${1}" {
+		address = "${2}"
+		config_id = ${3}
+		nodebalancer_id = ${4}
+	}
+snippet r_linode_sshkey
+	resource "linode_sshkey" "${1}" {
+		label = "${2}"
+		ssh_key = "${3}"
+	}
+snippet r_linode_stackscript
+	resource "linode_stackscript" "${1}" {
+		description = "${2}"
+		images = ["${3}"]
+		label = "${4}"
+		script = "${5}"
+	}
+snippet r_linode_token
+	resource "linode_token" "${1}" {
+		scopes = "${2}"
+	}
+snippet r_linode_volume
+	resource "linode_volume" "${1}" {
+		label = "${2}"
+		region = "${3}"
+	}
+snippet d_linode_account
+	data "linode_account" "${1}" {
+		
+	}
+snippet d_linode_image
+	data "linode_image" "${1}" {
+		id = "${2}"
+	}
+snippet d_linode_instance_type
+	data "linode_instance_type" "${1}" {
+		id = "${2}"
+	}
+snippet d_linode_profile
+	data "linode_profile" "${1}" {
+		
+	}
+snippet d_linode_region
+	data "linode_region" "${1}" {
+		id = "${2}"
+	}
+snippet d_linode_sshkey
+	data "linode_sshkey" "${1}" {
+		label = "${2}"
+	}
+snippet d_linode_user
+	data "linode_user" "${1}" {
+		username = "${2}"
+	}

@@ -1,0 +1,16 @@
+snippet acme
+	provider "acme" {
+		server_url = "${1}"
+	}
+snippet r_acme_certificate
+	resource "acme_certificate" "${1}" {
+		account_key_pem = "${2}"
+		dns_challenge {
+			provider = ""
+		}
+	}
+snippet r_acme_registration
+	resource "acme_registration" "${1}" {
+		account_key_pem = "${2}"
+		email_address = "${3}"
+	}

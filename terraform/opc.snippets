@@ -1,0 +1,227 @@
+snippet opc
+	provider "opc" {
+		identity_domain = "${1}"
+		password = "${2}"
+		user = "${3}"
+	}
+snippet r_opc_compute_acl
+	resource "opc_compute_acl" "${1}" {
+		name = "${2}"
+	}
+snippet r_opc_compute_image_list
+	resource "opc_compute_image_list" "${1}" {
+		description = "${2}"
+		name = "${3}"
+	}
+snippet r_opc_compute_image_list_entry
+	resource "opc_compute_image_list_entry" "${1}" {
+		machine_images = ["${2}"]
+		name = "${3}"
+		version = ${4}
+	}
+snippet r_opc_compute_instance
+	resource "opc_compute_instance" "${1}" {
+		name = "${2}"
+		shape = "${3}"
+	}
+snippet r_opc_compute_ip_address_association
+	resource "opc_compute_ip_address_association" "${1}" {
+		name = "${2}"
+	}
+snippet r_opc_compute_ip_address_prefix_set
+	resource "opc_compute_ip_address_prefix_set" "${1}" {
+		name = "${2}"
+	}
+snippet r_opc_compute_ip_address_reservation
+	resource "opc_compute_ip_address_reservation" "${1}" {
+		ip_address_pool = "${2}"
+		name = "${3}"
+	}
+snippet r_opc_compute_ip_association
+	resource "opc_compute_ip_association" "${1}" {
+		parent_pool = "${2}"
+		vcable = "${3}"
+	}
+snippet r_opc_compute_ip_network
+	resource "opc_compute_ip_network" "${1}" {
+		ip_address_prefix = "${2}"
+		name = "${3}"
+	}
+snippet r_opc_compute_ip_network_exchange
+	resource "opc_compute_ip_network_exchange" "${1}" {
+		name = "${2}"
+	}
+snippet r_opc_compute_ip_reservation
+	resource "opc_compute_ip_reservation" "${1}" {
+		permanent = ${2:false}
+	}
+snippet r_opc_compute_machine_image
+	resource "opc_compute_machine_image" "${1}" {
+		account = "${2}"
+		file = "${3}"
+		name = "${4}"
+	}
+snippet r_opc_compute_orchestrated_instance
+	resource "opc_compute_orchestrated_instance" "${1}" {
+		desired_state = "${2}"
+		instance {
+			name = ""
+			shape = ""
+		}
+		name = "${4}"
+	}
+snippet r_opc_compute_route
+	resource "opc_compute_route" "${1}" {
+		ip_address_prefix = "${2}"
+		name = "${3}"
+		next_hop_vnic_set = "${4}"
+	}
+snippet r_opc_compute_sec_rule
+	resource "opc_compute_sec_rule" "${1}" {
+		action = "${2}"
+		application = "${3}"
+		destination_list = "${4}"
+		name = "${5}"
+		source_list = "${6}"
+	}
+snippet r_opc_compute_security_application
+	resource "opc_compute_security_application" "${1}" {
+		name = "${2}"
+		protocol = "${3}"
+	}
+snippet r_opc_compute_security_association
+	resource "opc_compute_security_association" "${1}" {
+		seclist = "${2}"
+		vcable = "${3}"
+	}
+snippet r_opc_compute_security_ip_list
+	resource "opc_compute_security_ip_list" "${1}" {
+		ip_entries = ["${2}"]
+		name = "${3}"
+	}
+snippet r_opc_compute_security_list
+	resource "opc_compute_security_list" "${1}" {
+		name = "${2}"
+	}
+snippet r_opc_compute_security_protocol
+	resource "opc_compute_security_protocol" "${1}" {
+		name = "${2}"
+	}
+snippet r_opc_compute_security_rule
+	resource "opc_compute_security_rule" "${1}" {
+		flow_direction = "${2}"
+		name = "${3}"
+	}
+snippet r_opc_compute_snapshot
+	resource "opc_compute_snapshot" "${1}" {
+		instance = "${2}"
+	}
+snippet r_opc_compute_ssh_key
+	resource "opc_compute_ssh_key" "${1}" {
+		key = "${2}"
+		name = "${3}"
+	}
+snippet r_opc_compute_storage_attachment
+	resource "opc_compute_storage_attachment" "${1}" {
+		index = ${2}
+		instance = "${3}"
+		storage_volume = "${4}"
+	}
+snippet r_opc_compute_storage_volume
+	resource "opc_compute_storage_volume" "${1}" {
+		name = "${2}"
+		size = ${3}
+	}
+snippet r_opc_compute_storage_volume_snapshot
+	resource "opc_compute_storage_volume_snapshot" "${1}" {
+		volume_name = "${2}"
+	}
+snippet r_opc_compute_vnic_set
+	resource "opc_compute_vnic_set" "${1}" {
+		name = "${2}"
+	}
+snippet r_opc_compute_vpn_endpoint_v2
+	resource "opc_compute_vpn_endpoint_v2" "${1}" {
+		customer_vpn_gateway = "${2}"
+		ip_network = "${3}"
+		name = "${4}"
+		pre_shared_key = "${5}"
+		reachable_routes = ["${6}"]
+		vnic_sets = ["${7}"]
+	}
+snippet r_opc_lbaas_certificate
+	resource "opc_lbaas_certificate" "${1}" {
+		certificate_body = "${2}"
+		name = "${3}"
+		type = "${4}"
+	}
+snippet r_opc_lbaas_listener
+	resource "opc_lbaas_listener" "${1}" {
+		balancer_protocol = "${2}"
+		load_balancer = "${3}"
+		name = "${4}"
+		port = ${5}
+		server_protocol = "${6}"
+	}
+snippet r_opc_lbaas_load_balancer
+	resource "opc_lbaas_load_balancer" "${1}" {
+		name = "${2}"
+		region = "${3}"
+		scheme = "${4}"
+	}
+snippet r_opc_lbaas_policy
+	resource "opc_lbaas_policy" "${1}" {
+		load_balancer = "${2}"
+		name = "${3}"
+	}
+snippet r_opc_lbaas_server_pool
+	resource "opc_lbaas_server_pool" "${1}" {
+		load_balancer = "${2}"
+		name = "${3}"
+		servers = ["${4}"]
+	}
+snippet r_opc_storage_container
+	resource "opc_storage_container" "${1}" {
+		name = "${2}"
+	}
+snippet r_opc_storage_object
+	resource "opc_storage_object" "${1}" {
+		container = "${2}"
+		name = "${3}"
+	}
+snippet d_opc_compute_image_list_entry
+	data "opc_compute_image_list_entry" "${1}" {
+		image_list = "${2}"
+		version = ${3}
+	}
+snippet d_opc_compute_ip_address_reservation
+	data "opc_compute_ip_address_reservation" "${1}" {
+		name = "${2}"
+	}
+snippet d_opc_compute_ip_reservation
+	data "opc_compute_ip_reservation" "${1}" {
+		name = "${2}"
+	}
+snippet d_opc_compute_machine_image
+	data "opc_compute_machine_image" "${1}" {
+		account = "${2}"
+		name = "${3}"
+	}
+snippet d_opc_compute_network_interface
+	data "opc_compute_network_interface" "${1}" {
+		instance_id = "${2}"
+		instance_name = "${3}"
+		interface = "${4}"
+	}
+snippet d_opc_compute_ssh_key
+	data "opc_compute_ssh_key" "${1}" {
+		name = "${2}"
+	}
+snippet d_opc_compute_storage_volume_snapshot
+	data "opc_compute_storage_volume_snapshot" "${1}" {
+		name = "${2}"
+	}
+snippet d_opc_compute_vnic
+	data "opc_compute_vnic" "${1}" {
+		name = "${2}"
+	}
