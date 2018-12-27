@@ -134,7 +134,7 @@ snippet http_backend
 	}
 snippet s3_backend
 	terraform {
-		backend "s3"
+		backend "s3" {
 			bucket = "${2}"
 			key = "${3}"
 			region = "us-east-1"
