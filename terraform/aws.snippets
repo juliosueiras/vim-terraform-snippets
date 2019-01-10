@@ -4,8 +4,7 @@ snippet aws
 	}
 snippet r_aws_acm_certificate
 	resource "aws_acm_certificate" "${1}" {
-		domain_name = "${2}"
-		validation_method = "${3}"
+		
 	}
 snippet r_aws_acm_certificate_validation
 	resource "aws_acm_certificate_validation" "${1}" {
@@ -50,9 +49,7 @@ snippet r_aws_alb_listener_rule
 	}
 snippet r_aws_alb_target_group
 	resource "aws_alb_target_group" "${1}" {
-		port = ${2}
-		protocol = "${3}"
-		vpc_id = "${4}"
+		
 	}
 snippet r_aws_alb_target_group_attachment
 	resource "aws_alb_target_group_attachment" "${1}" {
@@ -234,6 +231,35 @@ snippet r_aws_appautoscaling_target
 		resource_id = "${4}"
 		scalable_dimension = "${5}"
 		service_namespace = "${6}"
+	}
+snippet r_aws_appmesh_mesh
+	resource "aws_appmesh_mesh" "${1}" {
+		name = "${2}"
+	}
+snippet r_aws_appmesh_route
+	resource "aws_appmesh_route" "${1}" {
+		mesh_name = "${2}"
+		name = "${3}"
+		spec {
+		
+		}
+		virtual_router_name = "${5}"
+	}
+snippet r_aws_appmesh_virtual_node
+	resource "aws_appmesh_virtual_node" "${1}" {
+		mesh_name = "${2}"
+		name = "${3}"
+		spec {
+		
+		}
+	}
+snippet r_aws_appmesh_virtual_router
+	resource "aws_appmesh_virtual_router" "${1}" {
+		mesh_name = "${2}"
+		name = "${3}"
+		spec {
+			service_names = [""]
+		}
 	}
 snippet r_aws_appsync_api_key
 	resource "aws_appsync_api_key" "${1}" {
@@ -489,9 +515,6 @@ snippet r_aws_codedeploy_app
 snippet r_aws_codedeploy_deployment_config
 	resource "aws_codedeploy_deployment_config" "${1}" {
 		deployment_config_name = "${2}"
-		minimum_healthy_hosts {
-			type = ""
-		}
 	}
 snippet r_aws_codedeploy_deployment_group
 	resource "aws_codedeploy_deployment_group" "${1}" {
@@ -878,8 +901,6 @@ snippet r_aws_dynamodb_table
 		}
 		hash_key = "${3}"
 		name = "${4}"
-		read_capacity = ${5}
-		write_capacity = ${6}
 	}
 snippet r_aws_dynamodb_table_item
 	resource "aws_dynamodb_table_item" "${1}" {
@@ -1499,14 +1520,22 @@ snippet r_aws_lb_ssl_negotiation_policy
 	}
 snippet r_aws_lb_target_group
 	resource "aws_lb_target_group" "${1}" {
-		port = ${2}
-		protocol = "${3}"
-		vpc_id = "${4}"
+		
 	}
 snippet r_aws_lb_target_group_attachment
 	resource "aws_lb_target_group_attachment" "${1}" {
 		target_group_arn = "${2}"
 		target_id = "${3}"
+	}
+snippet r_aws_licensemanager_association
+	resource "aws_licensemanager_association" "${1}" {
+		license_configuration_arn = "${2}"
+		resource_arn = "${3}"
+	}
+snippet r_aws_licensemanager_license_configuration
+	resource "aws_licensemanager_license_configuration" "${1}" {
+		license_counting_type = "${2}"
+		name = "${3}"
 	}
 snippet r_aws_lightsail_domain
 	resource "aws_lightsail_domain" "${1}" {
@@ -1816,6 +1845,12 @@ snippet r_aws_rds_cluster
 	resource "aws_rds_cluster" "${1}" {
 		
 	}
+snippet r_aws_rds_cluster_endpoint
+	resource "aws_rds_cluster_endpoint" "${1}" {
+		cluster_endpoint_identifier = "${2}"
+		cluster_identifier = "${3}"
+		custom_endpoint_type = "${4}"
+	}
 snippet r_aws_rds_cluster_instance
 	resource "aws_rds_cluster_instance" "${1}" {
 		cluster_identifier = "${2}"
@@ -1824,6 +1859,10 @@ snippet r_aws_rds_cluster_instance
 snippet r_aws_rds_cluster_parameter_group
 	resource "aws_rds_cluster_parameter_group" "${1}" {
 		family = "${2}"
+	}
+snippet r_aws_rds_global_cluster
+	resource "aws_rds_global_cluster" "${1}" {
+		global_cluster_identifier = "${2}"
 	}
 snippet r_aws_redshift_cluster
 	resource "aws_redshift_cluster" "${1}" {
@@ -1897,6 +1936,10 @@ snippet r_aws_route_table_association
 		route_table_id = "${2}"
 		subnet_id = "${3}"
 	}
+snippet r_aws_s3_account_public_access_block
+	resource "aws_s3_account_public_access_block" "${1}" {
+		
+	}
 snippet r_aws_s3_bucket
 	resource "aws_s3_bucket" "${1}" {
 		
@@ -1935,6 +1978,10 @@ snippet r_aws_s3_bucket_policy
 		bucket = "${2}"
 		policy = "${3}"
 	}
+snippet r_aws_s3_bucket_public_access_block
+	resource "aws_s3_bucket_public_access_block" "${1}" {
+		bucket = "${2}"
+	}
 snippet r_aws_secretsmanager_secret
 	resource "aws_secretsmanager_secret" "${1}" {
 		
@@ -1954,6 +2001,22 @@ snippet r_aws_security_group_rule
 		security_group_id = "${4}"
 		to_port = ${5}
 		type = "${6}"
+	}
+snippet r_aws_securityhub_account
+	resource "aws_securityhub_account" "${1}" {
+		
+	}
+snippet r_aws_securityhub_product_subscription
+	resource "aws_securityhub_product_subscription" "${1}" {
+		product_arn = "${2}"
+	}
+snippet r_aws_securityhub_standards_subscription
+	resource "aws_securityhub_standards_subscription" "${1}" {
+		standards_arn = "${2}"
+	}
+snippet r_aws_service_discovery_http_namespace
+	resource "aws_service_discovery_http_namespace" "${1}" {
+		name = "${2}"
 	}
 snippet r_aws_service_discovery_private_dns_namespace
 	resource "aws_service_discovery_private_dns_namespace" "${1}" {
@@ -2220,6 +2283,22 @@ snippet r_aws_swf_domain
 	resource "aws_swf_domain" "${1}" {
 		workflow_execution_retention_period_in_days = "${2}"
 	}
+snippet r_aws_transfer_server
+	resource "aws_transfer_server" "${1}" {
+		
+	}
+snippet r_aws_transfer_ssh_key
+	resource "aws_transfer_ssh_key" "${1}" {
+		body = "${2}"
+		server_id = "${3}"
+		user_name = "${4}"
+	}
+snippet r_aws_transfer_user
+	resource "aws_transfer_user" "${1}" {
+		role = "${2}"
+		server_id = "${3}"
+		user_name = "${4}"
+	}
 snippet r_aws_volume_attachment
 	resource "aws_volume_attachment" "${1}" {
 		device_name = "${2}"
@@ -2471,9 +2550,17 @@ snippet d_aws_api_gateway_rest_api
 	data "aws_api_gateway_rest_api" "${1}" {
 		name = "${2}"
 	}
+snippet d_aws_api_gateway_vpc_link
+	data "aws_api_gateway_vpc_link" "${1}" {
+		name = "${2}"
+	}
 snippet d_aws_arn
 	data "aws_arn" "${1}" {
 		arn = "${2}"
+	}
+snippet d_aws_autoscaling_group
+	data "aws_autoscaling_group" "${1}" {
+		name = "${2}"
 	}
 snippet d_aws_autoscaling_groups
 	data "aws_autoscaling_groups" "${1}" {

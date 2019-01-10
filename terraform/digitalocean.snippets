@@ -17,6 +17,11 @@ snippet r_digitalocean_droplet
 		region = "${4}"
 		size = "${5}"
 	}
+snippet r_digitalocean_droplet_snapshot
+	resource "digitalocean_droplet_snapshot" "${1}" {
+		droplet_id = "${2}"
+		name = "${3}"
+	}
 snippet r_digitalocean_firewall
 	resource "digitalocean_firewall" "${1}" {
 		name = "${2}"
@@ -29,6 +34,24 @@ snippet r_digitalocean_floating_ip_assignment
 	resource "digitalocean_floating_ip_assignment" "${1}" {
 		droplet_id = ${2}
 		ip_address = "${3}"
+	}
+snippet r_digitalocean_kubernetes_cluster
+	resource "digitalocean_kubernetes_cluster" "${1}" {
+		name = "${2}"
+		node_pool {
+			name = ""
+			node_count = 1
+			size = ""
+		}
+		region = "${4}"
+		version = "${5}"
+	}
+snippet r_digitalocean_kubernetes_node_pool
+	resource "digitalocean_kubernetes_node_pool" "${1}" {
+		cluster_id = "${2}"
+		name = "${3}"
+		node_count = ${4}
+		size = "${5}"
 	}
 snippet r_digitalocean_loadbalancer
 	resource "digitalocean_loadbalancer" "${1}" {
@@ -85,6 +108,10 @@ snippet d_digitalocean_droplet
 	data "digitalocean_droplet" "${1}" {
 		name = "${2}"
 	}
+snippet d_digitalocean_droplet_snapshot
+	data "digitalocean_droplet_snapshot" "${1}" {
+		
+	}
 snippet d_digitalocean_floating_ip
 	data "digitalocean_floating_ip" "${1}" {
 		ip_address = "${2}"
@@ -92,6 +119,10 @@ snippet d_digitalocean_floating_ip
 snippet d_digitalocean_image
 	data "digitalocean_image" "${1}" {
 		
+	}
+snippet d_digitalocean_kubernetes_cluster
+	data "digitalocean_kubernetes_cluster" "${1}" {
+		name = "${2}"
 	}
 snippet d_digitalocean_loadbalancer
 	data "digitalocean_loadbalancer" "${1}" {

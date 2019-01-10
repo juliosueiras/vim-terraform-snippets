@@ -2,6 +2,14 @@ snippet tfe
 	provider "tfe" {
 		
 	}
+snippet r_tfe_oauth_client
+	resource "tfe_oauth_client" "${1}" {
+		api_url = "${2}"
+		http_url = "${3}"
+		oauth_token = "${4}"
+		organization = "${5}"
+		service_provider = "${6}"
+	}
 snippet r_tfe_organization
 	resource "tfe_organization" "${1}" {
 		email = "${2}"
@@ -64,5 +72,30 @@ snippet r_tfe_variable
 snippet r_tfe_workspace
 	resource "tfe_workspace" "${1}" {
 		name = "${2}"
+		organization = "${3}"
+	}
+snippet d_tfe_ssh_key
+	data "tfe_ssh_key" "${1}" {
+		name = "${2}"
+		organization = "${3}"
+	}
+snippet d_tfe_team
+	data "tfe_team" "${1}" {
+		name = "${2}"
+		organization = "${3}"
+	}
+snippet d_tfe_team_access
+	data "tfe_team_access" "${1}" {
+		team_id = "${2}"
+		workspace_id = "${3}"
+	}
+snippet d_tfe_workspace
+	data "tfe_workspace" "${1}" {
+		name = "${2}"
+		organization = "${3}"
+	}
+snippet d_tfe_workspace_ids
+	data "tfe_workspace_ids" "${1}" {
+		names = ["${2}"]
 		organization = "${3}"
 	}

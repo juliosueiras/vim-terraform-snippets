@@ -141,6 +141,23 @@ snippet r_kubernetes_service_account
 		
 		}
 	}
+snippet r_kubernetes_stateful_set
+	resource "kubernetes_stateful_set" "${1}" {
+		metadata {
+		
+		}
+		spec {
+			selector {
+			
+			}
+			service_name = ""
+			template {
+				metadata {
+			
+			}
+			}
+		}
+	}
 snippet r_kubernetes_storage_class
 	resource "kubernetes_storage_class" "${1}" {
 		metadata {

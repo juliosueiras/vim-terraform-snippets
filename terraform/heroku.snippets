@@ -32,6 +32,13 @@ snippet r_heroku_app_release
 		app = "${2}"
 		slug_id = "${3}"
 	}
+snippet r_heroku_build
+	resource "heroku_build" "${1}" {
+		app = "${2}"
+		source {
+		
+		}
+	}
 snippet r_heroku_cert
 	resource "heroku_cert" "${1}" {
 		app = "${2}"

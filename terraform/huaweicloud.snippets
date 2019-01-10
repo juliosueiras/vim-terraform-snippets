@@ -30,6 +30,30 @@ snippet r_huaweicloud_blockstorage_volume_v2
 	resource "huaweicloud_blockstorage_volume_v2" "${1}" {
 		size = ${2}
 	}
+snippet r_huaweicloud_cce_cluster_v3
+	resource "huaweicloud_cce_cluster_v3" "${1}" {
+		cluster_type = "${2}"
+		container_network_type = "${3}"
+		flavor_id = "${4}"
+		name = "${5}"
+		subnet_id = "${6}"
+		vpc_id = "${7}"
+	}
+snippet r_huaweicloud_cce_node_v3
+	resource "huaweicloud_cce_node_v3" "${1}" {
+		availability_zone = "${2}"
+		cluster_id = "${3}"
+		data_volumes {
+			size = 1
+			volumetype = ""
+		}
+		flavor_id = "${5}"
+		key_pair = "${6}"
+		root_volume {
+			size = 1
+			volumetype = ""
+		}
+	}
 snippet r_huaweicloud_ces_alarmrule
 	resource "huaweicloud_ces_alarmrule" "${1}" {
 		alarm_name = "${2}"
@@ -81,6 +105,67 @@ snippet r_huaweicloud_compute_volume_attach_v2
 		instance_id = "${2}"
 		volume_id = "${3}"
 	}
+snippet r_huaweicloud_csbs_backup_policy_v1
+	resource "huaweicloud_csbs_backup_policy_v1" "${1}" {
+		name = "${2}"
+		resource {
+			id = ""
+			name = ""
+			type = ""
+		}
+		scheduled_operation {
+			operation_type = ""
+			trigger_pattern = ""
+		}
+	}
+snippet r_huaweicloud_csbs_backup_v1
+	resource "huaweicloud_csbs_backup_v1" "${1}" {
+		resource_id = "${2}"
+	}
+snippet r_huaweicloud_cts_tracker_v1
+	resource "huaweicloud_cts_tracker_v1" "${1}" {
+		bucket_name = "${2}"
+		is_send_all_key_operation = ${3:false}
+		is_support_smn = ${4:false}
+		operations = ["${5}"]
+		topic_id = "${6}"
+	}
+snippet r_huaweicloud_dcs_instance_v1
+	resource "huaweicloud_dcs_instance_v1" "${1}" {
+		available_zones = ["${2}"]
+		backup_at = [${3}]
+		backup_type = "${4}"
+		begin_at = "${5}"
+		capacity = ${6}
+		engine = "${7}"
+		name = "${8}"
+		period_type = "${9}"
+		product_id = "${10}"
+		save_days = ${11}
+		security_group_id = "${12}"
+		subnet_id = "${13}"
+		vpc_id = "${14}"
+	}
+snippet r_huaweicloud_dms_group_v1
+	resource "huaweicloud_dms_group_v1" "${1}" {
+		name = "${2}"
+		queue_id = "${3}"
+	}
+snippet r_huaweicloud_dms_instance_v1
+	resource "huaweicloud_dms_instance_v1" "${1}" {
+		available_zones = ["${2}"]
+		engine = "${3}"
+		name = "${4}"
+		product_id = "${5}"
+		security_group_id = "${6}"
+		storage_space = ${7}
+		subnet_id = "${8}"
+		vpc_id = "${9}"
+	}
+snippet r_huaweicloud_dms_queue_v1
+	resource "huaweicloud_dms_queue_v1" "${1}" {
+		name = "${2}"
+	}
 snippet r_huaweicloud_dns_recordset_v2
 	resource "huaweicloud_dns_recordset_v2" "${1}" {
 		name = "${2}"
@@ -91,6 +176,17 @@ snippet r_huaweicloud_dns_recordset_v2
 snippet r_huaweicloud_dns_zone_v2
 	resource "huaweicloud_dns_zone_v2" "${1}" {
 		name = "${2}"
+	}
+snippet r_huaweicloud_dws_cluster
+	resource "huaweicloud_dws_cluster" "${1}" {
+		name = "${2}"
+		network_id = "${3}"
+		node_type = "${4}"
+		number_of_node = ${5}
+		security_group_id = "${6}"
+		user_name = "${7}"
+		user_pwd = "${8}"
+		vpc_id = "${9}"
 	}
 snippet r_huaweicloud_elb_backendecs
 	resource "huaweicloud_elb_backendecs" "${1}" {
@@ -177,6 +273,68 @@ snippet r_huaweicloud_lb_pool_v2
 		lb_method = "${2}"
 		protocol = "${3}"
 	}
+snippet r_huaweicloud_maas_task_v1
+	resource "huaweicloud_maas_task_v1" "${1}" {
+		dst_node {
+			ak = ""
+			bucket = ""
+			object_key = ""
+			region = ""
+			sk = ""
+		}
+		enable_kms = ${3:false}
+		src_node {
+			ak = ""
+			bucket = ""
+			object_key = ""
+			region = ""
+			sk = ""
+		}
+		thread_num = ${5}
+	}
+snippet r_huaweicloud_mls_instance
+	resource "huaweicloud_mls_instance" "${1}" {
+		flavor = "${2}"
+		mrs_cluster {
+			id = ""
+		}
+		name = "${4}"
+		network {
+			available_zone = ""
+			network_id = ""
+			public_ip {
+				bind_type = ""
+			}
+			vpc_id = ""
+		}
+		version = "${6}"
+	}
+snippet r_huaweicloud_mrs_cluster_v1
+	resource "huaweicloud_mrs_cluster_v1" "${1}" {
+		available_zone_id = "${2}"
+		billing_type = ${3}
+		cluster_name = "${4}"
+		component_list {
+			component_name = ""
+		}
+		core_node_num = ${6}
+		core_node_size = "${7}"
+		master_node_num = ${8}
+		master_node_size = "${9}"
+		node_public_cert_name = "${10}"
+		safe_mode = ${11}
+		subnet_id = "${12}"
+		volume_size = ${13}
+		volume_type = "${14}"
+		vpc_id = "${15}"
+	}
+snippet r_huaweicloud_mrs_job_v1
+	resource "huaweicloud_mrs_job_v1" "${1}" {
+		cluster_id = "${2}"
+		jar_path = "${3}"
+		job_name = "${4}"
+		job_type = ${5}
+	}
 snippet r_huaweicloud_nat_gateway_v2
 	resource "huaweicloud_nat_gateway_v2" "${1}" {
 		internal_network_id = "${2}"
@@ -189,6 +347,11 @@ snippet r_huaweicloud_nat_snat_rule_v2
 		floating_ip_id = "${2}"
 		nat_gateway_id = "${3}"
 		network_id = "${4}"
+	}
+snippet r_huaweicloud_networking_floatingip_associate_v2
+	resource "huaweicloud_networking_floatingip_associate_v2" "${1}" {
+		floating_ip = "${2}"
+		port_id = "${3}"
 	}
 snippet r_huaweicloud_networking_floatingip_v2
 	resource "huaweicloud_networking_floatingip_v2" "${1}" {
@@ -290,6 +453,20 @@ snippet r_huaweicloud_smn_topic_v2
 	resource "huaweicloud_smn_topic_v2" "${1}" {
 		name = "${2}"
 	}
+snippet r_huaweicloud_vbs_backup_policy_v2
+	resource "huaweicloud_vbs_backup_policy_v2" "${1}" {
+		frequency = ${2}
+		name = "${3}"
+		rentention_num = ${4}
+		retain_first_backup = "${5}"
+		start_time = "${6}"
+		status = "${7}"
+	}
+snippet r_huaweicloud_vbs_backup_v2
+	resource "huaweicloud_vbs_backup_v2" "${1}" {
+		name = "${2}"
+		volume_id = "${3}"
+	}
 snippet r_huaweicloud_vpc_eip_v1
 	resource "huaweicloud_vpc_eip_v1" "${1}" {
 		bandwidth {
@@ -329,6 +506,55 @@ snippet r_huaweicloud_vpc_v1
 	resource "huaweicloud_vpc_v1" "${1}" {
 		cidr = "${2}"
 		name = "${3}"
+	}
+snippet d_huaweicloud_antiddos_v1
+	data "huaweicloud_antiddos_v1" "${1}" {
+		
+	}
+snippet d_huaweicloud_cce_cluster_v3
+	data "huaweicloud_cce_cluster_v3" "${1}" {
+		
+	}
+snippet d_huaweicloud_cce_node_v3
+	data "huaweicloud_cce_node_v3" "${1}" {
+		cluster_id = "${2}"
+	}
+snippet d_huaweicloud_csbs_backup_policy_v1
+	data "huaweicloud_csbs_backup_policy_v1" "${1}" {
+		
+	}
+snippet d_huaweicloud_csbs_backup_v1
+	data "huaweicloud_csbs_backup_v1" "${1}" {
+		
+	}
+snippet d_huaweicloud_cts_tracker_v1
+	data "huaweicloud_cts_tracker_v1" "${1}" {
+		
+	}
+snippet d_huaweicloud_dcs_az_v1
+	data "huaweicloud_dcs_az_v1" "${1}" {
+		
+	}
+snippet d_huaweicloud_dcs_maintainwindow_v1
+	data "huaweicloud_dcs_maintainwindow_v1" "${1}" {
+		
+	}
+snippet d_huaweicloud_dcs_product_v1
+	data "huaweicloud_dcs_product_v1" "${1}" {
+		
+	}
+snippet d_huaweicloud_dms_az_v1
+	data "huaweicloud_dms_az_v1" "${1}" {
+		
+	}
+snippet d_huaweicloud_dms_maintainwindow_v1
+	data "huaweicloud_dms_maintainwindow_v1" "${1}" {
+		
+	}
+snippet d_huaweicloud_dms_product_v1
+	data "huaweicloud_dms_product_v1" "${1}" {
+		engine = "${2}"
+		instance_type = "${3}"
 	}
 snippet d_huaweicloud_iam_role_v3
 	data "huaweicloud_iam_role_v3" "${1}" {
@@ -383,6 +609,14 @@ snippet d_huaweicloud_s3_bucket_object
 	}
 snippet d_huaweicloud_sfs_file_system_v2
 	data "huaweicloud_sfs_file_system_v2" "${1}" {
+		
+	}
+snippet d_huaweicloud_vbs_backup_policy_v2
+	data "huaweicloud_vbs_backup_policy_v2" "${1}" {
+		
+	}
+snippet d_huaweicloud_vbs_backup_v2
+	data "huaweicloud_vbs_backup_v2" "${1}" {
 		
 	}
 snippet d_huaweicloud_vpc_peering_connection_v2

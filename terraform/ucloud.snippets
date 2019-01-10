@@ -1,0 +1,91 @@
+snippet ucloud
+	provider "ucloud" {
+		private_key = "${1}"
+		project_id = "${2}"
+		public_key = "${3}"
+		region = "${4}"
+	}
+snippet r_ucloud_disk
+	resource "ucloud_disk" "${1}" {
+		availability_zone = "${2}"
+		disk_size = ${3}
+	}
+snippet r_ucloud_disk_attachment
+	resource "ucloud_disk_attachment" "${1}" {
+		availability_zone = "${2}"
+		disk_id = "${3}"
+		instance_id = "${4}"
+	}
+snippet r_ucloud_eip
+	resource "ucloud_eip" "${1}" {
+		internet_type = "${2}"
+	}
+snippet r_ucloud_eip_association
+	resource "ucloud_eip_association" "${1}" {
+		eip_id = "${2}"
+		resource_id = "${3}"
+	}
+snippet r_ucloud_instance
+	resource "ucloud_instance" "${1}" {
+		availability_zone = "${2}"
+		image_id = "${3}"
+		instance_type = "${4}"
+		root_password = "${5}"
+	}
+snippet r_ucloud_lb
+	resource "ucloud_lb" "${1}" {
+		
+	}
+snippet r_ucloud_lb_attachment
+	resource "ucloud_lb_attachment" "${1}" {
+		listener_id = "${2}"
+		load_balancer_id = "${3}"
+		resource_id = "${4}"
+	}
+snippet r_ucloud_lb_listener
+	resource "ucloud_lb_listener" "${1}" {
+		load_balancer_id = "${2}"
+		protocol = "${3}"
+	}
+snippet r_ucloud_lb_rule
+	resource "ucloud_lb_rule" "${1}" {
+		backend_ids = ["${2}"]
+		listener_id = "${3}"
+		load_balancer_id = "${4}"
+	}
+snippet r_ucloud_security_group
+	resource "ucloud_security_group" "${1}" {
+		rules {
+			port_range = ""
+		}
+	}
+snippet r_ucloud_subnet
+	resource "ucloud_subnet" "${1}" {
+		cidr_block = "${2}"
+		vpc_id = "${3}"
+	}
+snippet r_ucloud_vpc
+	resource "ucloud_vpc" "${1}" {
+		cidr_blocks = ["${2}"]
+	}
+snippet r_ucloud_vpc_peering_connection
+	resource "ucloud_vpc_peering_connection" "${1}" {
+		peer_vpc_id = "${2}"
+		vpc_id = "${3}"
+	}
+snippet d_ucloud_eips
+	data "ucloud_eips" "${1}" {
+		
+	}
+snippet d_ucloud_images
+	data "ucloud_images" "${1}" {
+		
+	}
+snippet d_ucloud_projects
+	data "ucloud_projects" "${1}" {
+		
+	}
+snippet d_ucloud_zones
+	data "ucloud_zones" "${1}" {
+		
+	}

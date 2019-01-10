@@ -2,6 +2,15 @@ snippet flexibleengine
 	provider "flexibleengine" {
 		auth_url = "${1}"
 	}
+snippet r_flexibleengine_antiddos_v1
+	resource "flexibleengine_antiddos_v1" "${1}" {
+		app_type_id = ${2}
+		cleaning_access_pos_id = ${3}
+		enable_l7 = ${4:false}
+		floating_ip_id = "${5}"
+		http_request_pos_id = ${6}
+		traffic_pos_id = ${7}
+	}
 snippet r_flexibleengine_as_configuration_v1
 	resource "flexibleengine_as_configuration_v1" "${1}" {
 		instance_config {
@@ -97,10 +106,32 @@ snippet r_flexibleengine_csbs_backup_v1
 	resource "flexibleengine_csbs_backup_v1" "${1}" {
 		resource_id = "${2}"
 	}
+snippet r_flexibleengine_cts_tracker_v1
+	resource "flexibleengine_cts_tracker_v1" "${1}" {
+		bucket_name = "${2}"
+	}
+snippet r_flexibleengine_dcs_instance_v1
+	resource "flexibleengine_dcs_instance_v1" "${1}" {
+		available_zones = ["${2}"]
+		backup_at = [${3}]
+		backup_type = "${4}"
+		begin_at = "${5}"
+		capacity = ${6}
+		engine = "${7}"
+		name = "${8}"
+		period_type = "${9}"
+		product_id = "${10}"
+		save_days = ${11}
+		security_group_id = "${12}"
+		subnet_id = "${13}"
+		vpc_id = "${14}"
+	}
 snippet r_flexibleengine_dns_recordset_v2
 	resource "flexibleengine_dns_recordset_v2" "${1}" {
 		name = "${2}"
-		zone_id = "${3}"
+		records = ["${3}"]
+		type = "${4}"
+		zone_id = "${5}"
 	}
 snippet r_flexibleengine_dns_zone_v2
 	resource "flexibleengine_dns_zone_v2" "${1}" {
@@ -260,6 +291,11 @@ snippet r_flexibleengine_nat_snat_rule_v2
 		floating_ip_id = "${2}"
 		nat_gateway_id = "${3}"
 		network_id = "${4}"
+	}
+snippet r_flexibleengine_networking_floatingip_associate_v2
+	resource "flexibleengine_networking_floatingip_associate_v2" "${1}" {
+		floating_ip = "${2}"
+		port_id = "${3}"
 	}
 snippet r_flexibleengine_networking_floatingip_v2
 	resource "flexibleengine_networking_floatingip_v2" "${1}" {
@@ -447,6 +483,22 @@ snippet d_flexibleengine_csbs_backup_policy_v1
 	}
 snippet d_flexibleengine_csbs_backup_v1
 	data "flexibleengine_csbs_backup_v1" "${1}" {
+		
+	}
+snippet d_flexibleengine_cts_tracker_v1
+	data "flexibleengine_cts_tracker_v1" "${1}" {
+		
+	}
+snippet d_flexibleengine_dcs_az_v1
+	data "flexibleengine_dcs_az_v1" "${1}" {
+		
+	}
+snippet d_flexibleengine_dcs_maintainwindow_v1
+	data "flexibleengine_dcs_maintainwindow_v1" "${1}" {
+		
+	}
+snippet d_flexibleengine_dcs_product_v1
+	data "flexibleengine_dcs_product_v1" "${1}" {
 		
 	}
 snippet d_flexibleengine_images_image_v2

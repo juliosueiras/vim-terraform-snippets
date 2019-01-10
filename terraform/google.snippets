@@ -24,6 +24,23 @@ snippet r_google_bigtable_table
 		instance_name = "${2}"
 		name = "${3}"
 	}
+snippet r_google_billing_account_iam_binding
+	resource "google_billing_account_iam_binding" "${1}" {
+		billing_account_id = "${2}"
+		members = ["${3}"]
+		role = "${4}"
+	}
+snippet r_google_billing_account_iam_member
+	resource "google_billing_account_iam_member" "${1}" {
+		billing_account_id = "${2}"
+		member = "${3}"
+		role = "${4}"
+	}
+snippet r_google_billing_account_iam_policy
+	resource "google_billing_account_iam_policy" "${1}" {
+		billing_account_id = "${2}"
+		policy_data = "${3}"
+	}
 snippet r_google_binary_authorization_attestor
 	resource "google_binary_authorization_attestor" "${1}" {
 		attestation_authority_note {
@@ -220,6 +237,12 @@ snippet r_google_compute_router_interface
 		name = "${2}"
 		router = "${3}"
 		vpn_tunnel = "${4}"
+	}
+snippet r_google_compute_router_nat
+	resource "google_compute_router_nat" "${1}" {
+		name = "${2}"
+		nat_ip_allocate_option = "${3}"
+		router = "${4}"
 	}
 snippet r_google_compute_router_peer
 	resource "google_compute_router_peer" "${1}" {
@@ -506,6 +529,21 @@ snippet r_google_monitoring_alert_policy
 		display_name = "${4}"
 		enabled = ${5:false}
 	}
+snippet r_google_monitoring_group
+	resource "google_monitoring_group" "${1}" {
+		display_name = "${2}"
+		filter = "${3}"
+	}
+snippet r_google_monitoring_notification_channel
+	resource "google_monitoring_notification_channel" "${1}" {
+		display_name = "${2}"
+		type = "${3}"
+	}
+snippet r_google_monitoring_uptime_check_config
+	resource "google_monitoring_uptime_check_config" "${1}" {
+		display_name = "${2}"
+		timeout = "${3}"
+	}
 snippet r_google_organization_iam_binding
 	resource "google_organization_iam_binding" "${1}" {
 		members = ["${2}"]
@@ -728,6 +766,11 @@ snippet r_google_sql_database_instance
 			tier = ""
 		}
 	}
+snippet r_google_sql_ssl_cert
+	resource "google_sql_ssl_cert" "${1}" {
+		common_name = "${2}"
+		instance = "${3}"
+	}
 snippet r_google_sql_user
 	resource "google_sql_user" "${1}" {
 		instance = "${2}"
@@ -763,6 +806,12 @@ snippet r_google_storage_bucket_object
 		bucket = "${2}"
 		name = "${3}"
 	}
+snippet r_google_storage_default_object_access_control
+	resource "google_storage_default_object_access_control" "${1}" {
+		bucket = "${2}"
+		entity = "${3}"
+		role = "${4}"
+	}
 snippet r_google_storage_default_object_acl
 	resource "google_storage_default_object_acl" "${1}" {
 		bucket = "${2}"
@@ -772,6 +821,13 @@ snippet r_google_storage_notification
 		bucket = "${2}"
 		payload_format = "${3}"
 		topic = "${4}"
+	}
+snippet r_google_storage_object_access_control
+	resource "google_storage_object_access_control" "${1}" {
+		bucket = "${2}"
+		entity = "${3}"
+		object = "${4}"
+		role = "${5}"
 	}
 snippet r_google_storage_object_acl
 	resource "google_storage_object_acl" "${1}" {
@@ -889,6 +945,10 @@ snippet d_google_iam_policy
 				members = [""]
 				role = ""
 			}
+	}
+snippet d_google_iam_role
+	data "google_iam_role" "${1}" {
+		name = "${2}"
 	}
 snippet d_google_kms_secret
 	data "google_kms_secret" "${1}" {

@@ -1,0 +1,29 @@
+snippet hedvig
+	provider "hedvig" {
+		node = "${1}"
+		password = "${2}"
+		username = "${3}"
+	}
+snippet r_hedvig_access
+	resource "hedvig_access" "${1}" {
+		address = "${2}"
+		host = "${3}"
+		type = "${4}"
+		vdisk = "${5}"
+	}
+snippet r_hedvig_lun
+	resource "hedvig_lun" "${1}" {
+		controller = "${2}"
+		vdisk = "${3}"
+	}
+snippet r_hedvig_mount
+	resource "hedvig_mount" "${1}" {
+		controller = "${2}"
+		vdisk = "${3}"
+	}
+snippet r_hedvig_vdisk
+	resource "hedvig_vdisk" "${1}" {
+		name = "${2}"
+		size = ${3}
+		type = "${4}"
+	}

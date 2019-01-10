@@ -625,12 +625,10 @@ snippet r_azurerm_key_vault
 	}
 snippet r_azurerm_key_vault_access_policy
 	resource "azurerm_key_vault_access_policy" "${1}" {
-		key_permissions = ["${2}"]
-		object_id = "${3}"
-		resource_group_name = "${4}"
-		secret_permissions = ["${5}"]
-		tenant_id = "${6}"
-		vault_name = "${7}"
+		object_id = "${2}"
+		resource_group_name = "${3}"
+		tenant_id = "${4}"
+		vault_name = "${5}"
 	}
 snippet r_azurerm_key_vault_certificate
 	resource "azurerm_key_vault_certificate" "${1}" {
@@ -820,6 +818,33 @@ snippet r_azurerm_management_lock
 		lock_level = "${2}"
 		name = "${3}"
 		scope = "${4}"
+	}
+snippet r_azurerm_mariadb_database
+	resource "azurerm_mariadb_database" "${1}" {
+		charset = "${2}"
+		collation = "${3}"
+		name = "${4}"
+		resource_group_name = "${5}"
+		server_name = "${6}"
+	}
+snippet r_azurerm_mariadb_server
+	resource "azurerm_mariadb_server" "${1}" {
+		administrator_login = "${2}"
+		administrator_login_password = "${3}"
+		location = "${4}"
+		name = "${5}"
+		resource_group_name = "${6}"
+		sku {
+			capacity = 1
+			family = ""
+			name = ""
+			tier = ""
+		}
+		ssl_enforcement = "${8}"
+		storage_profile {
+			storage_mb = 1
+		}
+		version = "${10}"
 	}
 snippet r_azurerm_metric_alertrule
 	resource "azurerm_metric_alertrule" "${1}" {
@@ -1321,6 +1346,16 @@ snippet r_azurerm_shared_image_version
 			regional_replica_count = 1
 		}
 	}
+snippet r_azurerm_signalr_service
+	resource "azurerm_signalr_service" "${1}" {
+		location = "${2}"
+		name = "${3}"
+		resource_group_name = "${4}"
+		sku {
+			capacity = 1
+			name = ""
+		}
+	}
 snippet r_azurerm_snapshot
 	resource "azurerm_snapshot" "${1}" {
 		create_option = "${2}"
@@ -1670,6 +1705,11 @@ snippet d_azurerm_managed_disk
 snippet d_azurerm_management_group
 	data "azurerm_management_group" "${1}" {
 		group_id = "${2}"
+	}
+snippet d_azurerm_monitor_action_group
+	data "azurerm_monitor_action_group" "${1}" {
+		name = "${2}"
+		resource_group_name = "${3}"
 	}
 snippet d_azurerm_monitor_diagnostic_categories
 	data "azurerm_monitor_diagnostic_categories" "${1}" {

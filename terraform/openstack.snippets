@@ -289,6 +289,15 @@ snippet r_openstack_objectstorage_tempurl_v1
 		object = "${3}"
 		ttl = ${4}
 	}
+snippet r_openstack_sharedfilesystem_securityservice_v2
+	resource "openstack_sharedfilesystem_securityservice_v2" "${1}" {
+		type = "${2}"
+	}
+snippet r_openstack_sharedfilesystem_sharenetwork_v2
+	resource "openstack_sharedfilesystem_sharenetwork_v2" "${1}" {
+		neutron_net_id = "${2}"
+		neutron_subnet_id = "${3}"
+	}
 snippet r_openstack_vpnaas_endpoint_group_v2
 	resource "openstack_vpnaas_endpoint_group_v2" "${1}" {
 		
@@ -314,12 +323,24 @@ snippet r_openstack_vpnaas_site_connection_v2
 		psk = "${6}"
 		vpnservice_id = "${7}"
 	}
+snippet d_openstack_blockstorage_snapshot_v2
+	data "openstack_blockstorage_snapshot_v2" "${1}" {
+		
+	}
+snippet d_openstack_blockstorage_snapshot_v3
+	data "openstack_blockstorage_snapshot_v3" "${1}" {
+		
+	}
 snippet d_openstack_compute_flavor_v2
 	data "openstack_compute_flavor_v2" "${1}" {
 		
 	}
 snippet d_openstack_compute_keypair_v2
 	data "openstack_compute_keypair_v2" "${1}" {
+		name = "${2}"
+	}
+snippet d_openstack_containerinfra_cluster_v1
+	data "openstack_containerinfra_cluster_v1" "${1}" {
 		name = "${2}"
 	}
 snippet d_openstack_containerinfra_clustertemplate_v1

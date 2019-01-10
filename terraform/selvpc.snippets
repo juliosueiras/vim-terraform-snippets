@@ -7,6 +7,12 @@ snippet r_selvpc_resell_floatingip_v2
 		project_id = "${2}"
 		region = "${3}"
 	}
+snippet r_selvpc_resell_keypair_v2
+	resource "selvpc_resell_keypair_v2" "${1}" {
+		name = "${2}"
+		public_key = "${3}"
+		user_id = "${4}"
+	}
 snippet r_selvpc_resell_license_v2
 	resource "selvpc_resell_license_v2" "${1}" {
 		project_id = "${2}"
@@ -16,4 +22,29 @@ snippet r_selvpc_resell_license_v2
 snippet r_selvpc_resell_project_v2
 	resource "selvpc_resell_project_v2" "${1}" {
 		name = "${2}"
+	}
+snippet r_selvpc_resell_role_v2
+	resource "selvpc_resell_role_v2" "${1}" {
+		project_id = "${2}"
+		user_id = "${3}"
+	}
+snippet r_selvpc_resell_subnet_v2
+	resource "selvpc_resell_subnet_v2" "${1}" {
+		project_id = "${2}"
+		region = "${3}"
+	}
+snippet r_selvpc_resell_token_v2
+	resource "selvpc_resell_token_v2" "${1}" {
+		
+	}
+snippet r_selvpc_resell_user_v2
+	resource "selvpc_resell_user_v2" "${1}" {
+		name = "${2}"
+		password = "${3}"
+	}
+snippet r_selvpc_resell_vrrp_subnet_v2
+	resource "selvpc_resell_vrrp_subnet_v2" "${1}" {
+		master_region = "${2}"
+		project_id = "${3}"
+		slave_region = "${4}"
 	}

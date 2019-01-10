@@ -37,12 +37,28 @@ snippet r_hcloud_volume_attachment
 		server_id = ${2}
 		volume_id = ${3}
 	}
+snippet d_hcloud_datacenter
+	data "hcloud_datacenter" "${1}" {
+		
+	}
+snippet d_hcloud_datacenters
+	data "hcloud_datacenters" "${1}" {
+		
+	}
 snippet d_hcloud_floating_ip
 	data "hcloud_floating_ip" "${1}" {
 		
 	}
 snippet d_hcloud_image
 	data "hcloud_image" "${1}" {
+		
+	}
+snippet d_hcloud_location
+	data "hcloud_location" "${1}" {
+		
+	}
+snippet d_hcloud_locations
+	data "hcloud_locations" "${1}" {
 		
 	}
 snippet d_hcloud_ssh_key

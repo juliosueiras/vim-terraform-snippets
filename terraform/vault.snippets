@@ -90,6 +90,10 @@ snippet r_vault_database_secret_backend_role
 		db_name = "${4}"
 		name = "${5}"
 	}
+snippet r_vault_gcp_auth_backend
+	resource "vault_gcp_auth_backend" "${1}" {
+		credentials = "${2}"
+	}
 snippet r_vault_gcp_auth_backend_role
 	resource "vault_gcp_auth_backend_role" "${1}" {
 		project_id = "${2}"
@@ -98,12 +102,22 @@ snippet r_vault_gcp_auth_backend_role
 	}
 snippet r_vault_gcp_secret_backend
 	resource "vault_gcp_secret_backend" "${1}" {
-		credentials = "${2}"
+		
 	}
 snippet r_vault_generic_secret
 	resource "vault_generic_secret" "${1}" {
 		data_json = "${2}"
 		path = "${3}"
+	}
+snippet r_vault_identity_group
+	resource "vault_identity_group" "${1}" {
+		name = "${2}"
+	}
+snippet r_vault_identity_group_alias
+	resource "vault_identity_group_alias" "${1}" {
+		canonical_id = "${2}"
+		mount_accessor = "${3}"
+		name = "${4}"
 	}
 snippet r_vault_jwt_auth_backend_role
 	resource "vault_jwt_auth_backend_role" "${1}" {

@@ -116,6 +116,10 @@ snippet r_alicloud_cs_kubernetes
 		master_instance_types = ["${2}"]
 		worker_instance_types = ["${3}"]
 	}
+snippet r_alicloud_cs_managed_kubernetes
+	resource "alicloud_cs_managed_kubernetes" "${1}" {
+		worker_instance_types = ["${2}"]
+	}
 snippet r_alicloud_cs_swarm
 	resource "alicloud_cs_swarm" "${1}" {
 		cidr_block = "${2}"
@@ -307,7 +311,6 @@ snippet r_alicloud_kvstore_backup_policy
 snippet r_alicloud_kvstore_instance
 	resource "alicloud_kvstore_instance" "${1}" {
 		instance_class = "${2}"
-		password = "${3}"
 	}
 snippet r_alicloud_log_machine_group
 	resource "alicloud_log_machine_group" "${1}" {
@@ -368,8 +371,7 @@ snippet r_alicloud_oss_bucket_object
 	}
 snippet r_alicloud_ots_instance
 	resource "alicloud_ots_instance" "${1}" {
-		description = "${2}"
-		name = "${3}"
+		name = "${2}"
 	}
 snippet r_alicloud_ots_instance_attachment
 	resource "alicloud_ots_instance_attachment" "${1}" {

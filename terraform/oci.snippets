@@ -112,10 +112,27 @@ snippet r_oci_core_instance
 		compartment_id = "${3}"
 		shape = "${4}"
 	}
+snippet r_oci_core_instance_configuration
+	resource "oci_core_instance_configuration" "${1}" {
+		compartment_id = "${2}"
+		instance_details {
+			instance_type = ""
+		}
+	}
 snippet r_oci_core_instance_console_connection
 	resource "oci_core_instance_console_connection" "${1}" {
 		instance_id = "${2}"
 		public_key = "${3}"
+	}
+snippet r_oci_core_instance_pool
+	resource "oci_core_instance_pool" "${1}" {
+		compartment_id = "${2}"
+		instance_configuration_id = "${3}"
+		placement_configurations {
+			availability_domain = ""
+			primary_subnet_id = ""
+		}
+		size = ${5}
 	}
 snippet r_oci_core_internet_gateway
 	resource "oci_core_internet_gateway" "${1}" {
@@ -161,6 +178,11 @@ snippet r_oci_core_route_table
 	resource "oci_core_route_table" "${1}" {
 		compartment_id = "${2}"
 		vcn_id = "${3}"
+	}
+snippet r_oci_core_route_table_attachment
+	resource "oci_core_route_table_attachment" "${1}" {
+		route_table_id = "${2}"
+		subnet_id = "${3}"
 	}
 snippet r_oci_core_security_list
 	resource "oci_core_security_list" "${1}" {
@@ -217,7 +239,7 @@ snippet r_oci_core_volume_attachment
 	}
 snippet r_oci_core_volume_backup
 	resource "oci_core_volume_backup" "${1}" {
-		volume_id = "${2}"
+		
 	}
 snippet r_oci_core_volume_backup_policy_assignment
 	resource "oci_core_volume_backup_policy_assignment" "${1}" {
@@ -413,6 +435,10 @@ snippet r_oci_identity_user
 	resource "oci_identity_user" "${1}" {
 		description = "${2}"
 		name = "${3}"
+	}
+snippet r_oci_identity_user_capabilities_management
+	resource "oci_identity_user_capabilities_management" "${1}" {
+		user_id = "${2}"
 	}
 snippet r_oci_identity_user_group_membership
 	resource "oci_identity_user_group_membership" "${1}" {
@@ -713,6 +739,14 @@ snippet d_oci_core_instance
 	data "oci_core_instance" "${1}" {
 		instance_id = "${2}"
 	}
+snippet d_oci_core_instance_configuration
+	data "oci_core_instance_configuration" "${1}" {
+		instance_configuration_id = "${2}"
+	}
+snippet d_oci_core_instance_configurations
+	data "oci_core_instance_configurations" "${1}" {
+		compartment_id = "${2}"
+	}
 snippet d_oci_core_instance_console_connections
 	data "oci_core_instance_console_connections" "${1}" {
 		compartment_id = "${2}"
@@ -720,6 +754,19 @@ snippet d_oci_core_instance_console_connections
 snippet d_oci_core_instance_credentials
 	data "oci_core_instance_credentials" "${1}" {
 		instance_id = "${2}"
+	}
+snippet d_oci_core_instance_pool
+	data "oci_core_instance_pool" "${1}" {
+		instance_pool_id = "${2}"
+	}
+snippet d_oci_core_instance_pool_instances
+	data "oci_core_instance_pool_instances" "${1}" {
+		compartment_id = "${2}"
+		instance_pool_id = "${3}"
+	}
+snippet d_oci_core_instance_pools
+	data "oci_core_instance_pools" "${1}" {
+		compartment_id = "${2}"
 	}
 snippet d_oci_core_instances
 	data "oci_core_instances" "${1}" {
@@ -1073,6 +1120,10 @@ snippet d_oci_identity_fault_domains
 snippet d_oci_identity_groups
 	data "oci_identity_groups" "${1}" {
 		compartment_id = "${2}"
+	}
+snippet d_oci_identity_identity_provider_groups
+	data "oci_identity_identity_provider_groups" "${1}" {
+		identity_provider_id = "${2}"
 	}
 snippet d_oci_identity_identity_providers
 	data "oci_identity_identity_providers" "${1}" {

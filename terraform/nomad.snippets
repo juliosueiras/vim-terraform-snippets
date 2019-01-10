@@ -36,6 +36,18 @@ snippet r_nomad_sentinel_policy
 		policy = "${4}"
 		scope = "${5}"
 	}
+snippet d_nomad_deployments
+	data "nomad_deployments" "${1}" {
+		
+	}
+snippet d_nomad_job
+	data "nomad_job" "${1}" {
+		job_id = "${2}"
+	}
+snippet d_nomad_namespaces
+	data "nomad_namespaces" "${1}" {
+		
+	}
 snippet d_nomad_regions
 	data "nomad_regions" "${1}" {
 		

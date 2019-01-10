@@ -1,0 +1,36 @@
+snippet skytap
+	provider "skytap" {
+		api_token = "${1}"
+		username = "${2}"
+	}
+snippet r_skytap_environment
+	resource "skytap_environment" "${1}" {
+		description = "${2}"
+		name = "${3}"
+		template_id = "${4}"
+	}
+snippet r_skytap_network
+	resource "skytap_network" "${1}" {
+		domain = "${2}"
+		environment_id = "${3}"
+		name = "${4}"
+		subnet = "${5}"
+	}
+snippet r_skytap_project
+	resource "skytap_project" "${1}" {
+		name = "${2}"
+	}
+snippet r_skytap_vm
+	resource "skytap_vm" "${1}" {
+		environment_id = "${2}"
+		template_id = "${3}"
+		vm_id = "${4}"
+	}
+snippet d_skytap_project
+	data "skytap_project" "${1}" {
+		name = "${2}"
+	}
+snippet d_skytap_template
+	data "skytap_template" "${1}" {
+		name = "${2}"
+	}

@@ -21,9 +21,18 @@ snippet r_icinga2_hostgroup
 		display_name = "${2}"
 		name = "${3}"
 	}
+snippet r_icinga2_notification
+	resource "icinga2_notification" "${1}" {
+		command = "${2}"
+		hostname = "${3}"
+	}
 snippet r_icinga2_service
 	resource "icinga2_service" "${1}" {
 		check_command = "${2}"
 		hostname = "${3}"
 		name = "${4}"
+	}
+snippet r_icinga2_user
+	resource "icinga2_user" "${1}" {
+		name = "${2}"
 	}

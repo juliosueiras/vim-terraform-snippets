@@ -1,0 +1,26 @@
+snippet azuread
+	provider "azuread" {
+		environment = "${1}"
+	}
+snippet r_azuread_application
+	resource "azuread_application" "${1}" {
+		name = "${2}"
+	}
+snippet r_azuread_service_principal
+	resource "azuread_service_principal" "${1}" {
+		application_id = "${2}"
+	}
+snippet r_azuread_service_principal_password
+	resource "azuread_service_principal_password" "${1}" {
+		end_date = "${2}"
+		service_principal_id = "${3}"
+		value = "${4}"
+	}
+snippet d_azuread_application
+	data "azuread_application" "${1}" {
+		
+	}
+snippet d_azuread_service_principal
+	data "azuread_service_principal" "${1}" {
+		
+	}
