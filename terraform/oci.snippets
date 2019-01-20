@@ -550,6 +550,15 @@ snippet r_oci_load_balancer_path_route_set
 			}
 		}
 	}
+snippet r_oci_load_balancer_rule_set
+	resource "oci_load_balancer_rule_set" "${1}" {
+		items {
+			action = ""
+			header = ""
+		}
+		load_balancer_id = "${3}"
+		name = "${4}"
+	}
 snippet r_oci_objectstorage_bucket
 	resource "oci_objectstorage_bucket" "${1}" {
 		compartment_id = "${2}"
@@ -753,6 +762,10 @@ snippet d_oci_core_instance_console_connections
 	}
 snippet d_oci_core_instance_credentials
 	data "oci_core_instance_credentials" "${1}" {
+		instance_id = "${2}"
+	}
+snippet d_oci_core_instance_devices
+	data "oci_core_instance_devices" "${1}" {
 		instance_id = "${2}"
 	}
 snippet d_oci_core_instance_pool
@@ -1266,6 +1279,15 @@ snippet d_oci_load_balancer_policies
 snippet d_oci_load_balancer_protocols
 	data "oci_load_balancer_protocols" "${1}" {
 		compartment_id = "${2}"
+	}
+snippet d_oci_load_balancer_rule_set
+	data "oci_load_balancer_rule_set" "${1}" {
+		load_balancer_id = "${2}"
+		name = "${3}"
+	}
+snippet d_oci_load_balancer_rule_sets
+	data "oci_load_balancer_rule_sets" "${1}" {
+		load_balancer_id = "${2}"
 	}
 snippet d_oci_load_balancer_shapes
 	data "oci_load_balancer_shapes" "${1}" {

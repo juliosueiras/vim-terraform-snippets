@@ -13,6 +13,18 @@ snippet r_gitlab_group
 		name = "${2}"
 		path = "${3}"
 	}
+snippet r_gitlab_group_membership
+	resource "gitlab_group_membership" "${1}" {
+		access_level = "${2}"
+		group_id = "${3}"
+		user_id = ${4}
+	}
+snippet r_gitlab_group_variable
+	resource "gitlab_group_variable" "${1}" {
+		group = "${2}"
+		key = "${3}"
+		value = "${4}"
+	}
 snippet r_gitlab_label
 	resource "gitlab_label" "${1}" {
 		color = "${2}"
@@ -28,10 +40,30 @@ snippet r_gitlab_project_hook
 		project = "${2}"
 		url = "${3}"
 	}
+snippet r_gitlab_project_membership
+	resource "gitlab_project_membership" "${1}" {
+		access_level = "${2}"
+		project_id = "${3}"
+		user_id = ${4}
+	}
+snippet r_gitlab_project_variable
+	resource "gitlab_project_variable" "${1}" {
+		key = "${2}"
+		project = "${3}"
+		value = "${4}"
+	}
 snippet r_gitlab_user
 	resource "gitlab_user" "${1}" {
 		email = "${2}"
 		name = "${3}"
 		password = "${4}"
 		username = "${5}"
+	}
+snippet d_gitlab_project
+	data "gitlab_project" "${1}" {
+		id = ${2}
+	}
+snippet d_gitlab_user
+	data "gitlab_user" "${1}" {
+		
 	}

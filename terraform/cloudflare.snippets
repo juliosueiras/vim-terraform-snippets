@@ -78,7 +78,6 @@ snippet r_cloudflare_rate_limit
 	resource "cloudflare_rate_limit" "${1}" {
 		action {
 			mode = ""
-			timeout = 1
 		}
 		period = ${3}
 		threshold = ${4}
@@ -89,6 +88,16 @@ snippet r_cloudflare_record
 		domain = "${2}"
 		name = "${3}"
 		type = "${4}"
+	}
+snippet r_cloudflare_spectrum_application
+	resource "cloudflare_spectrum_application" "${1}" {
+		dns {
+			name = ""
+			type = ""
+		}
+		origin_port = ${3}
+		protocol = "${4}"
+		zone_id = "${5}"
 	}
 snippet r_cloudflare_waf_rule
 	resource "cloudflare_waf_rule" "${1}" {
@@ -124,4 +133,10 @@ snippet r_cloudflare_zone_settings_override
 snippet d_cloudflare_ip_ranges
 	data "cloudflare_ip_ranges" "${1}" {
 		
+	}
+snippet d_cloudflare_zones
+	data "cloudflare_zones" "${1}" {
+		filter {
+			
+			}
 	}

@@ -64,6 +64,18 @@ snippet r_kubernetes_namespace
 		
 		}
 	}
+snippet r_kubernetes_network_policy
+	resource "kubernetes_network_policy" "${1}" {
+		metadata {
+		
+		}
+		spec {
+			pod_selector {
+			
+			}
+			policy_types = [""]
+		}
+	}
 snippet r_kubernetes_persistent_volume
 	resource "kubernetes_persistent_volume" "${1}" {
 		metadata {
@@ -120,6 +132,32 @@ snippet r_kubernetes_resource_quota
 		
 		}
 	}
+snippet r_kubernetes_role
+	resource "kubernetes_role" "${1}" {
+		metadata {
+		
+		}
+		rule {
+			api_groups = [""]
+			resources = [""]
+			verbs = [""]
+		}
+	}
+snippet r_kubernetes_role_binding
+	resource "kubernetes_role_binding" "${1}" {
+		metadata {
+		
+		}
+		role_ref {
+			api_group = ""
+			kind = ""
+			name = ""
+		}
+		subject {
+			kind = ""
+			name = ""
+		}
+	}
 snippet r_kubernetes_secret
 	resource "kubernetes_secret" "${1}" {
 		metadata {
@@ -164,6 +202,12 @@ snippet r_kubernetes_storage_class
 		
 		}
 		storage_provisioner = "${3}"
+	}
+snippet d_kubernetes_secret
+	data "kubernetes_secret" "${1}" {
+		metadata {
+			
+			}
 	}
 snippet d_kubernetes_service
 	data "kubernetes_service" "${1}" {

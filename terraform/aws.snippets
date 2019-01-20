@@ -809,6 +809,14 @@ snippet r_aws_dms_replication_task
 		table_mappings = "${6}"
 		target_endpoint_arn = "${7}"
 	}
+snippet r_aws_docdb_cluster_parameter_group
+	resource "aws_docdb_cluster_parameter_group" "${1}" {
+		family = "${2}"
+	}
+snippet r_aws_docdb_subnet_group
+	resource "aws_docdb_subnet_group" "${1}" {
+		subnet_ids = ["${2}"]
+	}
 snippet r_aws_dx_bgp_peer
 	resource "aws_dx_bgp_peer" "${1}" {
 		address_family = "${2}"
@@ -1160,6 +1168,10 @@ snippet r_aws_glacier_vault_lock
 		policy = "${3}"
 		vault_name = "${4}"
 	}
+snippet r_aws_globalaccelerator_accelerator
+	resource "aws_globalaccelerator_accelerator" "${1}" {
+		name = "${2}"
+	}
 snippet r_aws_glue_catalog_database
 	resource "aws_glue_catalog_database" "${1}" {
 		name = "${2}"
@@ -1355,7 +1367,6 @@ snippet r_aws_iam_user_ssh_key
 snippet r_aws_inspector_assessment_target
 	resource "aws_inspector_assessment_target" "${1}" {
 		name = "${2}"
-		resource_group_arn = "${3}"
 	}
 snippet r_aws_inspector_assessment_template
 	resource "aws_inspector_assessment_template" "${1}" {
@@ -1463,6 +1474,10 @@ snippet r_aws_lambda_function
 		handler = "${3}"
 		role = "${4}"
 		runtime = "${5}"
+	}
+snippet r_aws_lambda_layer_version
+	resource "aws_lambda_layer_version" "${1}" {
+		layer_name = "${2}"
 	}
 snippet r_aws_lambda_permission
 	resource "aws_lambda_permission" "${1}" {
@@ -1589,6 +1604,10 @@ snippet r_aws_main_route_table_association
 	resource "aws_main_route_table_association" "${1}" {
 		route_table_id = "${2}"
 		vpc_id = "${3}"
+	}
+snippet r_aws_media_package_channel
+	resource "aws_media_package_channel" "${1}" {
+		channel_id = "${2}"
 	}
 snippet r_aws_media_store_container
 	resource "aws_media_store_container" "${1}" {
@@ -1841,6 +1860,10 @@ snippet r_aws_proxy_protocol_policy
 		instance_ports = ["${2}"]
 		load_balancer = "${3}"
 	}
+snippet r_aws_ram_resource_share
+	resource "aws_ram_resource_share" "${1}" {
+		name = "${2}"
+	}
 snippet r_aws_rds_cluster
 	resource "aws_rds_cluster" "${1}" {
 		
@@ -1894,6 +1917,13 @@ snippet r_aws_redshift_subnet_group
 	resource "aws_redshift_subnet_group" "${1}" {
 		name = "${2}"
 		subnet_ids = ["${3}"]
+	}
+snippet r_aws_resourcegroups_group
+	resource "aws_resourcegroups_group" "${1}" {
+		name = "${2}"
+		resource_query {
+			query = ""
+		}
 	}
 snippet r_aws_route
 	resource "aws_route" "${1}" {
@@ -1981,6 +2011,12 @@ snippet r_aws_s3_bucket_policy
 snippet r_aws_s3_bucket_public_access_block
 	resource "aws_s3_bucket_public_access_block" "${1}" {
 		bucket = "${2}"
+	}
+snippet r_aws_sagemaker_notebook_instance
+	resource "aws_sagemaker_notebook_instance" "${1}" {
+		instance_type = "${2}"
+		name = "${3}"
+		role_arn = "${4}"
 	}
 snippet r_aws_secretsmanager_secret
 	resource "aws_secretsmanager_secret" "${1}" {
@@ -2706,6 +2742,10 @@ snippet d_aws_eip
 	}
 snippet d_aws_eks_cluster
 	data "aws_eks_cluster" "${1}" {
+		name = "${2}"
+	}
+snippet d_aws_elastic_beanstalk_application
+	data "aws_elastic_beanstalk_application" "${1}" {
 		name = "${2}"
 	}
 snippet d_aws_elastic_beanstalk_hosted_zone

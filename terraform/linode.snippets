@@ -36,7 +36,8 @@ snippet r_linode_nodebalancer_node
 	resource "linode_nodebalancer_node" "${1}" {
 		address = "${2}"
 		config_id = ${3}
-		nodebalancer_id = ${4}
+		label = "${4}"
+		nodebalancer_id = ${5}
 	}
 snippet r_linode_sshkey
 	resource "linode_sshkey" "${1}" {

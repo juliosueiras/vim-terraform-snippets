@@ -39,6 +39,30 @@ snippet r_flexibleengine_blockstorage_volume_v2
 	resource "flexibleengine_blockstorage_volume_v2" "${1}" {
 		size = ${2}
 	}
+snippet r_flexibleengine_cce_cluster_v3
+	resource "flexibleengine_cce_cluster_v3" "${1}" {
+		cluster_type = "${2}"
+		container_network_type = "${3}"
+		flavor_id = "${4}"
+		name = "${5}"
+		subnet_id = "${6}"
+		vpc_id = "${7}"
+	}
+snippet r_flexibleengine_cce_node_v3
+	resource "flexibleengine_cce_node_v3" "${1}" {
+		availability_zone = "${2}"
+		cluster_id = "${3}"
+		data_volumes {
+			size = 1
+			volumetype = ""
+		}
+		flavor_id = "${5}"
+		key_pair = "${6}"
+		root_volume {
+			size = 1
+			volumetype = ""
+		}
+	}
 snippet r_flexibleengine_ces_alarmrule
 	resource "flexibleengine_ces_alarmrule" "${1}" {
 		alarm_name = "${2}"
@@ -460,6 +484,14 @@ snippet r_flexibleengine_vpc_v1
 	resource "flexibleengine_vpc_v1" "${1}" {
 		cidr = "${2}"
 		name = "${3}"
+	}
+snippet d_flexibleengine_cce_cluster_v3
+	data "flexibleengine_cce_cluster_v3" "${1}" {
+		
+	}
+snippet d_flexibleengine_cce_node_v3
+	data "flexibleengine_cce_node_v3" "${1}" {
+		cluster_id = "${2}"
 	}
 snippet d_flexibleengine_compute_bms_flavors_v2
 	data "flexibleengine_compute_bms_flavors_v2" "${1}" {

@@ -4,14 +4,58 @@ snippet spotinst
 	}
 snippet r_spotinst_elastigroup_aws
 	resource "spotinst_elastigroup_aws" "${1}" {
-		description = "${2}"
-		fallback_to_ondemand = ${3:false}
-		instance_types_ondemand = "${4}"
-		instance_types_spot = ["${5}"]
-		name = "${6}"
-		orientation = "${7}"
+		fallback_to_ondemand = ${2:false}
+		instance_types_ondemand = "${3}"
+		instance_types_spot = ["${4}"]
+		name = "${5}"
+		orientation = "${6}"
+		product = "${7}"
+		security_groups = ["${8}"]
+	}
+snippet r_spotinst_elastigroup_aws_beanstalk
+	resource "spotinst_elastigroup_aws_beanstalk" "${1}" {
+		beanstalk_environment_name = "${2}"
+		desired_capacity = ${3}
+		instance_types_spot = ["${4}"]
+		max_size = ${5}
+		min_size = ${6}
+		name = "${7}"
 		product = "${8}"
-		security_groups = ["${9}"]
+		region = "${9}"
+	}
+snippet r_spotinst_elastigroup_azure
+	resource "spotinst_elastigroup_azure" "${1}" {
+		low_priority_sizes = ["${2}"]
+		name = "${3}"
+		network {
+			resource_group_name = ""
+			subnet_name = ""
+			virtual_network_name = ""
+		}
+		od_sizes = ["${5}"]
+		product = "${6}"
+		region = "${7}"
+		resource_group_name = "${8}"
+		strategy {
+		
+		}
+	}
+snippet r_spotinst_elastigroup_gcp
+	resource "spotinst_elastigroup_gcp" "${1}" {
+		desired_capacity = ${2}
+		name = "${3}"
+	}
+snippet r_spotinst_elastigroup_gke
+	resource "spotinst_elastigroup_gke" "${1}" {
+		cluster_id = "${2}"
+		cluster_zone_name = "${3}"
+		desired_capacity = ${4}
+		name = "${5}"
+	}
+snippet r_spotinst_ocean_aws
+	resource "spotinst_ocean_aws" "${1}" {
+		security_groups = ["${2}"]
+		subnet_ids = ["${3}"]
 	}
 snippet r_spotinst_subscription
 	resource "spotinst_subscription" "${1}" {

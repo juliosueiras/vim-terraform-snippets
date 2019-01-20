@@ -100,6 +100,11 @@ snippet r_azurerm_application_insights
 		name = "${4}"
 		resource_group_name = "${5}"
 	}
+snippet r_azurerm_application_insights_api_key
+	resource "azurerm_application_insights_api_key" "${1}" {
+		application_insights_id = "${2}"
+		name = "${3}"
+	}
 snippet r_azurerm_application_security_group
 	resource "azurerm_application_security_group" "${1}" {
 		location = "${2}"
@@ -200,6 +205,26 @@ snippet r_azurerm_azuread_service_principal_password
 		end_date = "${2}"
 		service_principal_id = "${3}"
 		value = "${4}"
+	}
+snippet r_azurerm_batch_account
+	resource "azurerm_batch_account" "${1}" {
+		location = "${2}"
+		name = "${3}"
+		resource_group_name = "${4}"
+	}
+snippet r_azurerm_batch_pool
+	resource "azurerm_batch_pool" "${1}" {
+		account_name = "${2}"
+		name = "${3}"
+		node_agent_sku_id = "${4}"
+		resource_group_name = "${5}"
+		storage_image_reference {
+			offer = ""
+			publisher = ""
+			sku = ""
+			version = ""
+		}
+		vm_size = "${7}"
 	}
 snippet r_azurerm_cdn_endpoint
 	resource "azurerm_cdn_endpoint" "${1}" {
@@ -558,13 +583,24 @@ snippet r_azurerm_express_route_circuit_peering
 snippet r_azurerm_firewall
 	resource "azurerm_firewall" "${1}" {
 		ip_configuration {
-			internal_public_ip_address_id = ""
 			name = ""
 			subnet_id = ""
 		}
 		location = "${3}"
 		name = "${4}"
 		resource_group_name = "${5}"
+	}
+snippet r_azurerm_firewall_application_rule_collection
+	resource "azurerm_firewall_application_rule_collection" "${1}" {
+		action = "${2}"
+		azure_firewall_name = "${3}"
+		name = "${4}"
+		priority = ${5}
+		resource_group_name = "${6}"
+		rule {
+			name = ""
+			source_addresses = [""]
+		}
 	}
 snippet r_azurerm_firewall_network_rule_collection
 	resource "azurerm_firewall_network_rule_collection" "${1}" {
@@ -970,7 +1006,6 @@ snippet r_azurerm_network_interface
 		ip_configuration {
 			name = ""
 			private_ip_address_allocation = ""
-			subnet_id = ""
 		}
 		location = "${3}"
 		name = "${4}"
@@ -1063,6 +1098,12 @@ snippet r_azurerm_policy_definition
 		name = "${4}"
 		policy_type = "${5}"
 	}
+snippet r_azurerm_policy_set_definition
+	resource "azurerm_policy_set_definition" "${1}" {
+		display_name = "${2}"
+		name = "${3}"
+		policy_type = "${4}"
+	}
 snippet r_azurerm_postgresql_configuration
 	resource "azurerm_postgresql_configuration" "${1}" {
 		name = "${2}"
@@ -1116,8 +1157,7 @@ snippet r_azurerm_public_ip
 	resource "azurerm_public_ip" "${1}" {
 		location = "${2}"
 		name = "${3}"
-		public_ip_address_allocation = "${4}"
-		resource_group_name = "${5}"
+		resource_group_name = "${4}"
 	}
 snippet r_azurerm_recovery_services_protected_vm
 	resource "azurerm_recovery_services_protected_vm" "${1}" {
@@ -1604,6 +1644,11 @@ snippet d_azurerm_app_service_plan
 		name = "${2}"
 		resource_group_name = "${3}"
 	}
+snippet d_azurerm_application_insights
+	data "azurerm_application_insights" "${1}" {
+		name = "${2}"
+		resource_group_name = "${3}"
+	}
 snippet d_azurerm_application_security_group
 	data "azurerm_application_security_group" "${1}" {
 		name = "${2}"
@@ -1616,6 +1661,17 @@ snippet d_azurerm_azuread_application
 snippet d_azurerm_azuread_service_principal
 	data "azurerm_azuread_service_principal" "${1}" {
 		
+	}
+snippet d_azurerm_batch_account
+	data "azurerm_batch_account" "${1}" {
+		name = "${2}"
+		resource_group_name = "${3}"
+	}
+snippet d_azurerm_batch_pool
+	data "azurerm_batch_pool" "${1}" {
+		account_name = "${2}"
+		name = "${3}"
+		resource_group_name = "${4}"
 	}
 snippet d_azurerm_builtin_role_definition
 	data "azurerm_builtin_role_definition" "${1}" {
@@ -1686,6 +1742,16 @@ snippet d_azurerm_kubernetes_cluster
 	data "azurerm_kubernetes_cluster" "${1}" {
 		name = "${2}"
 		resource_group_name = "${3}"
+	}
+snippet d_azurerm_lb
+	data "azurerm_lb" "${1}" {
+		name = "${2}"
+		resource_group_name = "${3}"
+	}
+snippet d_azurerm_lb_backend_address_pool
+	data "azurerm_lb_backend_address_pool" "${1}" {
+		loadbalancer_id = "${2}"
+		name = "${3}"
 	}
 snippet d_azurerm_log_analytics_workspace
 	data "azurerm_log_analytics_workspace" "${1}" {
@@ -1852,6 +1918,11 @@ snippet d_azurerm_subscriptions
 snippet d_azurerm_traffic_manager_geographical_location
 	data "azurerm_traffic_manager_geographical_location" "${1}" {
 		name = "${2}"
+	}
+snippet d_azurerm_virtual_machine
+	data "azurerm_virtual_machine" "${1}" {
+		name = "${2}"
+		resource_group_name = "${3}"
 	}
 snippet d_azurerm_virtual_network
 	data "azurerm_virtual_network" "${1}" {

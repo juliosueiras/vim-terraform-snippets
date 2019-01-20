@@ -157,6 +157,18 @@ snippet r_openstack_images_image_v2
 		disk_format = "${3}"
 		name = "${4}"
 	}
+snippet r_openstack_lb_l7policy_v2
+	resource "openstack_lb_l7policy_v2" "${1}" {
+		action = "${2}"
+		listener_id = "${3}"
+	}
+snippet r_openstack_lb_l7rule_v2
+	resource "openstack_lb_l7rule_v2" "${1}" {
+		compare_type = "${2}"
+		l7policy_id = "${3}"
+		type = "${4}"
+		value = "${5}"
+	}
 snippet r_openstack_lb_listener_v2
 	resource "openstack_lb_listener_v2" "${1}" {
 		loadbalancer_id = "${2}"
@@ -293,6 +305,19 @@ snippet r_openstack_sharedfilesystem_securityservice_v2
 	resource "openstack_sharedfilesystem_securityservice_v2" "${1}" {
 		type = "${2}"
 	}
+snippet r_openstack_sharedfilesystem_share_access_v2
+	resource "openstack_sharedfilesystem_share_access_v2" "${1}" {
+		access_level = "${2}"
+		access_to = "${3}"
+		access_type = "${4}"
+		share_id = "${5}"
+	}
+snippet r_openstack_sharedfilesystem_share_v2
+	resource "openstack_sharedfilesystem_share_v2" "${1}" {
+		name = "${2}"
+		share_proto = "${3}"
+		size = ${4}
+	}
 snippet r_openstack_sharedfilesystem_sharenetwork_v2
 	resource "openstack_sharedfilesystem_sharenetwork_v2" "${1}" {
 		neutron_net_id = "${2}"
@@ -391,6 +416,14 @@ snippet d_openstack_networking_network_v2
 	data "openstack_networking_network_v2" "${1}" {
 		
 	}
+snippet d_openstack_networking_port_ids_v2
+	data "openstack_networking_port_ids_v2" "${1}" {
+		
+	}
+snippet d_openstack_networking_port_v2
+	data "openstack_networking_port_v2" "${1}" {
+		
+	}
 snippet d_openstack_networking_router_v2
 	data "openstack_networking_router_v2" "${1}" {
 		
@@ -405,5 +438,17 @@ snippet d_openstack_networking_subnet_v2
 	}
 snippet d_openstack_networking_subnetpool_v2
 	data "openstack_networking_subnetpool_v2" "${1}" {
+		
+	}
+snippet d_openstack_sharedfilesystem_share_v2
+	data "openstack_sharedfilesystem_share_v2" "${1}" {
+		
+	}
+snippet d_openstack_sharedfilesystem_sharenetwork_v2
+	data "openstack_sharedfilesystem_sharenetwork_v2" "${1}" {
+		
+	}
+snippet d_openstack_sharedfilesystem_snapshot_v2
+	data "openstack_sharedfilesystem_snapshot_v2" "${1}" {
 		
 	}
