@@ -10,3 +10,31 @@ snippet d_terraform_remote_state
 	data "terraform_remote_state" "${1}" {
 		backend = "${2}"
 	}
+snippet variable
+	variable "${1}" {
+		description = "${2}"
+		type        = "${3}"
+		default     = null
+	}
+snippet variable_with_validation
+	variable "${1}" {
+		description = "${2}"
+		type        = "${3}"
+		default     = null
+
+		validation {
+			condition     = try(var.${1})
+			error_message = "${4}."
+		}
+	}
+snippet output
+	output "${1}" {
+		description = "${2}"
+		value       = "${3}"
+	}
+snippet module
+	module "${1}" {
+		source = "${2}"
+
+		${3}
+	}
